@@ -17,3 +17,5 @@ Desktop de 1363 × 936 CSS px; quadro mobile de 390 × 844 CSS px, conteúdo de 
 Navegação por menu até a oferta e o FAQ funcionando. Primeiro accordion aberto e resposta conferida. DOM confirmou cinco perguntas, nenhuma comparação por criança e faixa superior sem preços/bônus.
 
 Capturas: `parchment-mobile-offer.jpg` e `compact-faq-mobile.jpg`. Build, TypeScript e lint passaram. A compra permanece desabilitada sem checkout configurado. Webapp não alterado.
+
+Produção verificada em https://lpclubedamissao.vercel.app/, deploy READY `dpl_ESjV4krzg1Ejz5XLWAVnP8pkHVpg`, código `1f611603dc5189bf6a023c3b5c9fd92d841b5602`. Screenshot `parchment-production.jpg`. DOM de produção confirmou a faixa sem preço/bônus, referência R$197, cinco perguntas e ausência de overflow.
