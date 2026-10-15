@@ -41,3 +41,10 @@ O mockup é uma composição de página muito comprimida. A página real tem cor
 - Console: nenhum erro da aplicação observado; houve uma mensagem da extensão do navegador sobre metadados, externa à LP.
 - `npm run lint`: passou, sem avisos na revisão final. `npm run typecheck`: passou. `npm run build`: passou. `npm test`: 3 testes passaram (UTMs, limites dos parâmetros, URLs HTTPS e expiração).
 - Repositório original do webapp conferido limpo com `git status --short`.
+
+## Verificação após publicação
+
+- Vercel: `dpl_5iCK7fZHGrmtvc2mZvkSZSfBCwm8`, estado READY, produção, código do commit `33a100713bdce2ced83c07f79d7eeee6ef152655`.
+- Domínio verificado e aberto no navegador: https://lpclubedamissao.vercel.app/.
+- `docs/lp-production.jpg`: screenshot da hero em produção. Galeria avançou para o mapa e a pergunta sobre entrega abriu a resposta de pré-lançamento no domínio publicado.
+- A página permanece sem checkout nem rastreamento ativo. A captura/documentação posterior não altera o código publicado.
