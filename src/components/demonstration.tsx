@@ -62,10 +62,28 @@ const materialPreviews = [
     kind: "print",
   },
   {
-    src: "/demo/diario-explorador.webp",
-    alt: "Diário do Explorador impresso em uma cena realista",
-    label: "Materiais que dão vida à missão",
-    kind: "print square",
+    src: "/demo/diario-explorador-atual.webp",
+    alt: "Diário do Explorador e páginas de desafios impressos",
+    label: "Diário do Explorador",
+    kind: "print",
+  },
+  {
+    src: "/demo/certificado-aventureiro.webp",
+    alt: "Certificado de Aventureiro impresso com materiais da missão",
+    label: "Certificado de Aventureiro",
+    kind: "print",
+  },
+  {
+    src: "/demo/tag-aventureiro.webp",
+    alt: "Identificação de Aventureiro sendo colocada no peito da criança",
+    label: "Identificação de Aventureiro",
+    kind: "print",
+  },
+  {
+    src: "/demo/familia-aventura.webp",
+    alt: "Mãe e filho celebram juntos a aventura com o certificado",
+    label: "Uma conquista para celebrar em família",
+    kind: "print",
   },
 ];
 export function Screenshot({
