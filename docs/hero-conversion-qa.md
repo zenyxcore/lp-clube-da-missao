@@ -47,3 +47,11 @@ Removido o link “Conheça seu direito”. A etapa “Monte a equipe” passou 
 ## Selo aprovado aplicado
 
 O responsável aprovou o selo gerado de 7 dias, agora aplicado em `public/assets/guarantee-7-days.webp`, com transparência preservada e tamanho otimizado de 640×640 (aproximadamente 149KB). O selo anterior em CSS e seus estilos foram substituídos. Validado visualmente em produção: 190×190 no desktop e 210×210 no mobile, imagem carregada e sem overflow horizontal (375px). Build e lint aprovados. Deployment `dpl_52tuz1B93MoPa8AAY6xs5EAX5wP4`, commit `f33ed7333fdc5fa81ed6b466b1c578f6f2013a47`, READY. Evidências: `approved-seal-desktop.jpg`, `approved-seal-mobile-full.jpg` e recorte `approved-seal-mobile.jpg`.
+
+## Acesso vitalício e parcelas
+
+O responsável definiu acesso vitalício a esta aventura, compra única e sem mensalidade. Destaque aplicado junto ao preço, hero, seção de acesso e FAQ; textos centralizados na configuração. Removidas referências ao provedor no conteúdo público. O layout mostra “ou 6x de R$6,17”, calculado a partir de R$37/6 e identificado como simulação sem juros enquanto `installmentsConfirmed:false`. Confirmar a tabela real do checkout antes de ativar pagamentos.
+
+Build, TypeScript do build, lint e três testes existentes aprovados. Produção READY em `dpl_7iyY6jNcydC4c1zhCh995H88VbPF`, commit `a760665308ce493384f37ad2b8435f44b83b3067`. Conferidos oferta desktop/mobile e FAQ; texto renderizado sem “Cakto”/“Wiven”, largura útil de 375px sem overflow. Oferta com aproximadamente 749px de altura. Evidência: `lifetime-offer-mobile.jpg`, recorte de `lifetime-offer-mobile-full.jpg`.
+
+Comparação de plataformas consultada nas páginas oficiais em 15/10/2026: https://www.cakto.com.br/taxas (Pix 0% + R$2,49; cartão padrão 4,99% + R$2,49), https://wiven.com.br/ (faixa inicial até R$10mil: 5,99% + R$1,99; a tabela não discrimina Pix/cartão separadamente), https://ajuda.cakto.com.br/pt-br/articles/18-como-funciona-o-parcelamento-no-checkout (acréscimos de parcelamento e mínimo de R$5 por parcela). A divisão simples de R$37 não representa a tabela de juros do checkout. Valores líquidos calculados apenas com as taxas publicadas, sem antecipação, juros, impostos ou outros custos.
