@@ -35,3 +35,7 @@ Logo movida para antes do H1 no HTML e na grade desktop. Validado no domínio p�
 ## Contraste das etapas
 
 Etapas 01–04 com fundo verde na identidade dos CTAs, texto branco e fonte de 14px em círculos de 36px. Validado visualmente em desktop e mobile; build e lint aprovados. Produção READY em `dpl_4BUx112Z2uNKivGApAMRy3s9XB2e`, commit `3560554eba0ad312167a57a5084f14f90f63a72c`. Evidências: `green-step-numbers-desktop.jpg` e `green-step-numbers-mobile.jpg`.
+
+## Imagem de nomes e avatares
+
+O card “Nomes e avatares da equipe” usa agora o WebP de 380×290 enviado pelo responsável, copiado sem edição para `public/assets/team-avatars.webp`. Imagem carregada e conferida no domínio público. Build e lint aprovados. Deployment `dpl_AJnX5oDDQBhqWCnZf8p9kS4L5ZMp`, commit `0621e190b308a64972ad915a7c2c1647c1b2280a`, READY. Evidência: `team-avatar-replacement.jpg`, recorte da captura `team-avatar-replacement-full.jpg`.
