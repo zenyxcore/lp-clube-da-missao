@@ -5549,3 +5549,442 @@ html {
     transition: none;
   }
 }
+
+/* Post-purchase offer: a focused, mobile-first step in the adventure funnel. */
+.upsell-page {
+  min-height: 100svh;
+  position: relative;
+  overflow: hidden;
+  padding: 24px 0 20px;
+  background:
+    radial-gradient(ellipse at 78% 18%, #145343 0, transparent 34%),
+    radial-gradient(ellipse at 8% 78%, #0b3440 0, transparent 38%),
+    var(--night);
+}
+.upsell-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: url("/assets/paper-texture.webp");
+  background-size: 680px auto;
+  mix-blend-mode: screen;
+}
+.upsell-wrap {
+  width: min(1080px, calc(100% - 40px));
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+.upsell-brand {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto 18px;
+}
+.upsell-brand img {
+  width: 132px;
+  height: auto;
+  object-fit: contain;
+}
+.upsell-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(330px, 0.88fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 70px);
+}
+.upsell-story {
+  padding: 24px 0;
+}
+.upsell-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+.upsell-story h1 {
+  max-width: 620px;
+  font-size: clamp(38px, 5.1vw, 64px);
+  line-height: 1.05;
+}
+.upsell-story h1 em {
+  color: var(--gold);
+}
+.upsell-lead {
+  max-width: 600px;
+  margin-top: 20px;
+  font-size: clamp(16px, 1.55vw, 19px);
+  line-height: 1.65;
+}
+.upsell-collection {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 26px 0 15px;
+  padding: 14px 16px;
+  border: 1px solid #b8924c70;
+  border-radius: 12px;
+  background: #ffffff08;
+}
+.upsell-collection-mark {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border: 1px solid #efc563;
+  border-radius: 50%;
+  color: var(--gold);
+}
+.upsell-collection-mark span {
+  position: absolute;
+  right: -3px;
+  bottom: -2px;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #163a30;
+  border-radius: 50%;
+  background: #15704f;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+}
+.upsell-collection strong,
+.upsell-collection > div:last-child > span {
+  display: block;
+}
+.upsell-collection strong {
+  color: var(--cream);
+  font-size: 16px;
+}
+.upsell-collection > div:last-child > span {
+  color: #c4d0c8;
+  font-size: 12px;
+}
+.upsell-adventure-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+  margin: 0;
+  padding: 8px 0 0;
+}
+.upsell-adventure-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #e6eadf;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.upsell-adventure-list li span {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  display: grid;
+  place-items: center;
+  margin-top: -1px;
+  border: 1px solid #e9c160;
+  border-radius: 50%;
+  color: #e9c160;
+}
+.upsell-note {
+  max-width: 570px;
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.upsell-offer-card {
+  padding: 23px 24px 20px;
+  border: 1px solid #d1b46f;
+  border-radius: 20px;
+  background:
+    linear-gradient(145deg, #fff4d8 0%, #efd9a5 100%);
+  color: #183a30;
+  box-shadow: 0 22px 70px #0005, inset 0 0 0 4px #fff9e3a8;
+  text-align: center;
+}
+.upsell-card-art {
+  height: 172px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: -6px auto 6px;
+}
+.upsell-art-ring {
+  position: absolute;
+  width: 156px;
+  aspect-ratio: 1;
+  border: 1px solid #a886464a;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 7px #a8864612;
+}
+.upsell-art-paper {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 1px solid #bb9656;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px #3d291d38;
+}
+.upsell-art-paper svg {
+  width: 30px;
+  height: 30px;
+  color: #145c46;
+}
+.paper-back {
+  width: 104px;
+  height: 126px;
+  transform: translate(30px, -3px) rotate(10deg);
+  background: #e2c98d;
+}
+.paper-front {
+  width: 116px;
+  height: 138px;
+  overflow: hidden;
+  transform: translate(-17px, 1px) rotate(-7deg);
+  background: linear-gradient(#fff3d4, #ead7a6);
+}
+.paper-front img {
+  width: 100%;
+  height: 100%;
+  padding: 12px 8px 27px;
+  object-fit: contain;
+}
+.paper-front span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px 2px;
+  background: #145c46;
+  color: #fff3d4;
+  font-family: var(--font-body);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.upsell-art-compass {
+  position: absolute;
+  right: calc(50% - 89px);
+  bottom: 8px;
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 5px #38291666);
+}
+.upsell-card-label {
+  color: #8a632a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+.upsell-offer-card h2 {
+  margin: 7px 0 10px;
+  color: #163a30;
+  font-size: clamp(23px, 2.3vw, 29px);
+}
+.upsell-price {
+  padding: 12px 0 14px;
+  border-top: 1px solid #b9a4717a;
+  border-bottom: 1px solid #b9a4717a;
+}
+.upsell-price span,
+.upsell-price strong {
+  display: block;
+}
+.upsell-price span {
+  color: #556353;
+  font-size: 12px;
+}
+.upsell-price strong {
+  color: #075b46;
+  font-family: var(--font-heading);
+  font-size: 44px;
+  line-height: 1.1;
+}
+.upsell-cakto-buttons {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+.upsell-integration-pending {
+  display: grid;
+  gap: 4px;
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px dashed #9c8254;
+  border-radius: 9px;
+  color: #5c503c;
+}
+.upsell-integration-pending span {
+  font-size: 13px;
+  font-weight: 700;
+}
+.upsell-integration-pending small {
+  font-size: 11px;
+  line-height: 1.4;
+}
+.upsell-cakto-buttons cakto-upsell-accept,
+.upsell-cakto-buttons cakto-upsell-reject {
+  display: block;
+  width: 100%;
+}
+.upsell-cakto-buttons cakto-upsell-accept::part(button) {
+  width: 100%;
+  min-height: 58px;
+  border: 1px solid #4ca97c;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #16815d, #075b46);
+  color: #fff9e8;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 5px 0 #064532, 0 10px 20px #075b4630;
+}
+.upsell-cakto-buttons cakto-upsell-reject::part(button) {
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: #625944;
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.upsell-terms {
+  margin-top: 9px;
+  color: #625944;
+  font-size: 10px;
+  line-height: 1.4;
+}
+.upsell-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  color: #aabbb3;
+  font-size: 11px;
+}
+.upsell-footer img {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+}
+@media (max-width: 760px) {
+  .upsell-page {
+    padding: 14px 0 16px;
+  }
+  .upsell-wrap {
+    width: min(100% - 28px, 540px);
+  }
+  .upsell-brand {
+    margin-bottom: 7px;
+  }
+  .upsell-brand img {
+    width: 104px;
+  }
+  .upsell-layout {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .upsell-story {
+    padding: 8px 0 0;
+    text-align: center;
+  }
+  .upsell-kicker {
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 9px;
+  }
+  .upsell-story h1 {
+    max-width: 480px;
+    margin: auto;
+    font-size: clamp(34px, 9vw, 46px);
+  }
+  .upsell-lead {
+    margin: 11px auto 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .upsell-collection {
+    margin: 17px 0 10px;
+    padding: 11px 12px;
+    text-align: left;
+  }
+  .upsell-adventure-list {
+    text-align: left;
+    gap: 9px 10px;
+  }
+  .upsell-adventure-list li {
+    font-size: 12px;
+  }
+  .upsell-note {
+    margin: 12px auto 0;
+    font-size: 12px;
+  }
+  .upsell-offer-card {
+    padding: 17px 17px 14px;
+    border-radius: 16px;
+  }
+  .upsell-card-art {
+    height: 125px;
+    margin: -3px auto 2px;
+  }
+  .upsell-art-ring {
+    width: 116px;
+  }
+  .paper-back {
+    width: 82px;
+    height: 99px;
+  }
+  .paper-front {
+    width: 88px;
+    height: 106px;
+  }
+  .paper-front img {
+    padding: 8px 5px 22px;
+  }
+  .paper-front span {
+    padding: 4px 1px;
+    font-size: 7px;
+  }
+  .upsell-art-compass {
+    right: calc(50% - 67px);
+    bottom: 5px;
+    width: 42px;
+    height: 42px;
+  }
+  .upsell-offer-card h2 {
+    max-width: 350px;
+    margin: 6px auto 8px;
+    font-size: 24px;
+  }
+  .upsell-price {
+    padding: 9px 0 11px;
+  }
+  .upsell-price strong {
+    font-size: 38px;
+  }
+  .upsell-footer {
+    margin-top: 13px;
+    font-size: 10px;
+  }
+}
+@media (max-width: 390px) {
+  .upsell-wrap {
+    width: calc(100% - 22px);
+  }
+  .upsell-adventure-list {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+}
