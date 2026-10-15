@@ -5677,14 +5677,43 @@ html {
   padding: 8px 0 0;
 }
 .upsell-adventure-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 9px;
+  min-width: 0;
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr) 19px;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 9px 7px 5px;
+  border: 1px solid #d7c29032;
+  border-radius: 10px;
+  background: linear-gradient(130deg, #ffffff0c, #ffffff04);
   color: #e6eadf;
-  font-size: 13px;
-  line-height: 1.4;
 }
-.upsell-adventure-list li span {
+.upsell-mission-image {
+  display: block;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 5px #0005);
+}
+.upsell-mission-title {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+  line-height: 1.25;
+}
+.upsell-mission-title small {
+  color: #e8c566;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+.upsell-mission-title strong {
+  color: #f1ecdc;
+  font-size: 11px;
+  font-weight: 600;
+}
+.upsell-adventure-list .upsell-mission-check {
   width: 19px;
   height: 19px;
   flex: 0 0 19px;
@@ -5925,7 +5954,17 @@ html {
     gap: 9px 10px;
   }
   .upsell-adventure-list li {
-    font-size: 12px;
+    min-height: 74px;
+    grid-template-columns: 54px minmax(0, 1fr) 18px;
+    gap: 7px;
+    padding: 6px 8px 6px 4px;
+  }
+  .upsell-mission-image {
+    width: 54px;
+    height: 54px;
+  }
+  .upsell-mission-title strong {
+    font-size: 11px;
   }
   .upsell-note {
     margin: 12px auto 0;

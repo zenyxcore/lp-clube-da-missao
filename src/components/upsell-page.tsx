@@ -6,11 +6,11 @@ import { useEffect, useRef } from "react";
 import { Check, Compass, ScrollText, Sparkles } from "lucide-react";
 
 const adventures = [
-  "O Código da Estação Espacial",
-  "O Segredo da Floresta Antiga",
-  "Mistério no Museu",
-  "O Resgate dos Animais",
-  "O Enigma do Farol",
+  { title: "O Código da Estação Espacial", image: "/upsell/missions/codigo-espacial.webp" },
+  { title: "O Segredo da Floresta Antiga", image: "/upsell/missions/floresta-antiga.webp" },
+  { title: "Mistério no Museu", image: "/upsell/missions/misterio-museu.webp" },
+  { title: "O Resgate dos Animais", image: "/upsell/missions/resgate-animal.webp" },
+  { title: "O Enigma do Farol", image: "/upsell/missions/enigma-farol.webp" },
 ];
 
 function CaktoButtons({ snippet }: { snippet: string }) {
@@ -91,10 +91,22 @@ export function UpsellPage({ caktoSnippet }: { caktoSnippet: string }) {
             </div>
 
             <ul className="upsell-adventure-list">
-              {adventures.map((adventure) => (
-                <li key={adventure}>
-                  <span><Check size={14} strokeWidth={3} /></span>
-                  {adventure}
+              {adventures.map((adventure, index) => (
+                <li key={adventure.title}>
+                  <Image
+                    className="upsell-mission-image"
+                    src={adventure.image}
+                    alt={adventure.title}
+                    width={80}
+                    height={80}
+                  />
+                  <span className="upsell-mission-title">
+                    <small>MISSÃO 0{index + 1}</small>
+                    <strong>{adventure.title}</strong>
+                  </span>
+                  <span className="upsell-mission-check" aria-hidden="true">
+                    <Check size={13} strokeWidth={3} />
+                  </span>
                 </li>
               ))}
             </ul>
