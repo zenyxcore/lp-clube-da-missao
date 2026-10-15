@@ -35,7 +35,6 @@ export function Inside() {
             </div>
           </div>
           <div className="inside-copy">
-            <span className="eyebrow">FEITO PARA PEQUENOS EXPLORADORES</span>
             <h3>
               Tudo fica organizado
               <br />

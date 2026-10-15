@@ -41,7 +41,6 @@ export function Trust() {
               <WhatsAppMark />
             </span>
           </div>
-          <span className="eyebrow">SUA PRÓXIMA AVENTURA CHEGA ATÉ VOCÊ</span>
           <h3>
             Receba o acesso por
             <br />
@@ -58,7 +57,6 @@ export function Trust() {
         <div className="guarantee-panel">
           <GuaranteeSeal />
           <div>
-            <span className="eyebrow">ESCOLHA COM TRANQUILIDADE</span>
             <h3>7 dias de garantia.</h3>
             <p>
               Nas compras online, você pode exercer o direito de arrependimento

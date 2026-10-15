@@ -7,23 +7,9 @@ export function Personalization() {
     <section className="section personalization">
       <div className="container personalization-grid">
         <div>
-          <span className="eyebrow">A HISTÓRIA FICA AINDA MAIS ESPECIAL</span>
           <h2>
-            Aqui, seu filho ou neto é<br />
-            <em>o protagonista da história.</em>
+            Aqui, os pequenos são os protagonistas da história.
           </h2>
-          <p>
-            Escolha um personagem para cada criança e cadastre os nomes da
-            equipe. Eles aparecem na experiência e no certificado, deixando a
-            conquista com a cara da sua família.
-          </p>
-          <blockquote>
-            “Explorador Miguel, uma mensagem secreta acaba de chegar!”
-          </blockquote>
-          <small>
-            Exemplo ilustrativo de personalização. Nenhum dado de criança é
-            solicitado nesta página.
-          </small>
           <div className="personalization-cta">
             <Cta placement="personalization" />
           </div>

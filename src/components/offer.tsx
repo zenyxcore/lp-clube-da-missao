@@ -17,8 +17,10 @@ import { startCheckout } from "./analytics";
 import { Art, Heading, useClock } from "./shared";
 export function CheckoutButton({
   label = "Quero comprar essa aventura",
+  placement = "offer",
 }: {
   label?: string;
+  placement?: string;
 }) {
   const now = useClock(Boolean(offer.endsAt));
   const expired = now !== null && offerExpired(offer.endsAt, now);
@@ -31,7 +33,7 @@ export function CheckoutButton({
         disabled={!active}
         onClick={startCheckout}
         data-cta-action="checkout"
-        data-cta-placement="offer"
+        data-cta-placement={placement}
       >
         {expired
           ? "Condição encerrada"

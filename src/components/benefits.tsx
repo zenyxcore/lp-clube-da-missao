@@ -1,5 +1,5 @@
 "use client";
-import { Check, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 import { resources } from "@/lib/config";
 import { Art, Cta, Reveal, Heading } from "./shared";
 export function Benefits() {
@@ -32,13 +32,6 @@ export function Benefits() {
                 </div>
               </Reveal>
             ))}
-        </div>
-        <div className="material-note">
-          <Sparkles size={20} />
-          <p>
-            Uma história para explorar. Pistas para descobrir.{" "}
-            <strong>Tudo pensado para brincar juntos.</strong>
-          </p>
         </div>
         <div className="section-cta">
           <Cta placement="included" />

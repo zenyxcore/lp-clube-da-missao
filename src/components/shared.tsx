@@ -47,19 +47,17 @@ export function Reveal({
   );
 }
 export function Heading({
-  eyebrow,
   children,
   text,
   light = false,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   children: React.ReactNode;
   text?: string;
   light?: boolean;
 }) {
   return (
     <div className={`section-heading ${light ? "ink" : ""}`}>
-      <span className="eyebrow">{eyebrow}</span>
       <h2>{children}</h2>
       {text && <p>{text}</p>}
       <span className="heading-rule" aria-hidden="true">
