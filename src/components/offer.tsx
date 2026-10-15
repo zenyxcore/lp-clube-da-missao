@@ -80,7 +80,9 @@ export function OfferCard({ full = false }: { full?: boolean }) {
           "Conquistas da equipe",
         ].map((title) => (
           <li key={title}>
-            <Check size={16} />
+            <span className="include-check">
+              <Check size={11} strokeWidth={3} />
+            </span>
             {title}
           </li>
         ))}

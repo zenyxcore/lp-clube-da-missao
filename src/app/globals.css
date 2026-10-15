@@ -5440,3 +5440,112 @@ html {
     font-size: 13px;
   }
 }
+
+/* Offer polish: keep the parchment readable and reserve saturated green for the CTA. */
+.full-offer .edition {
+  background: #a83222;
+  border-color: #81261c;
+  color: #fff4dc;
+  box-shadow: 0 3px 10px #7b241d30;
+}
+.full-offer .offer-list.compact-includes {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 7px;
+}
+.full-offer .compact-includes li {
+  min-width: 0;
+  gap: 5px;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.full-offer .compact-includes .include-check {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  display: inline-grid;
+  place-items: center;
+  margin-top: 0;
+  border: 1px solid #087657;
+  border-radius: 50%;
+  color: #087657;
+}
+.full-offer .compact-includes .include-check svg {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+}
+.full-offer .offer-gifts {
+  background: linear-gradient(115deg, #f4e8ca, #e9dfc3);
+  border: 1px solid #c8b781;
+  color: #294337;
+  box-shadow: inset 0 0 0 1px #fff7e8a6;
+}
+.full-offer .offer-gifts > strong {
+  color: #315a43;
+}
+.full-offer .offer-gifts > strong svg {
+  color: #347653;
+}
+.full-offer .offer-gifts > div > span {
+  color: #304433;
+  background: #fffaf0b8;
+  border: 1px solid #d8c99f;
+}
+.full-offer .offer-gifts > div > span > svg {
+  color: #16805b;
+}
+.full-offer .offer-gifts b {
+  color: #12734f;
+}
+.full-offer .ownership-promise {
+  background: #e3ead8;
+  border-color: #b7c6a2;
+  color: #2b4a36;
+  box-shadow: inset 0 0 0 1px #fff9e8a6;
+}
+.full-offer .ownership-promise svg {
+  color: #397753;
+}
+.full-offer .ownership-promise > span + span {
+  border-left-color: #9eb28c;
+}
+.full-offer .price strong {
+  text-shadow: 0 0 20px #087f5d38;
+}
+.full-offer .purchase {
+  box-shadow: 0 5px 0 #064936, 0 0 18px #0a9a6a38;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.full-offer .purchase:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #064936, 0 0 25px #0a9a6a55;
+}
+.treasure-bonuses .free-badge {
+  background: linear-gradient(135deg, #157a54, #0b6347);
+  color: #fff8df;
+  border-color: #55a77d;
+  box-shadow: 0 4px 14px #061b1440;
+}
+@media (max-width: 700px) {
+  .full-offer .offer-list.compact-includes {
+    column-gap: 5px;
+  }
+  .full-offer .compact-includes li {
+    font-size: 10px;
+    gap: 4px;
+  }
+  .full-offer .compact-includes .include-check {
+    width: 14px;
+    height: 14px;
+    flex-basis: 14px;
+  }
+  .full-offer .compact-includes .include-check svg {
+    width: 9px;
+    height: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .full-offer .purchase {
+    transition: none;
+  }
+}
