@@ -16,17 +16,17 @@ export function Hero() {
       />
       <div className="hero-shade" />
       <div className="container hero-story-content">
-        <h1>
-          <span>Transforme</span>
-          <span>sua casa em uma</span>
-          <em>Grande Aventura!</em>
-        </h1>
         <Art
           name="clube-da-missao"
           alt="Clube da Missão"
           className="hero-club-logo"
           priority
         />
+        <h1>
+          <span>Transforme</span>
+          <span>sua casa em uma</span>
+          <em>Grande Aventura!</em>
+        </h1>
         <div className="hero-film-frame">
           <span className="frame-corner top-left" aria-hidden="true" />
           <span className="frame-corner top-right" aria-hidden="true" />

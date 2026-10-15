@@ -4114,7 +4114,7 @@ html {
   line-height: 1.08;
   letter-spacing: -0.045em;
   max-width: none;
-  margin: 0 auto;
+  margin: 0 auto 26px;
   text-shadow: 0 3px 25px #0009;
 }
 .hero-story h1 span {
@@ -4131,7 +4131,7 @@ html {
 .hero-club-logo {
   width: 164px;
   height: 142px;
-  margin: 20px auto 24px;
+  margin: 0 auto 24px;
   filter: drop-shadow(0 8px 16px #0008);
 }
 .hero-film-frame {
@@ -4904,7 +4904,7 @@ html {
   .hero-club-logo {
     width: 148px;
     height: 125px;
-    margin: 18px auto 25px;
+    margin: 0 auto 22px;
   }
   .hero-film-frame {
     padding: 5px;
@@ -5216,7 +5216,7 @@ html {
   }
   .hero.hero-story h1 {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 2;
     font-size: clamp(40px, 3.6vw, 51px);
     line-height: 1.12;
   }
@@ -5228,10 +5228,10 @@ html {
   }
   .hero-club-logo {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1;
     width: 145px;
     height: 120px;
-    margin: 18px auto 20px;
+    margin: 0 auto 20px;
   }
   .hero-film-frame {
     grid-column: 2;
