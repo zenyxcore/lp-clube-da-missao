@@ -39,3 +39,7 @@ Etapas 01–04 com fundo verde na identidade dos CTAs, texto branco e fonte de 1
 ## Imagem de nomes e avatares
 
 O card “Nomes e avatares da equipe” usa agora o WebP de 380×290 enviado pelo responsável, copiado sem edição para `public/assets/team-avatars.webp`. Imagem carregada e conferida no domínio público. Build e lint aprovados. Deployment `dpl_AJnX5oDDQBhqWCnZf8p9kS4L5ZMp`, commit `0621e190b308a64972ad915a7c2c1647c1b2280a`, READY. Evidência: `team-avatar-replacement.jpg`, recorte da captura `team-avatar-replacement-full.jpg`.
+
+## Link de direitos e imagem da etapa 02
+
+Removido o link “Conheça seu direito”. A etapa “Monte a equipe” passou a usar a mesma imagem `team-avatars.webp` do card de benefícios. Validado no domínio público: link ausente e imagem carregada; build e lint aprovados. Deployment `dpl_4tW65VSRSZJ7LxHKUcP2S3EchQno`, commit `332814d59b4e2fc2ab9d6e63243de2eb478cb62c`, READY. Evidência: `team-step-update.jpg`, recorte de `team-step-update-full.jpg`. Novo selo ilustrado de 7 dias gerado como prévia com alpha transparente; aplicação na LP depende da aprovação solicitada pelo responsável.
