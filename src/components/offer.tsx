@@ -39,15 +39,17 @@ export function CheckoutButton({
             : label}
         <ArrowRight size={19} />
       </button>
-      <p className="purchase-note">
-        {expired
-          ? "Aguarde a divulgação de uma nova condição."
-          : active
-            ? offer.checkoutUrl
-              ? "Compra única. Confira as condições no checkout."
-              : "Cadastre seu interesse pelo canal oficial."
-            : "Compra única • Sem mensalidade"}
-      </p>
+      {(active || expired) && (
+        <p className="purchase-note">
+          {expired
+            ? "Aguarde a divulgação de uma nova condição."
+            : active
+              ? offer.checkoutUrl
+                ? "Compra única. Confira as condições no checkout."
+                : "Cadastre seu interesse pelo canal oficial."
+              : "Compra única • Sem mensalidade"}
+        </p>
+      )}
     </>
   );
 }
@@ -117,9 +119,6 @@ export function OfferCard({ full = false }: { full?: boolean }) {
       </div>
       <OfferCondition />
       <CheckoutButton />
-      <span className="offer-foot">
-        História interativa + pistas para imprimir
-      </span>
     </div>
   );
 }
