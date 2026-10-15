@@ -25,3 +25,7 @@ Resultado: passou na revisão desktop/mobile. Esta revisão substitui as decisõ
 - Nenhuma alteração no webapp. Somente a landing page é publicada.
 
 Lint, TypeScript e build de produção executados antes do envio. Pixels, checkout e condições de acesso continuam conforme a configuração anterior de pré-lançamento.
+
+## Publicação verificada
+
+Produção READY: `dpl_M1odjVCUhKheh5Dx7yt2on3G2oVk`, código `44984b4c6a8f058665094af16d7e3fa1d8ec3085`. Domínio aberto e verificado: https://lpclubedamissao.vercel.app/. Screenshot: `revision-production.jpg`. No domínio publicado, menu e navegação até os bônus funcionaram; os dois selos gratuitos, ausência da barra fixa, ausência de overflow e animação do preço foram confirmados.
