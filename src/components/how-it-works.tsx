@@ -9,7 +9,7 @@ export const steps = [
   {
     title: "Monte a equipe",
     text: "Escolha os nomes e os personagens de até 3 crianças.",
-    image: "shield",
+    image: "team-avatars",
   },
   {
     title: "Esconda as pistas",

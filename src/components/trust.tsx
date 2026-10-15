@@ -1,5 +1,5 @@
 "use client";
-import { Mail, ArrowRight, Check } from "lucide-react";
+import { Mail, Check } from "lucide-react";
 import { offer } from "@/lib/config";
 function WhatsAppMark() {
   return (
@@ -65,13 +65,6 @@ export function Trust() {
               em até 7 dias e receber de volta os valores pagos, conforme o art.
               49 do CDC.
             </p>
-            <a
-              href="https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm#art49"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Conheça seu direito <ArrowRight size={14} />
-            </a>
           </div>
         </div>
       </div>
