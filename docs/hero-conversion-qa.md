@@ -31,3 +31,7 @@ Evidências: `hero-conversion-production.jpg`, `hero-conversion-mobile.jpg`, `he
 ## Correção de ordem da hero
 
 Logo movida para antes do H1 no HTML e na grade desktop. Validado no domínio público: a logo termina em 224px e o título começa em 244px no desktop; no mobile, termina em 215px e o título começa em 237px. Conteúdo de 375px sem overflow horizontal. Build, TypeScript do build e lint aprovados. Deployment `dpl_9CrRuZNu6fketH5ybauPK1RWNSkq`, commit `e4477acd68c608e7d086d97fef7b06ee209e814c`, READY. Evidência atual: `logo-above-title-mobile.jpg` (recorte da captura completa de mesmo nome com sufixo `-full`).
+
+## Contraste das etapas
+
+Etapas 01–04 com fundo verde na identidade dos CTAs, texto branco e fonte de 14px em círculos de 36px. Validado visualmente em desktop e mobile; build e lint aprovados. Produção READY em `dpl_4BUx112Z2uNKivGApAMRy3s9XB2e`, commit `3560554eba0ad312167a57a5084f14f90f63a72c`. Evidências: `green-step-numbers-desktop.jpg` e `green-step-numbers-mobile.jpg`.
