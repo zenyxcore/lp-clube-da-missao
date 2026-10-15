@@ -1,4 +1,5 @@
 export const assetDimensions: Record<string, [number, number]> = {
+  "guarantee-7-days": [640, 640],
   "team-avatars": [380, 290],
   "biblioteca": [
     1400,

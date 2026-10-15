@@ -1,6 +1,7 @@
 "use client";
-import { Mail, Check } from "lucide-react";
+import { Mail } from "lucide-react";
 import { offer } from "@/lib/config";
+import { Art } from "./shared";
 function WhatsAppMark() {
   return (
     <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
@@ -19,15 +20,11 @@ function WhatsAppMark() {
 }
 export function GuaranteeSeal() {
   return (
-    <div className="guarantee-seal" role="img" aria-label="Garantia de 7 dias">
-      <span className="seal-ring" />
-      <span className="seal-top">CLUBE DA MISSÃO</span>
-      <Check className="seal-check" size={21} />
-      <strong>7</strong>
-      <span className="seal-days">DIAS</span>
-      <span className="seal-ribbon">GARANTIA</span>
-      <span className="seal-bottom">SUA COMPRA COM TRANQUILIDADE</span>
-    </div>
+    <Art
+      name="guarantee-7-days"
+      alt="Clube da Missão — 7 dias de garantia"
+      className="guarantee-seal"
+    />
   );
 }
 export function Trust() {

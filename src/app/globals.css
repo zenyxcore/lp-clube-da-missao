@@ -4747,121 +4747,18 @@ html {
   font-size: 11px;
 }
 .guarantee-seal {
-  position: relative;
   flex-shrink: 0;
-  width: 164px;
-  height: 184px;
-  color: #f8daa0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 24px;
-  isolation: isolate;
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px #0004);
 }
-.guarantee-seal:before {
-  content: "";
-  position: absolute;
-  width: 154px;
-  height: 154px;
-  top: 4px;
-  background: linear-gradient(
-    135deg,
-    #ffe5aa,
-    #a9772d 45%,
-    #f1c56d 65%,
-    #a97b39
-  );
-  clip-path: polygon(
-    50% 0,
-    58% 5%,
-    67% 3%,
-    73% 10%,
-    83% 12%,
-    87% 21%,
-    95% 27%,
-    95% 37%,
-    100% 45%,
-    97% 54%,
-    99% 64%,
-    92% 71%,
-    89% 81%,
-    80% 85%,
-    74% 94%,
-    64% 94%,
-    55% 100%,
-    46% 96%,
-    36% 99%,
-    29% 92%,
-    19% 89%,
-    15% 80%,
-    6% 74%,
-    6% 64%,
-    0 55%,
-    4% 46%,
-    1% 36%,
-    8% 29%,
-    11% 19%,
-    20% 15%,
-    26% 6%,
-    36% 6%,
-    44% 1%
-  );
-  z-index: -2;
-}
-.guarantee-seal .seal-ring {
-  position: absolute;
-  top: 17px;
-  left: 18px;
-  width: 128px;
-  height: 128px;
-  background: radial-gradient(circle, #154b3d, #062e2b);
-  border: 2px solid #684e2c;
-  outline: 1px solid #ffdc8c;
-  border-radius: 50%;
-  z-index: -1;
-  box-shadow:
-    inset 0 0 0 5px #0e382e,
-    inset 0 0 0 6px #b6975760;
-}
-.seal-top {
-  font-size: 7px;
-  letter-spacing: 0.17em;
-  font-weight: 700;
-}
-.guarantee-seal .seal-check {
-  position: absolute;
-  right: 39px;
-  top: 45px;
-  color: #edca7f;
-}
-.guarantee-seal > strong {
-  font-family: var(--font-heading);
-  font-size: 61px;
-  line-height: 1;
-  margin: 2px 0 0;
-  text-shadow: 0 2px 0 #0008;
-}
-.seal-days {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-}
-.seal-ribbon {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  color: #fff0ca;
-  padding: 6px 27px;
-  margin-top: 7px;
-  background: linear-gradient(90deg, #8a2f21, #b44b2e, #8a2f21);
-  border-block: 1px solid #e1a85d;
-  clip-path: polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 5% 50%);
-}
-.seal-bottom {
-  font-size: 6px;
-  letter-spacing: 0.08em;
-  margin-top: 14px;
-  color: #e3c286;
+@media (max-width: 700px) {
+  .guarantee-seal {
+    width: 210px;
+    height: 210px;
+    max-width: 75%;
+  }
 }
 @media (max-width: 1000px) {
   .themed-trust .trust-grid {
