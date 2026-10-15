@@ -43,3 +43,7 @@ O card “Nomes e avatares da equipe” usa agora o WebP de 380×290 enviado pel
 ## Link de direitos e imagem da etapa 02
 
 Removido o link “Conheça seu direito”. A etapa “Monte a equipe” passou a usar a mesma imagem `team-avatars.webp` do card de benefícios. Validado no domínio público: link ausente e imagem carregada; build e lint aprovados. Deployment `dpl_4tW65VSRSZJ7LxHKUcP2S3EchQno`, commit `332814d59b4e2fc2ab9d6e63243de2eb478cb62c`, READY. Evidência: `team-step-update.jpg`, recorte de `team-step-update-full.jpg`. Novo selo ilustrado de 7 dias gerado como prévia com alpha transparente; aplicação na LP depende da aprovação solicitada pelo responsável.
+
+## Selo aprovado aplicado
+
+O responsável aprovou o selo gerado de 7 dias, agora aplicado em `public/assets/guarantee-7-days.webp`, com transparência preservada e tamanho otimizado de 640×640 (aproximadamente 149KB). O selo anterior em CSS e seus estilos foram substituídos. Validado visualmente em produção: 190×190 no desktop e 210×210 no mobile, imagem carregada e sem overflow horizontal (375px). Build e lint aprovados. Deployment `dpl_52tuz1B93MoPa8AAY6xs5EAX5wP4`, commit `f33ed7333fdc5fa81ed6b466b1c578f6f2013a47`, READY. Evidências: `approved-seal-desktop.jpg`, `approved-seal-mobile-full.jpg` e recorte `approved-seal-mobile.jpg`.
