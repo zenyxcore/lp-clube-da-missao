@@ -15,7 +15,6 @@ import { Trust } from "./trust";
 import { FAQ } from "./faq";
 import { FinalCTA } from "./final-cta";
 import { Footer } from "./footer";
-import { StickyCTA } from "./sticky-cta";
 export function Landing() {
   return (
     <>
@@ -38,7 +37,6 @@ export function Landing() {
         <FinalCTA />
       </main>
       <Footer />
-      <StickyCTA />
       <Analytics />
     </>
   );

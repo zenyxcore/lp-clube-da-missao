@@ -8,12 +8,12 @@ export function Benefits() {
       <div className="container">
         <Heading
           light
-          eyebrow="UMA MISSÃO. MUITAS DESCOBERTAS."
-          text="Da primeira pista à última conquista, cada detalhe faz parte da experiência."
+          eyebrow="O QUE VEM NA SUA COMPRA"
+          text="Você recebe a brincadeira organizada e os materiais digitais. Veja para que serve cada parte."
         >
-          Tudo o que você precisa para viver
+          Abra, prepare e comece
           <br />
-          <em>uma aventura completa.</em>
+          <em>a brincar com sua família.</em>
         </Heading>
         <div className="benefits-grid">
           {resources
@@ -31,8 +31,8 @@ export function Benefits() {
         <div className="material-note">
           <Printer size={19} />
           <p>
-            Você recebe a experiência digital e os materiais disponíveis para
-            imprimir.
+            É um produto digital: a história fica na plataforma e você imprime
+            as pistas em casa.
             <br />
             <strong>
               A preparação e o tesouro físico ficam por conta da sua família.

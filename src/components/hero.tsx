@@ -24,18 +24,18 @@ export function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy">
           <span className="eyebrow outlined">
-            UMA AVENTURA DO CLUBE DA MISSÃO
+            CAÇA AO TESOURO PARA CRIANÇAS DE 5 A 9 ANOS
           </span>
           <h1>
             Transforme sua casa em uma <em>grande aventura.</em>
           </h1>
           <p>
-            Uma caça ao tesouro interativa, com pistas, mistérios e desafios que
-            convidam as crianças a explorar, descobrir e viver momentos
-            especiais em família.
+            Você imprime e esconde as pistas. As crianças seguem a história no
+            celular, resolvem 6 desafios e procuram o tesouro pela casa. Uma
+            brincadeira pronta para viver em família.
           </p>
           <div className="hero-actions">
-            <Cta />
+            <Cta>Quero essa aventura para minha família</Cta>
             <a className="text-link" href="#como-funciona">
               Ver como funciona <ChevronDown size={16} />
             </a>
@@ -47,7 +47,7 @@ export function Hero() {
             </span>
             <span>
               <Smartphone />
-              Digital + atividades reais
+              História na tela, diversão pela casa
             </span>
             <span>
               <Printer />

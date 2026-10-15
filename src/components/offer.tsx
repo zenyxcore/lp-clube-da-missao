@@ -1,15 +1,17 @@
 "use client";
-import { ArrowRight, Check, ShieldCheck } from "lucide-react";
+import { useId } from "react";
+import { ArrowRight, Check, UsersRound, Gift } from "lucide-react";
 import { bonuses, offer, priceLabel, resources } from "@/lib/config";
 import { checkoutWithCampaign, offerExpired } from "@/lib/campaign";
 import { trackCheckout } from "./analytics";
 import { Art, Heading, useClock } from "./shared";
 export function CheckoutButton({
-  label = "Quero essa missão agora",
+  label = "Quero minha aventura em família",
 }: {
   label?: string;
 }) {
-  const now = useClock();
+  const now = useClock(),
+    noteId = useId();
   const expired = now !== null && offerExpired(offer.endsAt, now);
   const target = offer.checkoutUrl || offer.interestUrl;
   const active = Boolean(target) && !expired && (!offer.endsAt || now !== null);
@@ -25,74 +27,97 @@ export function CheckoutButton({
   }
   return (
     <>
-      <button className="button purchase" disabled={!active} onClick={visit}>
+      <button
+        className="button purchase"
+        disabled={!active}
+        onClick={visit}
+        aria-describedby={noteId}
+      >
         {expired
           ? "Condição encerrada"
-          : active
-            ? offer.checkoutUrl
-              ? label
-              : "Quero receber novidades"
-            : "Vendas em breve"}
-        <ArrowRight size={18} />
+          : active && !offer.checkoutUrl
+            ? "Quero receber novidades"
+            : label}
+        <ArrowRight size={19} />
       </button>
-      <p className="purchase-note">
+      <p id={noteId} className="purchase-note">
         {expired
           ? "Aguarde a divulgação de uma nova condição."
           : active
             ? offer.checkoutUrl
-              ? "Compra única. Você confere as condições no checkout."
+              ? "Compra única. Confira as condições no checkout."
               : "Cadastre seu interesse pelo canal oficial."
-            : "Pré-lançamento: o checkout ainda não está disponível. Nenhuma cobrança será realizada."}
+            : "Vendas em breve. A compra ainda não está liberada e nenhuma cobrança será feita."}
       </p>
     </>
   );
 }
 export function OfferCard({ full = false }: { full?: boolean }) {
+  const activeBonuses = bonuses.filter((b) => b.ready);
+  const perChild = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: offer.currency,
+  }).format(offer.price / offer.maxAdventurers);
   return (
     <div className={`offer-card ${full ? "full-offer" : ""}`}>
-      <span className="edition">EDIÇÃO DE ESTREIA</span>
+      <span className="edition">CONDIÇÃO ESPECIAL DE LANÇAMENTO</span>
       <Art
         name="missao-secreta"
         alt="Missão Secreta"
         className="mission-logo"
         priority={!full}
       />
-      <h3>
-        A Caça ao
-        <br />
-        Tesouro Perdido
-      </h3>
+      <h3>A Caça ao Tesouro Perdido</h3>
       <p className="offer-description">
-        Uma história cheia de descobertas.
-        <br />
-        Uma casa inteira para explorar.
+        Uma caça ao tesouro para brincar em casa, com crianças de 5 a 9 anos.
       </p>
-      {full && (
-        <ul className="offer-list">
-          {resources
-            .filter((r) => r.ready)
-            .map((r) => (
-              <li key={r.title}>
-                <Check size={16} />
-                {r.title}
-              </li>
-            ))}
-          {bonuses.filter((b) => b.ready).length > 0 && (
-            <li>
-              <Check size={16} />
-              Bônus confirmados da edição de estreia
-            </li>
-          )}
-        </ul>
+      <div className="offer-includes-label">SUA FAMÍLIA RECEBE:</div>
+      <ul className="offer-list">
+        {(full
+          ? resources.filter((r) => r.ready).map((r) => r.title)
+          : [
+              "História + 6 desafios para resolver",
+              "Mapa, pistas e guia para imprimir",
+              `Missão para até ${offer.maxAdventurers} aventureiros`,
+            ]
+        ).map((title) => (
+          <li key={title}>
+            <Check size={18} />
+            {title}
+          </li>
+        ))}
+      </ul>
+      {activeBonuses.length > 0 && (
+        <div className="offer-bonus-line">
+          <Gift size={18} />
+          <span>
+            <strong>Você ainda ganha {activeBonuses.length} bônus</strong>
+            <span>
+              {activeBonuses.map((b) => b.title).join(" + ")}. Sem custo extra.
+            </span>
+          </span>
+        </div>
       )}
       <div className="price">
-        <span>Viva essa aventura por</span>
+        <span>A aventura completa + bônus por</span>
         <strong>{priceLabel}</strong>
-        <small>Compra única · produto digital</small>
+        <small>Uma única compra. Sem mensalidade.</small>
       </div>
-      <CheckoutButton label={full ? "GARANTIR MINHA AVENTURA" : undefined} />
+      {full && (
+        <div className="price-anchor">
+          <UsersRound size={17} />
+          <p>
+            <strong>{perChild} por criança</strong>
+            <span>
+              Ao dividir o valor por uma equipe de {offer.maxAdventurers}. O
+              total da compra é {priceLabel}.
+            </span>
+          </p>
+        </div>
+      )}
+      <CheckoutButton />
       <span className="offer-foot">
-        <ShieldCheck size={14} /> Aventura para crianças de 5 a 9 anos
+        Produto digital · materiais para imprimir
       </span>
     </div>
   );
@@ -102,19 +127,16 @@ export function Offer() {
     <section className="section offer-section" id="oferta">
       <div className="container">
         <Heading
-          eyebrow="A PRÓXIMA GRANDE MEMÓRIA COMEÇA EM CASA"
-          text="Uma experiência que combina história, desafios, exploração e diversão em família."
+          eyebrow="TUDO EM UMA ÚNICA COMPRA"
+          text="História, desafios, materiais para imprimir e bônus. Você prepara a casa; as crianças vivem a aventura."
         >
-          Uma grande aventura.
+          Uma missão completa.
           <br />
-          <em>Um investimento pequeno</em>
-          <br />
-          em momentos especiais.
+          <em>Uma tarde para lembrar.</em>
         </Heading>
         <div className="final-offer-wrap">
           <Art name="compass" className="decor final-compass" />
           <Art name="chest" className="decor final-chest" />
-          <Art name="key" className="decor final-key" />
           <OfferCard full />
         </div>
       </div>

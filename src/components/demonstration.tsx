@@ -146,12 +146,12 @@ export function Demo() {
     <section className="section demo" id="aventura">
       <div className="container">
         <Heading
-          eyebrow="MENOS ROTINA. MAIS DESCOBERTAS."
-          text="A tela conduz a história. A imaginação leva a aventura para todos os cantos da casa."
+          eyebrow="ENTENDA O QUE É A MISSÃO SECRETA"
+          text="É uma caça ao tesouro guiada: a história fica na tela, mas as pistas estão escondidas pela sua casa. Um adulto prepara tudo e participa da diversão."
         >
-          Isso não é apenas um jogo na tela.
+          Uma história no celular.
           <br />
-          <em>É uma aventura que acontece de verdade.</em>
+          <em>Uma caça ao tesouro pela casa.</em>
         </Heading>
         {offer.videoUrl ? (
           <video
@@ -179,7 +179,7 @@ export function Demo() {
                 pode estar bem perto.
               </h3>
               <a className="button secondary" href="#screenshots">
-                Explore o produto por dentro <ArrowRight size={18} />
+                Veja as telas da brincadeira <ArrowRight size={18} />
               </a>
               <small>Prévia visual · veja as telas reais abaixo</small>
             </div>

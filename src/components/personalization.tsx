@@ -12,8 +12,9 @@ export function Personalization() {
             <em>o protagonista da história.</em>
           </h2>
           <p>
-            Nomes, avatares e uma equipe pronta para entrar em ação. A missão
-            tem um detalhe que faz toda a diferença: ela acontece com eles.
+            Escolha um personagem para cada criança e cadastre os nomes da
+            equipe. Eles aparecem na experiência e no certificado, deixando a
+            conquista com a cara da sua família.
           </p>
           <blockquote>
             “Explorador Miguel, uma mensagem secreta acaba de chegar!”

@@ -2,23 +2,23 @@
 import { Art, Reveal, Heading } from "./shared";
 export const steps = [
   {
-    title: "Acesse o Clube",
-    text: "Entre na plataforma e descubra sua aventura.",
+    title: "Abra a missão",
+    text: "No celular ou computador, abra a história que vai guiar a brincadeira.",
     image: "chest",
   },
   {
-    title: "Cadastre os aventureiros",
-    text: "Personalize a experiência com nomes e avatares.",
+    title: "Monte a equipe",
+    text: "Escolha os nomes e os personagens de até 3 crianças.",
     image: "shield",
   },
   {
-    title: "Prepare as pistas",
-    text: "Utilize o guia para organizar a brincadeira.",
+    title: "Esconda as pistas",
+    text: "Imprima os materiais e siga o guia para esconder as pistas pela casa.",
     image: "openmap",
   },
   {
-    title: "Viva a missão",
-    text: "Resolva enigmas, explore a casa e encontre o tesouro.",
+    title: "Comece a caça",
+    text: "Acompanhe as crianças: resolvam os desafios e encontrem o tesouro juntos.",
     image: "compass",
   },
 ];
@@ -27,12 +27,12 @@ export function HowItWorks() {
     <section className="section how" id="como-funciona">
       <div className="container">
         <Heading
-          eyebrow="A PRÓXIMA DESCOBERTA COMEÇA AQUI"
-          text="Você prepara as pistas. Eles entram na história. E a casa vira um cenário de descobertas."
+          eyebrow="COMO A BRINCADEIRA FUNCIONA"
+          text="Um adulto organiza as pistas e acompanha a equipe. Não é preciso inventar os enigmas: a missão já vem preparada."
         >
-          Em poucos passos,
+          Você prepara em casa.
           <br />
-          <em>a aventura começa.</em>
+          <em>Eles entram na aventura.</em>
         </Heading>
         <div className="steps">
           {steps.map((s, i) => (

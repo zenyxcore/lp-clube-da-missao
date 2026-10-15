@@ -8,9 +8,9 @@ export function Inside() {
     <section className="section inside">
       <div className="container">
         <Heading eyebrow="POR DENTRO DO CLUBE">
-          Um universo de aventuras
+          Abra no celular ou computador.
           <br />
-          <em>esperando para ser explorado.</em>
+          <em>A missão mostra o próximo passo.</em>
         </Heading>
         <div className="inside-grid">
           <div className="devices">
@@ -37,20 +37,22 @@ export function Inside() {
           <div className="inside-copy">
             <span className="eyebrow">FEITO PARA PEQUENOS EXPLORADORES</span>
             <h3>
-              A história ganha vida.
-              <br />A equipe faz parte dela.
+              Tudo fica organizado
+              <br />
+              para você acompanhar.
             </h3>
             <p>
-              Um lugar para descobrir a missão, escolher seus aventureiros e
-              celebrar cada passo do caminho.
+              Na área da missão, você monta a equipe, acompanha os desafios e vê
+              as conquistas. Enquanto isso, as crianças procuram as pistas que
+              você escondeu pela casa.
             </p>
             <ul>
               {[
-                "Quartel-General",
-                "Mapa das missões",
-                "Personalização dos aventureiros",
-                "Desafios interativos",
-                "Insígnias e conquistas",
+                "Página inicial da equipe",
+                "Mapa para acompanhar a aventura",
+                "Nomes e personagens das crianças",
+                "Desafios guiados, etapa por etapa",
+                "Conquistas e certificado ao finalizar",
               ].map((x) => (
                 <li key={x}>
                   <Check size={17} />

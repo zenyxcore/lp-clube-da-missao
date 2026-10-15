@@ -48,3 +48,7 @@ O mockup é uma composição de página muito comprimida. A página real tem cor
 - Domínio verificado e aberto no navegador: https://lpclubedamissao.vercel.app/.
 - `docs/lp-production.jpg`: screenshot da hero em produção. Galeria avançou para o mapa e a pergunta sobre entrega abriu a resposta de pré-lançamento no domínio publicado.
 - A página permanece sem checkout nem rastreamento ativo. A captura/documentação posterior não altera o código publicado.
+
+## Atualização de clareza e oferta
+
+A versão mais recente usa CTAs verdes, header com logo e menu, oferta em fundo liso e **não tem barra fixa inferior**. O histórico acima descreve a primeira versão. A revisão atual está em `docs/revision-qa.md` e registra os testes desktop/mobile e a ancoragem contextual do preço.

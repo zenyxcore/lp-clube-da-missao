@@ -17,6 +17,7 @@ export function safeUrl(value: string | undefined): string {
 }
 export const offer = {
   price: 37,
+  maxAdventurers: 3,
   currency: "BRL",
   checkoutUrl: safeUrl(process.env.NEXT_PUBLIC_CHECKOUT_URL),
   interestUrl: safeUrl(process.env.NEXT_PUBLIC_INTEREST_URL),
@@ -44,38 +45,38 @@ export const priceLabel = new Intl.NumberFormat("pt-BR", {
 }).format(offer.price);
 export const resources = [
   {
-    title: "Aventura interativa",
-    text: "Uma história original, organizada em etapas, com mistérios e descobertas.",
+    title: "História para brincar em família",
+    text: "A história aparece no celular ou computador e mostra o que a equipe precisa fazer em cada etapa.",
     image: "chest",
     ready: true,
   },
   {
-    title: "Seis desafios",
-    text: "Enigmas e atividades que revelam o próximo passo de uma grande missão.",
+    title: "6 desafios para resolver juntos",
+    text: "As crianças resolvem enigmas para descobrir a próxima pista e chegar ao tesouro.",
     image: "key",
     ready: true,
   },
   {
-    title: "Mapa e pistas",
-    text: "Materiais para imprimir e levar a brincadeira para o mundo real.",
+    title: "Mapa e pistas para imprimir",
+    text: "Imprima as pistas, esconda pela casa e deixe os pequenos exploradores encontrarem o caminho.",
     image: "openmap",
     ready: true,
   },
   {
     title: "Guia do responsável",
-    text: "Orientações para preparar as pistas e conduzir cada descoberta.",
+    text: "Um passo a passo mostra onde esconder cada pista e como ajudar as crianças durante a brincadeira.",
     image: "guide",
     ready: true,
   },
   {
-    title: "Aventureiros personalizados",
-    text: "Nomes e avatares para uma equipe que faz parte da própria história.",
+    title: "Nomes e avatares da equipe",
+    text: "Cadastre até 3 crianças e escolha os personagens. Os nomes da equipe aparecem na experiência.",
     image: "shield",
     ready: true,
   },
   {
-    title: "Conquistas e certificado",
-    text: "Insígnias e uma lembrança personalizada para celebrar a missão.",
+    title: "Recompensas da missão",
+    text: "A equipe conquista insígnias e recebe um certificado com seus nomes ao concluir os 6 desafios.",
     image: "certificate",
     ready: true,
   },
@@ -89,13 +90,13 @@ export const bonuses = [
   },
   {
     title: "Carta Secreta",
-    text: "Uma mensagem de boas-vindas para dar início a uma história extraordinária.",
+    text: "Imprima e entregue às crianças antes de começar. É o convite secreto que coloca a equipe dentro da história.",
     image: "letter",
     ready: true,
   },
   {
     title: "Certificado Personalizado",
-    text: "Uma lembrança com os nomes da equipe para guardar essa conquista.",
+    text: "Ao terminar a missão, imprima o certificado com os nomes da equipe e celebre a conquista em família.",
     image: "certificate",
     ready: true,
   },

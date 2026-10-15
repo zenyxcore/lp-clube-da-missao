@@ -1,25 +1,35 @@
 "use client";
 import { useState } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
-import { offer } from "@/lib/config";
+import { ArrowRight, Menu, X, Gift } from "lucide-react";
+import { bonuses, offer, priceLabel } from "@/lib/config";
 import { Art, useClock } from "./shared";
 export const nav = [
-  ["A aventura", "aventura"],
-  ["Como funciona", "como-funciona"],
-  ["O que você recebe", "recebe"],
-  ["Bônus", "bonus"],
-  ["Perguntas frequentes", "faq"],
+  ["Entenda a brincadeira", "aventura"],
+  ["Como preparar", "como-funciona"],
+  ["O que está incluído", "recebe"],
+  ["Seus bônus", "bonus"],
+  ["Ver a oferta", "oferta"],
+  ["Tire suas dúvidas", "faq"],
 ];
 export function Announcement() {
   const now = useClock(),
     end = Date.parse(offer.endsAt);
   const left = now && Number.isFinite(end) ? Math.max(0, end - now) : 0;
+  const count = bonuses.filter((b) => b.ready).length;
   return (
     <div className="announcement">
-      EDIÇÃO DE ESTREIA <span>•</span> CONDIÇÃO ESPECIAL DE LANÇAMENTO
+      <span className="launch-tag">EDIÇÃO DE ESTREIA</span>
+      <p>
+        <strong>Condição especial de lançamento</strong>
+        <span>
+          Missão completa por {priceLabel}
+          {count > 0 && ` + ${count} bônus sem custo extra`}
+        </span>
+      </p>
+      <Gift size={22} aria-hidden="true" className="announcement-gift" />
       {left > 0 && (
         <span className="countdown">
-          Encerra em {Math.floor(left / 86400000)}d{" "}
+          Oferta encerra em {Math.floor(left / 86400000)}d{" "}
           {Math.floor(left / 3600000) % 24}h {Math.floor(left / 60000) % 60}min
         </span>
       )}
@@ -41,16 +51,6 @@ export function Header() {
               priority
             />
           </a>
-          <nav aria-label="Navegação principal" className="desktop-nav">
-            {nav.map(([label, id]) => (
-              <a key={id} href={`#${id}`}>
-                {label}
-              </a>
-            ))}
-          </nav>
-          <a href="#oferta" className="header-cta">
-            Quero essa missão <ArrowRight size={15} />
-          </a>
           <button
             className="menu-toggle"
             aria-label={menu ? "Fechar menu" : "Abrir menu"}
@@ -58,26 +58,28 @@ export function Header() {
             aria-controls="mobile-menu"
             onClick={() => setMenu(!menu)}
           >
-            {menu ? <X /> : <Menu />}
+            <span>{menu ? "Fechar" : "Menu"}</span>
+            {menu ? <X size={20} /> : <Menu size={20} />}
           </button>
+          {menu && (
+            <nav
+              id="mobile-menu"
+              className="mobile-menu"
+              aria-label="Navegação da página"
+              onKeyDown={(e) => {
+                if (e.key === "Escape") setMenu(false);
+              }}
+            >
+              <span className="eyebrow">SUA PRÓXIMA DESCOBERTA</span>
+              {nav.map(([label, id]) => (
+                <a key={id} href={`#${id}`} onClick={() => setMenu(false)}>
+                  {label}
+                  <ArrowRight size={16} />
+                </a>
+              ))}
+            </nav>
+          )}
         </div>
-        {menu && (
-          <nav
-            id="mobile-menu"
-            className="mobile-menu"
-            aria-label="Menu mobile"
-            onKeyDown={(e) => {
-              if (e.key === "Escape") setMenu(false);
-            }}
-          >
-            {nav.map(([label, id]) => (
-              <a key={id} href={`#${id}`} onClick={() => setMenu(false)}>
-                {label}
-                <ArrowRight size={16} />
-              </a>
-            ))}
-          </nav>
-        )}
       </header>
     </>
   );
