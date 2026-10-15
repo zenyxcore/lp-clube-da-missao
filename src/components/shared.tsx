@@ -4,8 +4,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { offer } from "@/lib/config";
-import { startCheckout } from "./analytics";
 export function Art({
   name,
   className = "",
@@ -79,23 +77,11 @@ export function Cta({
   secondary?: boolean;
   placement?: string;
 }) {
-  const checkoutTarget = offer.checkoutUrl || offer.interestUrl;
-  const href = secondary
-    ? "#como-funciona"
-    : checkoutTarget || "#oferta";
   return (
     <a
       className={`button ${secondary ? "secondary" : ""}`}
-      href={href}
-      onClick={
-        !secondary && checkoutTarget
-          ? (event) => {
-              event.preventDefault();
-              startCheckout();
-            }
-          : undefined
-      }
-      data-cta-action={secondary ? "how-it-works" : "checkout"}
+      href="#oferta"
+      data-cta-action="view-offer"
       data-cta-placement={placement}
     >
       {children}
