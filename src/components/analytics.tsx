@@ -115,17 +115,16 @@ export function Analytics() {
   return (
     <aside className="consent" aria-label="Preferências de privacidade">
       <div>
-        <strong>Sua privacidade também importa.</strong>
         <p>
-          Com sua permissão, usamos o Meta Pixel para medir visitas e campanhas.
-          Você pode recusar ou alterar sua escolha no rodapé.{" "}
+          Permite medir visitas e campanhas com o Meta Pixel? Você pode mudar
+          sua escolha depois.{" "}
           {offer.privacyUrl && (
-            <a href={offer.privacyUrl}>Política de privacidade</a>
+            <a href={offer.privacyUrl}>Privacidade</a>
           )}
         </p>
       </div>
-      <button onClick={() => choose("rejected")}>Recusar</button>
-      <button onClick={() => choose("accepted")}>Permitir</button>
+      <button onClick={() => choose("rejected")}>Não, obrigado</button>
+      <button onClick={() => choose("accepted")}>Sim, aceito</button>
     </aside>
   );
 }
