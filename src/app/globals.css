@@ -510,14 +510,15 @@ summary:focus-visible {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: #bd8e35;
-  color: #102f32;
-  border: 3px solid #e3c678;
-  font-family: var(--font-heading);
+  background: linear-gradient(160deg, #0b7656, #075e46);
+  color: #ffffff;
+  border: 2px solid #68b88a;
+  box-shadow: 0 3px 0 #033b2d, 0 6px 12px #001b1a40;
+  font-family: var(--font-body);
   font-weight: 700;
-  width: 33px;
-  height: 33px;
-  font-size: 13px;
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
   display: grid;
   place-content: center;
 }
@@ -1785,11 +1786,6 @@ summary:focus-visible {
   .step p {
     font-size: 11px;
     line-height: 1.8;
-  }
-  .step-number {
-    width: 31px;
-    height: 31px;
-    font-size: 11px;
   }
   .demo .section-heading h2 {
     font-size: 29px;
@@ -3196,9 +3192,6 @@ body {
   .step-number {
     left: 13px;
     bottom: -4px;
-    width: 29px;
-    height: 29px;
-    font-size: 11px;
   }
   .step h3 {
     justify-content: flex-start;
