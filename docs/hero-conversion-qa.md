@@ -19,3 +19,11 @@ Build Next.js, TypeScript, ESLint e os três testes de campanha passaram. Sem er
 Navegador: revisão visual desktop e iframes de 390×844 e 320×844. Largura útil de conteúdo de 375px e 305px, respectivamente, sem overflow horizontal. No mobile de 390px o H1 ficou nas três linhas solicitadas e o CTA da hero terminou em aproximadamente 827px. Testados CTA até a oferta, troca da galeria, ampliação/fechamento e FAQ de acesso. Header ausente; sete CTAs identificados por ação/local. Não há mensagens internas de pré-lançamento no texto renderizado.
 
 Vídeo e fotos reais ainda dependem dos arquivos do responsável. Checkout, prazo de acesso, suporte e documentos legais devem ser concluídos antes da abertura comercial, conforme README.
+
+## Publicação verificada
+
+Produção: https://lpclubedamissao.vercel.app/ — deployment `dpl_CAGZKThZMCjKttn7UN68S6Esvf1X`, estado READY, commit `89d58e899f551e464677ba1820b0d789716abd27`.
+
+Hero conferida no domínio público em desktop e mobile; CTA navega à oferta e FAQ mostra a entrega por e-mail e WhatsApp. Na versão final, o pergaminho mede aproximadamente 705px de altura útil em 375px de largura, com preço a 349px do topo. Sem overflow horizontal e sem avisos internos de pré-lançamento. O console de produção não apresentou erro da aplicação (apenas uma mensagem da extensão do navegador). Checkout permanece desabilitado sem URL real.
+
+Evidências: `hero-conversion-production.jpg`, `hero-conversion-mobile.jpg`, `hero-conversion-offer.jpg`. `hero-mobile-final.jpg` é somente um recorte da captura mobile para facilitar a leitura.
