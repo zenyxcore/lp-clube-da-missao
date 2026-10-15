@@ -77,7 +77,7 @@ export const resources = [
   {
     title: "Nomes e avatares da equipe",
     text: "Cadastre até 3 crianças e escolha os personagens. Os nomes da equipe aparecem na experiência.",
-    image: "shield",
+    image: "team-avatars",
     ready: true,
   },
   {
