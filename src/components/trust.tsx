@@ -51,6 +51,9 @@ export function Trust() {
             {offer.accessDelivery} Depois, é só abrir a missão e reunir seus
             exploradores.
           </p>
+          <p className="trust-lifetime">
+            {offer.accessLabel}. {offer.purchaseLabel}. {offer.billingLabel}.
+          </p>
         </div>
         <div className="guarantee-panel">
           <GuaranteeSeal />

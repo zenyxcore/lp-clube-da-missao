@@ -55,3 +55,9 @@ As fotos reais dos materiais podem ser adicionadas em `showcasePhotos`, com arqu
 CTAs de navegação possuem `data-cta-action="view-offer"` e `data-cta-placement` (`hero`, `materials`, `included`, `personalization`, `bonuses`, `final`). O botão real de compra usa `data-cta-action="checkout"`, `data-cta-placement="offer"` e texto próprio. `InitiateCheckout` continua reservado a um checkout real e consentido.
 
 A LP não exibe avisos de “em breve”. O botão de compra continua sem ação enquanto não existir URL de checkout/interesse válida. Não há redirecionamento fictício. A escassez informa a condição de lançamento; “última chance” só aparece nas últimas 24 horas de uma data real configurada.
+
+## Condição de acesso e simulação de parcelas
+
+O responsável definiu acesso vitalício a esta aventura, compra única e sem mensalidade. Esses textos ficam em `offer.accessLabel`, `offer.accessDuration`, `offer.purchaseLabel` e `offer.billingLabel`. Não significa acesso a aventuras futuras.
+
+Parcelamento na LP: `offer.installmentCount` = 6. A parcela ilustrativa é derivada de `offer.price / offer.installmentCount` e arredondada para exibição (R$6,17). Com `installmentsConfirmed:false`, o layout identifica “Simulação sem juros”. Antes de ativar o checkout, conferir valores e juros reais e ajustar a configuração; a divisão simples não representa a tabela automática da Cakto. Não há menção ao provedor na oferta pública nem no FAQ.

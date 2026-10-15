@@ -18,8 +18,11 @@ export function safeUrl(value: string | undefined): string {
 export const offer = {
   price: 37,
   referencePrice: 197, // Valor de referência informado pelo responsável pela oferta.
-  installmentsLabel: "Ou parcele no cartão",
-  installmentsDetail: "Consulte as parcelas e os juros no checkout da Cakto.",
+  installmentCount: 6,
+  installmentsConfirmed: false, // Ative somente após conferir a tabela real do checkout.
+  accessLabel: "Acesso vitalício",
+  billingLabel: "Sem mensalidade",
+  purchaseLabel: "Compra única",
   maxAdventurers: 3,
   currency: "BRL",
   checkoutUrl: safeUrl(process.env.NEXT_PUBLIC_CHECKOUT_URL),
@@ -37,7 +40,7 @@ export const offer = {
   accessDelivery:
     "Receba o acesso pelo e-mail e pelo WhatsApp informados na compra.",
   accessDuration:
-    "Consulte o prazo de acesso nas condições da oferta no checkout.",
+    "O acesso a esta aventura é vitalício: compra única, sem mensalidade.",
   support: "O canal de suporte acompanha a confirmação da sua compra.",
   testimonials: [] as Testimonial[],
 };
@@ -49,6 +52,11 @@ export const priceLabel = new Intl.NumberFormat("pt-BR", {
   style: "currency",
   currency: offer.currency,
 }).format(offer.price);
+/** Divisão ilustrativa sem juros; a cobrança depende da configuração real do checkout. */
+export const installmentPriceLabel = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: offer.currency,
+}).format(offer.price / offer.installmentCount);
 export const resources = [
   {
     title: "História para brincar em família",
@@ -128,6 +136,6 @@ export const faqs = [
   ],
   [
     "Pagamento, suporte e reembolso?",
-    `Você poderá consultar as opções de cartão, parcelas e juros no checkout da Cakto. ${offer.support} Para compras online, o CDC prevê o direito de arrependimento em até 7 dias, conforme o art. 49.`,
+    `Você faz uma compra única, sem mensalidade. As opções de pagamento aparecem antes de concluir a compra. ${offer.support} Para compras online, o CDC prevê o direito de arrependimento em até 7 dias, conforme o art. 49.`,
   ],
 ];

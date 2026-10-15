@@ -79,10 +79,10 @@ export function Hero() {
               <Check size={15} /> De 5 a 9 anos
             </span>
             <span>
-              <Check size={15} /> Até 3 aventureiros
+              <Check size={15} /> {offer.accessLabel}
             </span>
             <span>
-              <Check size={15} /> Sem mensalidade
+              <Check size={15} /> {offer.billingLabel}
             </span>
           </div>
           <a className="hero-discover" href="#aventura">

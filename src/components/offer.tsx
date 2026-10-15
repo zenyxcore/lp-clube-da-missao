@@ -1,6 +1,17 @@
 "use client";
-import { ArrowRight, Check, CreditCard, Gift } from "lucide-react";
-import { bonuses, offer, priceLabel, referencePriceLabel } from "@/lib/config";
+import {
+  ArrowRight,
+  Check,
+  Gift,
+  Infinity as InfinityIcon,
+} from "lucide-react";
+import {
+  bonuses,
+  offer,
+  priceLabel,
+  referencePriceLabel,
+  installmentPriceLabel,
+} from "@/lib/config";
 import { checkoutWithCampaign, offerExpired } from "@/lib/campaign";
 import { trackCheckout } from "./analytics";
 import { Art, Heading, useClock } from "./shared";
@@ -47,7 +58,7 @@ export function CheckoutButton({
               ? offer.checkoutUrl
                 ? "Compra única. Confira as condições no checkout."
                 : "Cadastre seu interesse pelo canal oficial."
-              : "Compra única • Sem mensalidade"}
+              : `${offer.purchaseLabel} • ${offer.billingLabel}`}
         </p>
       )}
     </>
@@ -108,14 +119,23 @@ export function OfferCard({ full = false }: { full?: boolean }) {
           Na condição de lançamento, por
         </span>
         <strong>{priceLabel}</strong>
-        <small>Uma única compra. Sem mensalidade.</small>
+        <small>à vista · {offer.purchaseLabel.toLowerCase()}</small>
       </div>
-      <div className="installments-note">
-        <CreditCard size={19} />
-        <div>
-          <strong>{offer.installmentsLabel}</strong>
-          <span>{offer.installmentsDetail}</span>
-        </div>
+      <div className="installment-option">
+        <strong>
+          ou <b>{offer.installmentCount}x</b> de <b>{installmentPriceLabel}</b>
+        </strong>
+        {!offer.installmentsConfirmed && <small>Simulação sem juros.</small>}
+      </div>
+      <div className="ownership-promise">
+        <span>
+          <InfinityIcon size={19} />
+          <strong>{offer.accessLabel}</strong>
+        </span>
+        <span>
+          <Check size={18} />
+          <strong>{offer.billingLabel}</strong>
+        </span>
       </div>
       <OfferCondition />
       <CheckoutButton />

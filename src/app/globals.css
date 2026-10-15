@@ -513,7 +513,9 @@ summary:focus-visible {
   background: linear-gradient(160deg, #0b7656, #075e46);
   color: #ffffff;
   border: 2px solid #68b88a;
-  box-shadow: 0 3px 0 #033b2d, 0 6px 12px #001b1a40;
+  box-shadow:
+    0 3px 0 #033b2d,
+    0 6px 12px #001b1a40;
   font-family: var(--font-body);
   font-weight: 700;
   width: 36px;
@@ -5177,5 +5179,82 @@ html {
   }
   .offer-card.full-offer {
     padding-bottom: 50px;
+  }
+}
+
+/* Compra única e acesso vitalício com destaque na decisão de compra. */
+.installment-option {
+  text-align: center;
+  color: #315537;
+  margin: 0 auto 13px;
+}
+.installment-option > strong {
+  display: block;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.4;
+}
+.installment-option b {
+  font-weight: 700;
+}
+.installment-option > small {
+  display: block;
+  color: #626448;
+  font-size: 10px;
+  margin-top: 4px;
+}
+.ownership-promise {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  padding: 13px 10px;
+  margin: 0 0 15px;
+  border: 1px solid #11664c;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #0c644b, #064a39);
+  color: #fff6d8;
+  box-shadow: 0 4px 10px #20452c26;
+}
+.ownership-promise > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.ownership-promise strong {
+  font-size: 12px;
+  line-height: 1.4;
+}
+.ownership-promise svg {
+  flex-shrink: 0;
+  color: #f6d993;
+}
+.ownership-promise > span + span {
+  border-left: 1px solid #f2d79c4a;
+}
+.themed-trust .trust-lifetime {
+  color: #f4d58f;
+  font-weight: 700;
+  margin-top: 14px;
+  font-size: 13px;
+}
+@media (max-width: 700px) {
+  .installment-option > strong {
+    font-size: 16px;
+  }
+  .installment-option > small {
+    font-size: 9px;
+  }
+  .ownership-promise {
+    padding: 12px 7px;
+    gap: 5px;
+    margin-bottom: 13px;
+  }
+  .ownership-promise strong {
+    font-size: 10px;
+  }
+  .ownership-promise svg {
+    width: 16px;
+    height: 16px;
   }
 }
