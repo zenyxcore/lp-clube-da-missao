@@ -27,3 +27,7 @@ Produção: https://lpclubedamissao.vercel.app/ — deployment `dpl_CAGZKThZMCjK
 Hero conferida no domínio público em desktop e mobile; CTA navega à oferta e FAQ mostra a entrega por e-mail e WhatsApp. Na versão final, o pergaminho mede aproximadamente 705px de altura útil em 375px de largura, com preço a 349px do topo. Sem overflow horizontal e sem avisos internos de pré-lançamento. O console de produção não apresentou erro da aplicação (apenas uma mensagem da extensão do navegador). Checkout permanece desabilitado sem URL real.
 
 Evidências: `hero-conversion-production.jpg`, `hero-conversion-mobile.jpg`, `hero-conversion-offer.jpg`. `hero-mobile-final.jpg` é somente um recorte da captura mobile para facilitar a leitura.
+
+## Correção de ordem da hero
+
+Logo movida para antes do H1 no HTML e na grade desktop. Validado no domínio público: a logo termina em 224px e o título começa em 244px no desktop; no mobile, termina em 215px e o título começa em 237px. Conteúdo de 375px sem overflow horizontal. Build, TypeScript do build e lint aprovados. Deployment `dpl_9CrRuZNu6fketH5ybauPK1RWNSkq`, commit `e4477acd68c608e7d086d97fef7b06ee209e814c`, READY. Evidência atual: `logo-above-title-mobile.jpg` (recorte da captura completa de mesmo nome com sufixo `-full`).
