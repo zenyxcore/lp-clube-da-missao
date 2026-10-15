@@ -32,30 +32,6 @@ export const shots = [
 ];
 const materialPreviews = [
   {
-    src: "/demo/missao-etapa-preview.jpg",
-    alt: "Tela real de uma etapa da missão no celular",
-    label: "A história e os desafios no celular",
-    kind: "screen",
-  },
-  {
-    src: "/demo/missao-equipe.jpg",
-    alt: "Tela inicial real da missão no celular",
-    label: "O início da aventura",
-    kind: "screen",
-  },
-  {
-    src: "/demo/missao-avatares-preview.jpg",
-    alt: "Tela real de personalização dos aventureiros no celular",
-    label: "A equipe com nomes e avatares",
-    kind: "screen",
-  },
-  {
-    src: "/demo/missao-tesouro.jpg",
-    alt: "Tela real da descoberta do tesouro no celular",
-    label: "A descoberta do tesouro",
-    kind: "screen",
-  },
-  {
     src: "/demo/carta-nas-maos.webp",
     alt: "Carta temática impressa e segurada pelas mãos",
     label: "Uma pista para descobrir de verdade",
@@ -84,6 +60,30 @@ const materialPreviews = [
     alt: "Mãe e filho celebram juntos a aventura com o certificado",
     label: "Uma conquista para celebrar em família",
     kind: "print",
+  },
+  {
+    src: "/demo/missao-etapa-preview.jpg",
+    alt: "Tela real de uma etapa da missão no celular",
+    label: "A história e os desafios no celular",
+    kind: "screen",
+  },
+  {
+    src: "/demo/missao-equipe.jpg",
+    alt: "Tela inicial real da missão no celular",
+    label: "O início da aventura",
+    kind: "screen",
+  },
+  {
+    src: "/demo/missao-avatares-preview.jpg",
+    alt: "Tela real de personalização dos aventureiros no celular",
+    label: "A equipe com nomes e avatares",
+    kind: "screen",
+  },
+  {
+    src: "/demo/missao-tesouro.jpg",
+    alt: "Tela real da descoberta do tesouro no celular",
+    label: "A descoberta do tesouro",
+    kind: "screen",
   },
 ];
 export function Screenshot({
