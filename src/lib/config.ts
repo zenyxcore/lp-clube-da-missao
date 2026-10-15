@@ -35,11 +35,10 @@ export const offer = {
   privacyUrl: safeUrl(process.env.NEXT_PUBLIC_PRIVACY_URL),
   supportUrl: safeUrl(process.env.NEXT_PUBLIC_SUPPORT_URL),
   accessDelivery:
-    "A forma de entrega do acesso será informada na abertura das vendas. Nenhuma compra está sendo recebida nesta prévia.",
+    "Receba o acesso pelo e-mail e pelo WhatsApp informados na compra.",
   accessDuration:
-    "O prazo de acesso está em definição e será informado antes da abertura das vendas.",
-  support:
-    "O canal e os horários de suporte serão publicados antes da abertura das vendas.",
+    "Consulte o prazo de acesso nas condições da oferta no checkout.",
+  support: "O canal de suporte acompanha a confirmação da sua compra.",
   testimonials: [] as Testimonial[],
 };
 export const referencePriceLabel = new Intl.NumberFormat("pt-BR", {
@@ -108,6 +107,8 @@ export const bonuses = [
     ready: true,
   },
 ];
+/** Adicione aqui somente fotos reais aprovadas dos materiais impressos. */
+export const showcasePhotos: { src: string; alt: string }[] = [];
 export const faqs = [
   [
     "O que vou receber?",

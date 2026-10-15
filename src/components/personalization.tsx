@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { Cta } from "./shared";
 import { Screenshot } from "./demonstration";
 export function Personalization() {
   return (
@@ -8,7 +9,7 @@ export function Personalization() {
         <div>
           <span className="eyebrow">A HISTÓRIA FICA AINDA MAIS ESPECIAL</span>
           <h2>
-            Aqui, seu filho é<br />
+            Aqui, seu filho ou neto é<br />
             <em>o protagonista da história.</em>
           </h2>
           <p>
@@ -23,11 +24,14 @@ export function Personalization() {
             Exemplo ilustrativo de personalização. Nenhum dado de criança é
             solicitado nesta página.
           </small>
+          <div className="personalization-cta">
+            <Cta placement="personalization" />
+          </div>
         </div>
         <div className="personalization-art">
           <div className="explorer-card">
             <Image
-              src="/assets/avatars/explorador-03.webp"
+              src="/assets/avatars/explorador-02.webp"
               alt="Avatar ilustrado de um jovem explorador"
               width={150}
               height={150}

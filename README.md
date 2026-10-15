@@ -14,7 +14,7 @@ A versão inicial é de **pré-lançamento**. Sem `NEXT_PUBLIC_CHECKOUT_URL`, n�
 
 ### Antes de abrir as vendas
 
-- Confirmar entrega, duração do acesso e condições comerciais; atualizar `offer.accessDelivery`, `offer.accessDuration`, `offer.support`, FAQ, Trust e Footer para a versão comercial.
+- Implementar e testar a entrega de acesso por e-mail e WhatsApp solicitada pelo responsável pela oferta. A LP informa essa condição, mas não envia mensagens nem libera acesso. Confirmar duração do acesso e condições de suporte em `src/lib/config.ts`.
 - Publicar termos, política de privacidade e canal de suporte com a identificação real do fornecedor; configurar as três URLs.
 - Configurar e testar checkout externo e entrega efetiva após pagamento. A LP não libera acesso e não confirma transações.
 - Confirmar a disponibilidade de cada recurso. Carta e certificado existem no produto inspecionado. O **Diário do Explorador imprimível está `ready:false`** porque o app possui somente um diário digital; ele não é anunciado como incluído.
@@ -45,3 +45,13 @@ O responsável pela oferta informou R$197 como referência para a condição de 
 Parcelamento: a interface informa pagamento no cartão pela Cakto, com valores/juros consultados no checkout. Quantidade e valor exato das parcelas não foram simulados. A Cakto informa que a tabela depende do valor do produto e da configuração de pagamento: https://ajuda.cakto.com.br/pt-br/articles/18-como-funciona-o-parcelamento-no-checkout. A compra continua desabilitada até existir um checkout real.
 
 Faixa superior sem preço/bônus, pergaminho mais claro na oferta, destaque colorido dos bônus, cinco perguntas curtas no FAQ e alinhamentos ajustados no celular.
+
+## Hero e conversão — revisão atual
+
+Hero mobile: H1 em três linhas, logo central, vídeo 16:9 com moldura temática, H2, texto e CTA. `NEXT_PUBLIC_DEMO_VIDEO_URL` troca a arte estática oficial pelo vídeo, sem autoplay ou botão de reprodução fictício. Header de navegação removido; faixa de lançamento preservada.
+
+As fotos reais dos materiais podem ser adicionadas em `showcasePhotos`, com arquivos locais em `public/`. A seção já apresenta prints reais do computador e celular e ilustrações oficiais dos materiais; nenhuma foto de impresso foi inventada.
+
+CTAs de navegação possuem `data-cta-action="view-offer"` e `data-cta-placement` (`hero`, `materials`, `included`, `personalization`, `bonuses`, `final`). O botão real de compra usa `data-cta-action="checkout"`, `data-cta-placement="offer"` e texto próprio. `InitiateCheckout` continua reservado a um checkout real e consentido.
+
+A LP não exibe avisos de “em breve”. O botão de compra continua sem ação enquanto não existir URL de checkout/interesse válida. Não há redirecionamento fictício. A escassez informa a condição de lançamento; “última chance” só aparece nas últimas 24 horas de uma data real configurada.

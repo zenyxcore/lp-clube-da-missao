@@ -1,15 +1,14 @@
 "use client";
 import { Check, Gift } from "lucide-react";
 import { bonuses } from "@/lib/config";
-import { Art, Reveal, Heading } from "./shared";
+import { Art, Cta, Reveal, Heading } from "./shared";
 export function Bonuses() {
   const active = bonuses.filter((b) => b.ready);
   if (!active.length) return null;
   return (
-    <section className="section parchment bonus-section" id="bonus">
+    <section className="section bonus-section treasure-bonuses" id="bonus">
       <div className="container">
         <Heading
-          light
           eyebrow="PRESENTES PARA COMPLETAR A EXPERIÊNCIA"
           text="Na compra da missão, estes materiais também são seus. Sem pagar nada a mais."
         >
@@ -24,6 +23,7 @@ export function Bonuses() {
                 PRESENTE {String(i + 1).padStart(2, "0")}
               </span>
               <div className="bonus-image">
+                <span className="bonus-halo" aria-hidden="true" />
                 <Art name={b.image} />
               </div>
               <div className="bonus-copy">
@@ -45,6 +45,9 @@ export function Bonuses() {
           <Check size={18} /> A experiência completa e os bônus estão no mesmo
           valor. Nenhuma compra adicional.
         </p>
+        <div className="section-cta">
+          <Cta placement="bonuses">Quero a aventura com meus bônus</Cta>
+        </div>
       </div>
     </section>
   );

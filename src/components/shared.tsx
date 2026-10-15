@@ -69,25 +69,30 @@ export function Heading({
   );
 }
 export function Cta({
-  children = "Quero viver essa missão",
+  children = "Quero essa aventura para minha família",
   secondary = false,
+  placement = "section",
 }: {
   children?: React.ReactNode;
   secondary?: boolean;
+  placement?: string;
 }) {
   return (
     <a
       className={`button ${secondary ? "secondary" : ""}`}
       href={secondary ? "#como-funciona" : "#oferta"}
+      data-cta-action={secondary ? "how-it-works" : "view-offer"}
+      data-cta-placement={placement}
     >
       {children}
       <ArrowRight size={18} />
     </a>
   );
 }
-export function useClock() {
+export function useClock(enabled = true) {
   const [now, setNow] = useState<number | null>(null);
   useEffect(() => {
+    if (!enabled) return;
     const update = () => setNow(Date.now());
     const frame = requestAnimationFrame(update);
     const timer = setInterval(update, 1000);
@@ -95,6 +100,6 @@ export function useClock() {
       cancelAnimationFrame(frame);
       clearInterval(timer);
     };
-  }, []);
+  }, [enabled]);
   return now;
 }

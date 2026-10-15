@@ -1,23 +1,15 @@
 "use client";
-import { useId } from "react";
 import { ArrowRight, Check, CreditCard, Gift } from "lucide-react";
-import {
-  bonuses,
-  offer,
-  priceLabel,
-  referencePriceLabel,
-  resources,
-} from "@/lib/config";
+import { bonuses, offer, priceLabel, referencePriceLabel } from "@/lib/config";
 import { checkoutWithCampaign, offerExpired } from "@/lib/campaign";
 import { trackCheckout } from "./analytics";
 import { Art, Heading, useClock } from "./shared";
 export function CheckoutButton({
-  label = "Quero minha aventura em família",
+  label = "Quero comprar essa aventura",
 }: {
   label?: string;
 }) {
-  const now = useClock(),
-    noteId = useId();
+  const now = useClock(Boolean(offer.endsAt));
   const expired = now !== null && offerExpired(offer.endsAt, now);
   const target = offer.checkoutUrl || offer.interestUrl;
   const active = Boolean(target) && !expired && (!offer.endsAt || now !== null);
@@ -37,7 +29,8 @@ export function CheckoutButton({
         className="button purchase"
         disabled={!active}
         onClick={visit}
-        aria-describedby={noteId}
+        data-cta-action="checkout"
+        data-cta-placement="offer"
       >
         {expired
           ? "Condição encerrada"
@@ -46,14 +39,14 @@ export function CheckoutButton({
             : label}
         <ArrowRight size={19} />
       </button>
-      <p id={noteId} className="purchase-note">
+      <p className="purchase-note">
         {expired
           ? "Aguarde a divulgação de uma nova condição."
           : active
             ? offer.checkoutUrl
               ? "Compra única. Confira as condições no checkout."
               : "Cadastre seu interesse pelo canal oficial."
-            : "Vendas em breve. A compra ainda não está liberada e nenhuma cobrança será feita."}
+            : "Compra única • Sem mensalidade"}
       </p>
     </>
   );
@@ -73,31 +66,36 @@ export function OfferCard({ full = false }: { full?: boolean }) {
       <p className="offer-description">
         Uma caça ao tesouro para brincar em casa, com crianças de 5 a 9 anos.
       </p>
-      <div className="offer-includes-label">SUA FAMÍLIA RECEBE:</div>
-      <ul className="offer-list">
-        {(full
-          ? resources.filter((r) => r.ready).map((r) => r.title)
-          : [
-              "História + 6 desafios para resolver",
-              "Mapa, pistas e guia para imprimir",
-              `Missão para até ${offer.maxAdventurers} aventureiros`,
-            ]
-        ).map((title) => (
+      <div className="offer-includes-label">
+        UMA MISSÃO COMPLETA PARA SUA FAMÍLIA
+      </div>
+      <ul className="offer-list compact-includes">
+        {[
+          "História + 6 desafios",
+          "Mapa, pistas e guia",
+          `Até ${offer.maxAdventurers} aventureiros`,
+          "Conquistas da equipe",
+        ].map((title) => (
           <li key={title}>
-            <Check size={18} />
+            <Check size={16} />
             {title}
           </li>
         ))}
       </ul>
       {activeBonuses.length > 0 && (
-        <div className="offer-bonus-line">
-          <Gift size={18} />
-          <span>
-            <strong>Você ainda ganha {activeBonuses.length} bônus</strong>
-            <span>
-              {activeBonuses.map((b) => b.title).join(" + ")}. Sem custo extra.
-            </span>
-          </span>
+        <div className="offer-gifts">
+          <strong>
+            <Gift size={16} /> VOCÊ AINDA GANHA
+          </strong>
+          <div>
+            {activeBonuses.map((b) => (
+              <span key={b.title}>
+                <Check size={13} />
+                {b.title}
+                <b>GRÁTIS</b>
+              </span>
+            ))}
+          </div>
         </div>
       )}
       <div className="price">
@@ -117,11 +115,40 @@ export function OfferCard({ full = false }: { full?: boolean }) {
           <span>{offer.installmentsDetail}</span>
         </div>
       </div>
+      <OfferCondition />
       <CheckoutButton />
       <span className="offer-foot">
-        Produto digital · materiais para imprimir
+        História interativa + pistas para imprimir
       </span>
     </div>
+  );
+}
+export function OfferCondition({ final = false }: { final?: boolean }) {
+  const now = useClock(Boolean(offer.endsAt));
+  const end = Date.parse(offer.endsAt);
+  const remaining = now !== null && Number.isFinite(end) ? end - now : null;
+  if (remaining !== null && remaining <= 0) return null;
+  const lastChance = remaining !== null && remaining <= 86400000;
+  return (
+    <p className={`offer-condition ${final ? "final-condition" : ""}`}>
+      <span aria-hidden="true" />
+      <strong>
+        {lastChance
+          ? "Última chance de aproveitar esta condição"
+          : "Aproveite a condição especial de lançamento"}
+      </strong>
+      {remaining !== null && (
+        <small>
+          Encerra em{" "}
+          {new Intl.DateTimeFormat("pt-BR", {
+            dateStyle: "short",
+            timeStyle: "short",
+            timeZone: "America/Sao_Paulo",
+          }).format(end)}{" "}
+          (horário de Brasília).
+        </small>
+      )}
+    </p>
   );
 }
 export function Offer() {

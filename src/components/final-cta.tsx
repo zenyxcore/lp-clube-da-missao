@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { OfferCondition } from "./offer";
 import { Cta } from "./shared";
 export function FinalCTA() {
   return (
@@ -18,7 +19,8 @@ export function FinalCTA() {
           Prepare as pistas, reúna seus pequenos exploradores e descubra como
           uma tarde em casa pode se transformar em uma história especial.
         </p>
-        <Cta>QUERO VIVER ESSA MISSÃO</Cta>
+        <OfferCondition final />
+        <Cta placement="final">Quero essa aventura para minha família</Cta>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 import { offer } from "@/lib/config";
 import { Analytics } from "./analytics";
-import { Header } from "./header";
+import { Announcement } from "./header";
 import { Hero } from "./hero";
 import { Offer } from "./offer";
 import { HowItWorks } from "./how-it-works";
@@ -21,7 +21,7 @@ export function Landing() {
       <a href="#conteudo" className="skip-link">
         Pular para o conteúdo
       </a>
-      <Header />
+      <Announcement />
       <main id="conteudo">
         <Hero />
         <HowItWorks />

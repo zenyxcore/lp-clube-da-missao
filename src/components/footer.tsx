@@ -38,7 +38,7 @@ export function Footer() {
           © {new Date().getFullYear()} Clube da Missão. Todos os direitos
           reservados.
         </span>
-        <span>Pré-lançamento · vendas ainda não disponíveis</span>
+        <span>Grandes aventuras começam em casa.</span>
       </div>
     </footer>
   );

@@ -1,76 +1,94 @@
 "use client";
 import Image from "next/image";
-import {
-  ChevronDown,
-  Check,
-  Printer,
-  UsersRound,
-  Smartphone,
-} from "lucide-react";
+import { Check, ChevronDown, Compass } from "lucide-react";
+import { offer } from "@/lib/config";
 import { Art, Cta } from "./shared";
-import { OfferCard } from "./offer";
 export function Hero() {
   return (
-    <section id="inicio" className="hero">
+    <section id="inicio" className="hero hero-story">
       <Image
         src="/assets/mundo-da-missao.webp"
-        alt="Exploradores diante de uma floresta, cachoeiras e um castelo ao pôr do sol"
+        alt=""
         fill
         priority
         sizes="100vw"
         className="hero-background"
       />
       <div className="hero-shade" />
-      <div className="container hero-grid">
-        <div className="hero-copy">
-          <span className="eyebrow outlined">
-            CAÇA AO TESOURO PARA CRIANÇAS DE 5 A 9 ANOS
-          </span>
-          <h1>
-            Transforme sua casa em uma <em>grande aventura.</em>
-          </h1>
+      <div className="container hero-story-content">
+        <h1>
+          <span>Transforme</span>
+          <span>sua casa em uma</span>
+          <em>Grande Aventura!</em>
+        </h1>
+        <Art
+          name="clube-da-missao"
+          alt="Clube da Missão"
+          className="hero-club-logo"
+          priority
+        />
+        <div className="hero-film-frame">
+          <span className="frame-corner top-left" aria-hidden="true" />
+          <span className="frame-corner top-right" aria-hidden="true" />
+          <span className="frame-corner bottom-left" aria-hidden="true" />
+          <span className="frame-corner bottom-right" aria-hidden="true" />
+          {offer.videoUrl ? (
+            <video
+              controls
+              playsInline
+              preload="none"
+              poster="/assets/mundo-da-missao.webp"
+              aria-label="Conheça a Missão Secreta"
+            >
+              <source src={offer.videoUrl} />
+              Seu navegador não suporta este vídeo.
+            </video>
+          ) : (
+            <div className="hero-film-poster">
+              <Image
+                src="/assets/mundo-da-missao.webp"
+                alt="O universo da Missão Secreta: uma floresta cheia de descobertas"
+                fill
+                sizes="(max-width: 700px) 94vw, 820px"
+                priority
+              />
+              <div>
+                <Compass size={22} aria-hidden="true" />
+                <span>UMA MISSÃO. INFINITAS MEMÓRIAS.</span>
+                <Art
+                  name="missao-secreta"
+                  alt="Missão Secreta — A Caça ao Tesouro Perdido"
+                />
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="hero-story-pitch">
+          <h2>
+            Uma caça ao tesouro em casa.
+            <br />
+            <em>Uma lembrança para sempre.</em>
+          </h2>
           <p>
-            Você imprime e esconde as pistas. As crianças seguem a história no
-            celular, resolvem 6 desafios e procuram o tesouro pela casa. Uma
-            brincadeira pronta para viver em família.
+            Pistas escondidas, mistérios para resolver e a alegria de descobrir
+            juntos. Uma aventura pronta para transformar o tempo em família.
           </p>
-          <div className="hero-actions">
-            <Cta>Quero essa aventura para minha família</Cta>
-            <a className="text-link" href="#como-funciona">
-              Ver como funciona <ChevronDown size={16} />
-            </a>
-          </div>
-          <div className="hero-indicators">
+          <Cta placement="hero">Quero essa aventura para minha família</Cta>
+          <div className="hero-story-facts">
             <span>
-              <UsersRound />
-              Aventura em família
+              <Check size={15} /> De 5 a 9 anos
             </span>
             <span>
-              <Smartphone />
-              História na tela, diversão pela casa
+              <Check size={15} /> Até 3 aventureiros
             </span>
             <span>
-              <Printer />
-              Pistas para imprimir
-            </span>
-            <span>
-              <Check />
-              De 5 a 9 anos
+              <Check size={15} /> Sem mensalidade
             </span>
           </div>
+          <a className="hero-discover" href="#aventura">
+            Conheça o que sua família recebe <ChevronDown size={17} />
+          </a>
         </div>
-        <div className="hero-offer">
-          <Art name="compass" className="decor hero-compass" />
-          <Art name="key" className="decor hero-key" />
-          <OfferCard />
-        </div>
-      </div>
-      <div className="hero-caption">
-        <span>EXPLORAR</span>
-        <i />
-        DESCOBRIR
-        <i />
-        CRIAR MEMÓRIAS
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
-import { Printer } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import { resources } from "@/lib/config";
-import { Art, Reveal, Heading } from "./shared";
+import { Art, Cta, Reveal, Heading } from "./shared";
 export function Benefits() {
   return (
     <section className="section parchment" id="recebe">
@@ -9,7 +9,7 @@ export function Benefits() {
         <Heading
           light
           eyebrow="O QUE VEM NA SUA COMPRA"
-          text="Você recebe a brincadeira organizada e os materiais digitais. Veja para que serve cada parte."
+          text="Cada detalhe foi pensado para sua família entrar na história e aproveitar a descoberta."
         >
           Abra, prepare e comece
           <br />
@@ -20,7 +20,12 @@ export function Benefits() {
             .filter((r) => r.ready)
             .map((r) => (
               <Reveal className="benefit" key={r.title}>
-                <Art name={r.image} />
+                <span className="included-check">
+                  <Check size={15} strokeWidth={3} /> JÁ INCLUÍDO
+                </span>
+                <div className="benefit-treasure">
+                  <Art name={r.image} />
+                </div>
                 <div>
                   <h3>{r.title}</h3>
                   <p>{r.text}</p>
@@ -29,15 +34,14 @@ export function Benefits() {
             ))}
         </div>
         <div className="material-note">
-          <Printer size={19} />
+          <Sparkles size={20} />
           <p>
-            É um produto digital: a história fica na plataforma e você imprime
-            as pistas em casa.
-            <br />
-            <strong>
-              A preparação e o tesouro físico ficam por conta da sua família.
-            </strong>
+            Uma história para explorar. Pistas para descobrir.{" "}
+            <strong>Tudo pensado para brincar juntos.</strong>
           </p>
+        </div>
+        <div className="section-cta">
+          <Cta placement="included" />
         </div>
       </div>
     </section>

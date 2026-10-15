@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
-import { offer } from "@/lib/config";
-import { Heading } from "./shared";
+import { Check, X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
+import { showcasePhotos } from "@/lib/config";
+import { Art, Cta, Heading } from "./shared";
 export const shots = [
   {
     file: "quartel-general",
@@ -146,46 +146,65 @@ export function Demo() {
     <section className="section demo" id="aventura">
       <div className="container">
         <Heading
-          eyebrow="ENTENDA O QUE É A MISSÃO SECRETA"
-          text="É uma caça ao tesouro guiada: a história fica na tela, mas as pistas estão escondidas pela sua casa. Um adulto prepara tudo e participa da diversão."
+          eyebrow="VEJA O QUE VEM NA MISSÃO"
+          text="Conheça as telas da aventura e os materiais que levam a história para dentro da sua casa."
         >
-          Uma história no celular.
+          Da tela para as mãos.
           <br />
-          <em>Uma caça ao tesouro pela casa.</em>
+          <em>Da sua casa para a imaginação.</em>
         </Heading>
-        {offer.videoUrl ? (
-          <video
-            className="demo-video"
-            controls
-            preload="none"
-            poster="/assets/biblioteca.webp"
-          >
-            <source src={offer.videoUrl} />
-            Seu navegador não suporta este vídeo.
-          </video>
-        ) : (
-          <div className="demo-poster">
-            <Image
-              src="/assets/biblioteca.webp"
-              alt="Biblioteca de exploradores com mapas e vista para uma floresta dourada"
-              fill
-              sizes="90vw"
-            />
-            <div className="poster-copy">
-              <span className="eyebrow">ABRA AS PORTAS PARA A IMAGINAÇÃO</span>
-              <h3>
-                O próximo tesouro
-                <br />
-                pode estar bem perto.
-              </h3>
-              <a className="button secondary" href="#screenshots">
-                Veja as telas da brincadeira <ArrowRight size={18} />
-              </a>
-              <small>Prévia visual · veja as telas reais abaixo</small>
+        <div className="material-showcase">
+          <div className="showcase-screen">
+            <div className="showcase-browser-bar">
+              <i />
+              <i />
+              <i />
+              <span>Clube da Missão</span>
             </div>
+            <Screenshot index={0} />
+            <span className="showcase-label">
+              <Check size={16} /> A história no computador
+            </span>
+          </div>
+          <div className="showcase-phone">
+            <Image
+              src="/screenshots/clube-mobile.jpg"
+              alt="A missão aberta no celular"
+              width={375}
+              height={780}
+              sizes="(max-width: 700px) 34vw, 210px"
+            />
+            <span>A aventura na palma da mão</span>
+          </div>
+          <div className="showcase-printables">
+            <Art name="openmap" />
+            <Art name="letter" />
+            <span className="showcase-label">
+              <Check size={16} /> Mapa, pistas e surpresas para imprimir
+            </span>
+          </div>
+        </div>
+        {showcasePhotos.length > 0 && (
+          <div className="showcase-photos">
+            {showcasePhotos.map((photo) => (
+              <figure key={photo.src}>
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={1000}
+                  height={750}
+                  sizes="(max-width: 700px) 90vw, 40vw"
+                />
+                <figcaption>{photo.alt}</figcaption>
+              </figure>
+            ))}
           </div>
         )}
         <Gallery />
+        <div className="section-cta">
+          <p>Imagine a alegria de encontrar a próxima pista.</p>
+          <Cta placement="materials" />
+        </div>
       </div>
     </section>
   );
