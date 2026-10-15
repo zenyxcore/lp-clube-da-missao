@@ -116,10 +116,10 @@ export function Analytics() {
     <aside className="consent" aria-label="Preferências de privacidade">
       <div>
         <p>
-          Permite medir visitas e campanhas com o Meta Pixel? Você pode mudar
-          sua escolha depois.{" "}
+          Usamos cookies para o site funcionar e, com sua permissão, entender
+          como ele é usado.{" "}
           {offer.privacyUrl && (
-            <a href={offer.privacyUrl}>Privacidade</a>
+            <a href={offer.privacyUrl}>Política de Privacidade</a>
           )}
         </p>
       </div>
