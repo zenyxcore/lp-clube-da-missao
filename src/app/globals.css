@@ -1330,16 +1330,28 @@ summary:focus-visible {
   margin-left: 4px;
 }
 .consent button {
-  background: #075b46;
-  color: #fff5dc;
-  border: 0;
+  min-width: 112px;
   border-radius: 4px;
   padding: 10px 12px;
   font-size: 12px;
   white-space: nowrap;
 }
 .consent button:nth-of-type(1) {
+  background: transparent;
+  color: var(--forest);
+  border: 1px solid var(--forest);
+}
+.consent button:nth-of-type(1):hover {
+  background: #075b4610;
+}
+.consent button:nth-of-type(2) {
   background: #075b46;
+  color: #fff5dc;
+  border: 1px solid #075b46;
+}
+.consent button:nth-of-type(2):hover {
+  background: #064b3a;
+  border-color: #064b3a;
 }
 .testimonials {
   background: #0d3037;
@@ -2208,6 +2220,7 @@ summary:focus-visible {
     grid-column: 1 / -1;
   }
   .consent button {
+    min-width: 0;
     padding: 9px 8px;
   }
   .testimonial-grid {

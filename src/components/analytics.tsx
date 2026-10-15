@@ -123,7 +123,7 @@ export function Analytics() {
           )}
         </p>
       </div>
-      <button onClick={() => choose("rejected")}>Não, obrigado</button>
+      <button onClick={() => choose("rejected")}>Recusar</button>
       <button onClick={() => choose("accepted")}>Sim, aceito</button>
     </aside>
   );
