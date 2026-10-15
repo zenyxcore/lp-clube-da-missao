@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { Check, X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
-import { showcasePhotos } from "@/lib/config";
+import { useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Cta, Heading } from "./shared";
 export const shots = [
   {
@@ -33,15 +32,27 @@ export const shots = [
 ];
 const materialPreviews = [
   {
+    src: "/demo/missao-etapa.jpg",
+    alt: "Tela real de uma etapa da missão no celular",
+    label: "A história e os desafios no celular",
+    kind: "screen",
+  },
+  {
     src: "/demo/missao-equipe.jpg",
-    alt: "Tela real da missão aberta no celular, sem a barra do navegador",
-    label: "A aventura guiada no celular",
+    alt: "Tela inicial real da missão no celular",
+    label: "O início da aventura",
     kind: "screen",
   },
   {
     src: "/demo/missao-avatares.jpg",
-    alt: "Tela de personalização dos aventureiros no Clube da Missão",
+    alt: "Tela real de personalização dos aventureiros no celular",
     label: "A equipe com nomes e avatares",
+    kind: "screen",
+  },
+  {
+    src: "/demo/missao-tesouro.jpg",
+    alt: "Tela real da descoberta do tesouro no celular",
+    label: "A descoberta do tesouro",
     kind: "screen",
   },
   {
@@ -54,7 +65,7 @@ const materialPreviews = [
     src: "/demo/diario-explorador.webp",
     alt: "Diário do Explorador impresso em uma cena realista",
     label: "Materiais que dão vida à missão",
-    kind: "print",
+    kind: "print square",
   },
 ];
 export function Screenshot({
@@ -76,94 +87,84 @@ export function Screenshot({
     />
   );
 }
-export function Gallery() {
-  const [selected, setSelected] = useState(0),
-    [expanded, setExpanded] = useState(false);
-  const dialog = useRef<HTMLDialogElement>(null);
-  const opener = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    if (expanded) dialog.current?.showModal();
-    else if (dialog.current?.open) dialog.current.close();
-  }, [expanded]);
-  const change = (d: number) =>
-    setSelected((i) => (i + d + shots.length) % shots.length);
+export function DeliverableCarousel() {
+  const [selected, setSelected] = useState(0);
+  const touchStart = useRef<number | null>(null);
+  const change = (direction: number) =>
+    setSelected((index) =>
+      (index + direction + materialPreviews.length) % materialPreviews.length,
+    );
+  const current = materialPreviews[selected];
   return (
-    <div id="screenshots" className="gallery">
-      <div className="gallery-view">
-        <Screenshot index={selected} />
-        <button
-          ref={opener}
-          className="expand"
-          aria-label="Ampliar screenshot"
-          onClick={() => setExpanded(true)}
-        >
-          <Expand size={19} />
-        </button>
-      </div>
-      <div className="gallery-caption">
-        <div>
-          <span className="eyebrow">
-            PRINT REAL DO PRODUTO · {String(selected + 1).padStart(2, "0")} / 05
-          </span>
-          <h3>{shots[selected].label}</h3>
-          <p>{shots[selected].text}</p>
-        </div>
-        <div className="gallery-controls">
-          <button aria-label="Screenshot anterior" onClick={() => change(-1)}>
-            <ChevronLeft />
-          </button>
-          <button aria-label="Próximo screenshot" onClick={() => change(1)}>
-            <ChevronRight />
-          </button>
-        </div>
-      </div>
-      <div className="gallery-thumbnails">
-        {shots.map((s, i) => (
-          <button
-            key={s.file}
-            onClick={() => setSelected(i)}
-            aria-pressed={selected === i}
-            aria-label={`Ver ${s.label}`}
-          >
-            <Screenshot index={i} />
-            <span>0{i + 1}</span>
-          </button>
-        ))}
-      </div>
-      <dialog
-        ref={dialog}
-        className="lightbox"
-        onCancel={() => setExpanded(false)}
-        onClose={() => {
-          setExpanded(false);
-          opener.current?.focus();
+    <div
+      className="deliverable-carousel"
+      id="screenshots"
+      role="region"
+      aria-label="Prévia das telas e dos materiais da missão"
+      aria-roledescription="carrossel"
+    >
+      <div
+        className="deliverable-stage"
+        onTouchStart={(event) => {
+          touchStart.current = event.changedTouches[0]?.clientX ?? null;
         }}
-        aria-label={shots[selected].label}
+        onTouchEnd={(event) => {
+          const start = touchStart.current;
+          const end = event.changedTouches[0]?.clientX;
+          if (start !== null && end !== undefined && Math.abs(end - start) > 45) {
+            change(end < start ? 1 : -1);
+          }
+          touchStart.current = null;
+        }}
+        aria-live="polite"
       >
-        <button
-          className="close-lightbox"
-          onClick={() => setExpanded(false)}
-          aria-label="Fechar screenshot"
-        >
-          <X />
-        </button>
-        <Screenshot index={selected} />
-        <p>{shots[selected].label}</p>
-        <div className="gallery-controls">
-          <button
-            onClick={() => change(-1)}
-            aria-label="Screenshot anterior ampliado"
-          >
-            <ChevronLeft />
-          </button>
-          <button
-            onClick={() => change(1)}
-            aria-label="Próximo screenshot ampliado"
-          >
-            <ChevronRight />
-          </button>
+        <div className={`deliverable-image ${current.kind}`} key={current.src}>
+          <Image
+            src={current.src}
+            alt={current.alt}
+            fill
+            priority={selected === 0}
+            sizes="(max-width: 700px) 88vw, 500px"
+          />
         </div>
-      </dialog>
+        <span className="deliverable-type">
+          {current.kind.includes("screen")
+            ? "TELA REAL DO APP"
+            : "MATERIAL IMPRESSO"}
+        </span>
+        <button
+          className="deliverable-arrow previous"
+          aria-label="Ver item anterior"
+          onClick={() => change(-1)}
+        >
+          <ChevronLeft />
+        </button>
+        <button
+          className="deliverable-arrow next"
+          aria-label="Ver próximo item"
+          onClick={() => change(1)}
+        >
+          <ChevronRight />
+        </button>
+      </div>
+      <div className="deliverable-caption">
+        <span className="eyebrow">
+          {String(selected + 1).padStart(2, "0")} / {String(
+            materialPreviews.length,
+          ).padStart(2, "0")}
+        </span>
+        <h3>{current.label}</h3>
+        <div className="deliverable-dots" aria-label="Escolha um material">
+          {materialPreviews.map((item, index) => (
+            <button
+              key={item.src}
+              aria-label={`Ver ${item.label}`}
+              aria-current={selected === index ? "true" : undefined}
+              onClick={() => setSelected(index)}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -172,48 +173,14 @@ export function Demo() {
     <section className="section demo" id="aventura">
       <div className="container">
         <Heading
-          eyebrow="VEJA O QUE VEM NA MISSÃO"
-          text="Conheça as telas da aventura e os materiais que levam a história para dentro da sua casa."
+          eyebrow="OLHE POR DENTRO"
+          text="Passe pelas telas reais da missão e veja os materiais impressos que fazem a aventura ganhar vida em casa."
         >
-          Da tela para as mãos.
+          Veja o material
           <br />
-          <em>Da sua casa para a imaginação.</em>
+          <em>por dentro.</em>
         </Heading>
-        <div className="demo-material-grid">
-          {materialPreviews.map((item) => (
-            <figure className="demo-material" key={item.src}>
-              <div className={`demo-material-image ${item.kind}`}>
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(max-width: 700px) 44vw, (max-width: 1000px) 30vw, 23vw"
-                />
-              </div>
-              <figcaption>
-                <Check size={16} aria-hidden="true" />
-                <span>{item.label}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-        {showcasePhotos.length > 0 && (
-          <div className="showcase-photos">
-            {showcasePhotos.map((photo) => (
-              <figure key={photo.src}>
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  width={1000}
-                  height={750}
-                  sizes="(max-width: 700px) 90vw, 40vw"
-                />
-                <figcaption>{photo.alt}</figcaption>
-              </figure>
-            ))}
-          </div>
-        )}
-        <Gallery />
+        <DeliverableCarousel />
         <div className="section-cta">
           <p>Imagine a alegria de encontrar a próxima pista.</p>
           <Cta placement="materials" />

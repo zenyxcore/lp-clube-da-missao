@@ -4773,75 +4773,150 @@ html {
   filter: drop-shadow(0 8px 14px #0004);
 }
 
-/* Real app captures and printed materials: consistent, mobile-first frames. */
-.demo-material-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(10px, 2vw, 22px);
-  margin: 0 auto 42px;
-  max-width: 1040px;
+/* Product preview carousel: app captures and tactile print materials. */
+.deliverable-carousel {
+  width: min(100%, 520px);
+  margin: 0 auto 40px;
 }
-.demo-material {
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid #9c804c;
-  border-radius: 12px;
-  background: linear-gradient(145deg, #14343b, #0b222a 72%);
-  box-shadow: 0 14px 28px #0003;
-}
-.demo-material-image {
+.deliverable-stage {
   position: relative;
-  width: 100%;
-  aspect-ratio: 9 / 16;
+  width: min(100%, 450px);
+  height: min(70svh, 680px);
+  min-height: 440px;
+  margin: 0 auto;
   overflow: hidden;
-  background: #101f20;
+  border: 1px solid #b08b4c;
+  border-radius: 15px;
+  background:
+    radial-gradient(ellipse at 50% 38%, #fff1d31a, transparent 66%),
+    linear-gradient(145deg, #14343b, #081d24 76%);
+  box-shadow: 0 20px 44px #0005, inset 0 0 0 5px #07171d80;
+  touch-action: pan-y;
 }
-.demo-material-image img {
+.deliverable-image {
+  position: absolute;
+  inset: 13px;
+  overflow: hidden;
+  border-radius: 9px;
+  animation: deliverable-reveal 220ms ease-out;
+}
+.deliverable-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.demo-material-image.screen img {
-  /* Crop browser/status/navigation chrome and center the actual app screen. */
-  object-position: center 57%;
-}
-.demo-material-image.print img {
   object-position: center;
 }
-.demo-material figcaption {
-  min-height: 60px;
+.deliverable-image.screen img {
+  /* Frame out the browser chrome while keeping the app content in focus. */
+  object-position: center 57%;
+}
+.deliverable-image.square img {
+  object-fit: contain;
+  padding: 9px;
+  background: #0d211f;
+}
+.deliverable-type {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 1;
+  padding: 5px 9px;
+  border: 1px solid #e5c37b80;
+  border-radius: 999px;
+  background: #07171dd9;
+  color: #f5d891;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.deliverable-arrow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid #f1d28a;
+  border-radius: 50%;
+  background: #07171de8;
+  color: #ffe8b0;
+  transform: translateY(-50%);
+  transition: background 160ms ease, transform 160ms ease;
+}
+.deliverable-arrow:hover {
+  background: #145c48;
+  transform: translateY(-50%) scale(1.04);
+}
+.deliverable-arrow.previous {
+  left: 22px;
+}
+.deliverable-arrow.next {
+  right: 22px;
+}
+.deliverable-caption {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  padding: 17px 12px 0;
+  text-align: center;
+}
+.deliverable-caption h3 {
+  font-size: clamp(19px, 2.5vw, 25px);
+  line-height: 1.3;
+}
+.deliverable-dots {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 8px;
-  color: #f6dfa9;
-  text-align: center;
-  font-size: 12px;
-  line-height: 1.45;
-  font-weight: 600;
+  padding: 7px;
 }
-.demo-material figcaption svg {
-  flex: 0 0 auto;
-  color: #78c28b;
+.deliverable-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 1px solid #d8b971;
+  border-radius: 50%;
+  background: transparent;
+}
+.deliverable-dots button[aria-current="true"] {
+  width: 24px;
+  border-radius: 8px;
+  background: #f4b942;
+}
+@keyframes deliverable-reveal {
+  from { opacity: 0.65; transform: scale(0.99); }
+  to { opacity: 1; transform: scale(1); }
 }
 @media (max-width: 700px) {
-  .demo-material-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin: 0 auto 30px;
+  .deliverable-carousel {
+    width: 100%;
+    margin-bottom: 30px;
   }
-  .demo-material {
-    border-radius: 9px;
+  .deliverable-stage {
+    width: min(100%, 430px);
+    height: min(66svh, 590px);
+    min-height: 390px;
+    border-radius: 12px;
   }
-  .demo-material figcaption {
-    min-height: 58px;
-    font-size: 11px;
-    padding: 8px 6px;
-    gap: 5px;
+  .deliverable-image {
+    inset: 9px;
+    border-radius: 7px;
   }
-  .demo-material figcaption svg {
-    width: 14px;
+  .deliverable-type {
+    top: 17px;
+    left: 17px;
+    font-size: 8px;
+  }
+  .deliverable-arrow {
+    width: 38px;
+    height: 38px;
+  }
+  .deliverable-arrow.previous {
+    left: 15px;
+  }
+  .deliverable-arrow.next {
+    right: 15px;
   }
 }
 @media (max-width: 700px) {
