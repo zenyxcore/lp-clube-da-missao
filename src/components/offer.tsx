@@ -12,8 +12,8 @@ import {
   referencePriceLabel,
   installmentPriceLabel,
 } from "@/lib/config";
-import { checkoutWithCampaign, offerExpired } from "@/lib/campaign";
-import { trackCheckout } from "./analytics";
+import { offerExpired } from "@/lib/campaign";
+import { startCheckout } from "./analytics";
 import { Art, Heading, useClock } from "./shared";
 export function CheckoutButton({
   label = "Quero comprar essa aventura",
@@ -24,22 +24,12 @@ export function CheckoutButton({
   const expired = now !== null && offerExpired(offer.endsAt, now);
   const target = offer.checkoutUrl || offer.interestUrl;
   const active = Boolean(target) && !expired && (!offer.endsAt || now !== null);
-  function visit() {
-    let remembered = "";
-    try {
-      remembered = sessionStorage.getItem("clube-lp:campaign") || "";
-    } catch {}
-    if (offer.checkoutUrl) trackCheckout();
-    window.location.assign(
-      checkoutWithCampaign(target, window.location.search, remembered),
-    );
-  }
   return (
     <>
       <button
         className="button purchase"
         disabled={!active}
-        onClick={visit}
+        onClick={startCheckout}
         data-cta-action="checkout"
         data-cta-placement="offer"
       >

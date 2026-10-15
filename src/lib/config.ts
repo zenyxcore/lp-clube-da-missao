@@ -25,17 +25,21 @@ export const offer = {
   purchaseLabel: "Compra única",
   maxAdventurers: 3,
   currency: "BRL",
-  checkoutUrl: safeUrl(process.env.NEXT_PUBLIC_CHECKOUT_URL),
+  checkoutUrl:
+    safeUrl(process.env.NEXT_PUBLIC_CHECKOUT_URL) ||
+    "https://pay.cakto.com.br/3799kdi_1205399",
   interestUrl: safeUrl(process.env.NEXT_PUBLIC_INTEREST_URL),
   endsAt: process.env.NEXT_PUBLIC_OFFER_END_AT || "",
   videoUrl: safeUrl(process.env.NEXT_PUBLIC_DEMO_VIDEO_URL), // Arquivo MP4/WebM, sem autoplay.
-  metaPixelId:
-    safeUrl(process.env.NEXT_PUBLIC_PRIVACY_URL) &&
-    /^\d{5,20}$/.test(process.env.NEXT_PUBLIC_META_PIXEL_ID || "")
-      ? process.env.NEXT_PUBLIC_META_PIXEL_ID!
-      : "",
+  metaPixelId: /^\d{5,20}$/.test(
+    process.env.NEXT_PUBLIC_META_PIXEL_ID || "1094666426766908",
+  )
+    ? process.env.NEXT_PUBLIC_META_PIXEL_ID || "1094666426766908"
+    : "",
   termsUrl: safeUrl(process.env.NEXT_PUBLIC_TERMS_URL),
-  privacyUrl: safeUrl(process.env.NEXT_PUBLIC_PRIVACY_URL),
+  privacyUrl:
+    safeUrl(process.env.NEXT_PUBLIC_PRIVACY_URL) ||
+    "https://lpclubedamissao.vercel.app/privacidade",
   supportUrl: safeUrl(process.env.NEXT_PUBLIC_SUPPORT_URL),
   accessDelivery:
     "Receba o acesso pelo e-mail e pelo WhatsApp informados na compra.",

@@ -10,12 +10,12 @@ Node 24. `npm ci`, `npm run dev` e acesse localhost:3000. Verificações: `npm r
 
 `src/lib/config.ts` é a fonte de verdade: preço, disponibilidade de recursos/bônus, depoimentos autorizados e respostas comerciais. Copie `.env.example` para `.env.local` para desenvolvimento. Variáveis NEXT_PUBLIC são aplicadas no build: faça novo deploy após alterá-las.
 
-A versão inicial é de **pré-lançamento**. Sem `NEXT_PUBLIC_CHECKOUT_URL`, não existe redirecionamento de compra nem cobrança. Opcionalmente configure `NEXT_PUBLIC_INTEREST_URL` para um canal oficial de interesse. A data de oferta é opcional e deve ser real, ISO com fuso; uma condição vencida desabilita a compra. Sem data não há contador. Não há desconto, preço anterior ou depoimentos fictícios.
+O checkout Cakto da Missão Secreta está configurado como destino padrão em `src/lib/config.ts`; `NEXT_PUBLIC_CHECKOUT_URL` pode substituí-lo. Opcionalmente configure `NEXT_PUBLIC_INTEREST_URL` para um canal oficial de interesse. A data de oferta é opcional e deve ser real, ISO com fuso; uma condição vencida desabilita a compra. Sem data não há contador. Não há depoimentos fictícios.
 
 ### Antes de abrir as vendas
 
 - Implementar e testar a entrega de acesso por e-mail e WhatsApp solicitada pelo responsável pela oferta. A LP informa essa condição, mas não envia mensagens nem libera acesso. Confirmar duração do acesso e condições de suporte em `src/lib/config.ts`.
-- Publicar termos, política de privacidade e canal de suporte com a identificação real do fornecedor; configurar as três URLs.
+- Revisar e completar os canais de suporte e identificação do fornecedor antes de ampliar campanhas; a página de privacidade da medição está em `/privacidade`.
 - Configurar e testar checkout externo e entrega efetiva após pagamento. A LP não libera acesso e não confirma transações.
 - Confirmar a disponibilidade de cada recurso. Carta e certificado existem no produto inspecionado. O **Diário do Explorador imprimível está `ready:false`** porque o app possui somente um diário digital; ele não é anunciado como incluído.
 - Cadastrar somente depoimentos reais com primeiro nome autorizado, contexto e nota/data apenas quando fornecidas.
@@ -23,7 +23,7 @@ A versão inicial é de **pré-lançamento**. Sem `NEXT_PUBLIC_CHECKOUT_URL`, n�
 
 ## Campanhas e consentimento
 
-Meta Pixel é opcional e fica inativo sem ID válido **e URL de política de privacidade**. O script só carrega após permissão. Aceitar/recusar têm o mesmo destaque; preferência pode ser alterada no rodapé. Eventos: PageView, ViewContent e InitiateCheckout (somente no clique em checkout real). **Não existe evento Purchase**. Revogar consentimento desativa o envio e remove a campanha lembrada nesta sessão; não apaga retroativamente dados já enviados ao provedor.
+Meta Pixel `1094666426766908` está configurado e usa a página `/privacidade`; só carrega após permissão. Aceitar/recusar têm o mesmo destaque; preferência pode ser alterada no rodapé. Eventos: PageView, ViewContent e InitiateCheckout (somente no clique em checkout real). **Não existe evento Purchase**. Revogar consentimento desativa o envio e remove a campanha lembrada nesta sessão; não apaga retroativamente dados já enviados ao provedor.
 
 UTMs, fbclid e gclid da URL atual são preservados no checkout por lista permitida; outros parâmetros não são enviados. Persistência de campanha em sessionStorage só acontece após consentimento. A configuração e os testes não usam pixels reais nem transações.
 
@@ -52,9 +52,9 @@ Hero mobile: H1 em três linhas, logo central, vídeo 16:9 com moldura temática
 
 As fotos reais dos materiais podem ser adicionadas em `showcasePhotos`, com arquivos locais em `public/`. A seção já apresenta prints reais do computador e celular e ilustrações oficiais dos materiais; nenhuma foto de impresso foi inventada.
 
-CTAs de navegação possuem `data-cta-action="view-offer"` e `data-cta-placement` (`hero`, `materials`, `included`, `personalization`, `bonuses`, `final`). O botão real de compra usa `data-cta-action="checkout"`, `data-cta-placement="offer"` e texto próprio. `InitiateCheckout` continua reservado a um checkout real e consentido.
+CTAs de compra (`hero`, `materials`, `included`, `personalization`, `bonuses`, `final` e oferta) redirecionam diretamente ao checkout Cakto, carregam os parâmetros UTM permitidos e usam `data-cta-action="checkout"` com o local do botão em `data-cta-placement`. `InitiateCheckout` só é enviado quando há consentimento e Pixel ativo.
 
-A LP não exibe avisos de “em breve”. O botão de compra continua sem ação enquanto não existir URL de checkout/interesse válida. Não há redirecionamento fictício. A escassez informa a condição de lançamento; “última chance” só aparece nas últimas 24 horas de uma data real configurada.
+A LP não exibe avisos de “em breve”. O botão usa o checkout Cakto real configurado. A escassez informa a condição de lançamento; “última chance” só aparece nas últimas 24 horas de uma data real configurada.
 
 ## Condição de acesso e simulação de parcelas
 

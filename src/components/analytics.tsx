@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { offer } from "@/lib/config";
-import { campaignParams } from "@/lib/campaign";
+import { campaignParams, checkoutWithCampaign } from "@/lib/campaign";
 type Pixel = ((...args: unknown[]) => void) & {
   queue?: unknown[][];
   loaded?: boolean;
@@ -24,6 +24,18 @@ export function trackCheckout() {
         currency: offer.currency,
       });
   } catch {}
+}
+export function startCheckout() {
+  const target = offer.checkoutUrl || offer.interestUrl;
+  if (!target) return;
+  let remembered = "";
+  try {
+    remembered = sessionStorage.getItem("clube-lp:campaign") || "";
+  } catch {}
+  if (offer.checkoutUrl) trackCheckout();
+  window.location.assign(
+    checkoutWithCampaign(target, window.location.search, remembered),
+  );
 }
 export function Analytics() {
   const [open, setOpen] = useState(false);
