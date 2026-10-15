@@ -32,7 +32,7 @@ export const shots = [
 ];
 const materialPreviews = [
   {
-    src: "/demo/missao-etapa.jpg",
+    src: "/demo/missao-etapa-preview.jpg",
     alt: "Tela real de uma etapa da missão no celular",
     label: "A história e os desafios no celular",
     kind: "screen",
@@ -44,7 +44,7 @@ const materialPreviews = [
     kind: "screen",
   },
   {
-    src: "/demo/missao-avatares.jpg",
+    src: "/demo/missao-avatares-preview.jpg",
     alt: "Tela real de personalização dos aventureiros no celular",
     label: "A equipe com nomes e avatares",
     kind: "screen",
@@ -127,42 +127,44 @@ export function DeliverableCarousel() {
             sizes="(max-width: 700px) 88vw, 500px"
           />
         </div>
-        <span className="deliverable-type">
-          {current.kind.includes("screen")
-            ? "TELA REAL DO APP"
-            : "MATERIAL IMPRESSO"}
-        </span>
-        <button
-          className="deliverable-arrow previous"
-          aria-label="Ver item anterior"
-          onClick={() => change(-1)}
-        >
-          <ChevronLeft />
-        </button>
-        <button
-          className="deliverable-arrow next"
-          aria-label="Ver próximo item"
-          onClick={() => change(1)}
-        >
-          <ChevronRight />
-        </button>
       </div>
       <div className="deliverable-caption">
-        <span className="eyebrow">
-          {String(selected + 1).padStart(2, "0")} / {String(
-            materialPreviews.length,
-          ).padStart(2, "0")}
+        <span className="deliverable-type">
+          {current.kind.includes("screen") ? "TELA REAL DO APP" : "MATERIAL IMPRESSO"}
         </span>
         <h3>{current.label}</h3>
-        <div className="deliverable-dots" aria-label="Escolha um material">
-          {materialPreviews.map((item, index) => (
-            <button
-              key={item.src}
-              aria-label={`Ver ${item.label}`}
-              aria-current={selected === index ? "true" : undefined}
-              onClick={() => setSelected(index)}
-            />
-          ))}
+        <div className="deliverable-controls">
+          <button
+            className="deliverable-arrow"
+            aria-label="Ver item anterior"
+            onClick={() => change(-1)}
+          >
+            <ChevronLeft />
+          </button>
+          <div className="deliverable-paging">
+            <span className="eyebrow">
+              {String(selected + 1).padStart(2, "0")} / {String(
+                materialPreviews.length,
+              ).padStart(2, "0")}
+            </span>
+            <div className="deliverable-dots" aria-label="Escolha um material">
+              {materialPreviews.map((item, index) => (
+                <button
+                  key={item.src}
+                  aria-label={`Ver ${item.label}`}
+                  aria-current={selected === index ? "true" : undefined}
+                  onClick={() => setSelected(index)}
+                />
+              ))}
+            </div>
+          </div>
+          <button
+            className="deliverable-arrow"
+            aria-label="Ver próximo item"
+            onClick={() => change(1)}
+          >
+            <ChevronRight />
+          </button>
         </div>
       </div>
     </div>

@@ -7,7 +7,6 @@ import { Offer } from "./offer";
 import { HowItWorks } from "./how-it-works";
 import { Demo } from "./demonstration";
 import { Benefits } from "./benefits";
-import { Inside } from "./inside";
 import { Personalization } from "./personalization";
 import { Bonuses } from "./bonuses";
 import { Testimonials } from "./testimonials";
@@ -26,11 +25,10 @@ export function Landing() {
         <Hero />
         <HowItWorks />
         <Demo />
-        <Benefits />
-        <Inside />
-        <Personalization />
         <Bonuses />
         <Offer />
+        <Benefits />
+        <Personalization />
         <Testimonials items={offer.testimonials} />
         <Trust />
         <FAQ />

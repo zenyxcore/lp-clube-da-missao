@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { OfferCondition } from "./offer";
 import { Cta } from "./shared";
+import { priceLabel, referencePriceLabel } from "@/lib/config";
 export function FinalCTA() {
   return (
     <section className="final-cta">
@@ -18,6 +19,11 @@ export function FinalCTA() {
         <p>
           Prepare as pistas, reúna seus pequenos exploradores e descubra como
           uma tarde em casa pode se transformar em uma história especial.
+        </p>
+        <p className="final-offer-summary">
+          <strong>Última chance:</strong> missão completa + bônus da edição por
+          <del>{referencePriceLabel}</del> <b>{priceLabel}</b>. Compra única,
+          acesso vitalício e sem mensalidade.
         </p>
         <OfferCondition final />
         <Cta placement="final">Quero essa aventura para minha família</Cta>
