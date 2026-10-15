@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import { ArrowRight, Menu, X, Gift } from "lucide-react";
-import { bonuses, offer, priceLabel } from "@/lib/config";
+import { ArrowRight, Menu, X } from "lucide-react";
+import { offer } from "@/lib/config";
 import { Art, useClock } from "./shared";
 export const nav = [
   ["Entenda a brincadeira", "aventura"],
@@ -15,18 +15,12 @@ export function Announcement() {
   const now = useClock(),
     end = Date.parse(offer.endsAt);
   const left = now && Number.isFinite(end) ? Math.max(0, end - now) : 0;
-  const count = bonuses.filter((b) => b.ready).length;
   return (
     <div className="announcement">
       <span className="launch-tag">EDIÇÃO DE ESTREIA</span>
       <p>
         <strong>Condição especial de lançamento</strong>
-        <span>
-          Missão completa por {priceLabel}
-          {count > 0 && ` + ${count} bônus sem custo extra`}
-        </span>
       </p>
-      <Gift size={22} aria-hidden="true" className="announcement-gift" />
       {left > 0 && (
         <span className="countdown">
           Oferta encerra em {Math.floor(left / 86400000)}d{" "}

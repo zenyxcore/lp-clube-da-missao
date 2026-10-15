@@ -52,3 +52,5 @@ O mockup é uma composição de página muito comprimida. A página real tem cor
 ## Atualização de clareza e oferta
 
 A versão mais recente usa CTAs verdes, header com logo e menu, oferta em fundo liso e **não tem barra fixa inferior**. O histórico acima descreve a primeira versão. A revisão atual está em `docs/revision-qa.md` e registra os testes desktop/mobile e a ancoragem contextual do preço.
+
+A revisão mais recente restaura o pergaminho claro, usa R$197 como referência indicada pelo responsável, remove a comparação por criança e reduz o FAQ a cinco perguntas. Ver `docs/parchment-mobile-qa.md` para a revisão mobile atual.

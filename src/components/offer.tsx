@@ -1,7 +1,13 @@
 "use client";
 import { useId } from "react";
-import { ArrowRight, Check, UsersRound, Gift } from "lucide-react";
-import { bonuses, offer, priceLabel, resources } from "@/lib/config";
+import { ArrowRight, Check, CreditCard, Gift } from "lucide-react";
+import {
+  bonuses,
+  offer,
+  priceLabel,
+  referencePriceLabel,
+  resources,
+} from "@/lib/config";
 import { checkoutWithCampaign, offerExpired } from "@/lib/campaign";
 import { trackCheckout } from "./analytics";
 import { Art, Heading, useClock } from "./shared";
@@ -54,10 +60,6 @@ export function CheckoutButton({
 }
 export function OfferCard({ full = false }: { full?: boolean }) {
   const activeBonuses = bonuses.filter((b) => b.ready);
-  const perChild = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: offer.currency,
-  }).format(offer.price / offer.maxAdventurers);
   return (
     <div className={`offer-card ${full ? "full-offer" : ""}`}>
       <span className="edition">CONDIÇÃO ESPECIAL DE LANÇAMENTO</span>
@@ -99,22 +101,22 @@ export function OfferCard({ full = false }: { full?: boolean }) {
         </div>
       )}
       <div className="price">
-        <span>A aventura completa + bônus por</span>
+        <span className="price-reference">
+          De <del>{referencePriceLabel}</del>
+        </span>
+        <span className="price-launch-label">
+          Na condição de lançamento, por
+        </span>
         <strong>{priceLabel}</strong>
         <small>Uma única compra. Sem mensalidade.</small>
       </div>
-      {full && (
-        <div className="price-anchor">
-          <UsersRound size={17} />
-          <p>
-            <strong>{perChild} por criança</strong>
-            <span>
-              Ao dividir o valor por uma equipe de {offer.maxAdventurers}. O
-              total da compra é {priceLabel}.
-            </span>
-          </p>
+      <div className="installments-note">
+        <CreditCard size={19} />
+        <div>
+          <strong>{offer.installmentsLabel}</strong>
+          <span>{offer.installmentsDetail}</span>
         </div>
-      )}
+      </div>
       <CheckoutButton />
       <span className="offer-foot">
         Produto digital · materiais para imprimir

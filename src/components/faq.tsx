@@ -1,30 +1,24 @@
 "use client";
 import { ChevronDown } from "lucide-react";
 import { faqs } from "@/lib/config";
-import { Art } from "./shared";
+import { Heading } from "./shared";
 export function FAQ() {
   return (
     <section className="section parchment faq-section" id="faq">
       <div className="container faq-grid">
-        <div>
-          <span className="eyebrow">ANTES DE PARTIR</span>
-          <h2>
-            Pequenas dúvidas.
-            <br />
-            <em>Grandes descobertas.</em>
-          </h2>
-          <p>Tudo para você começar essa aventura com tranquilidade.</p>
-          <Art name="compass" />
-        </div>
+        <Heading
+          light
+          eyebrow="RESPOSTAS RÁPIDAS"
+          text="O essencial para você preparar a missão com tranquilidade."
+        >
+          Dúvidas antes de <em>começar?</em>
+        </Heading>
         <div className="faq-list">
-          {faqs.map(([q, a], i) => (
+          {faqs.map(([q, a]) => (
             <details key={q} name="faq">
               <summary>
-                <span className="faq-number">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
                 {q}
-                <ChevronDown size={19} />
+                <ChevronDown size={18} />
               </summary>
               <p>{a}</p>
             </details>

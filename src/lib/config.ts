@@ -17,6 +17,9 @@ export function safeUrl(value: string | undefined): string {
 }
 export const offer = {
   price: 37,
+  referencePrice: 197, // Valor de referência informado pelo responsável pela oferta.
+  installmentsLabel: "Ou parcele no cartão",
+  installmentsDetail: "Consulte as parcelas e os juros no checkout da Cakto.",
   maxAdventurers: 3,
   currency: "BRL",
   checkoutUrl: safeUrl(process.env.NEXT_PUBLIC_CHECKOUT_URL),
@@ -39,6 +42,10 @@ export const offer = {
     "O canal e os horários de suporte serão publicados antes da abertura das vendas.",
   testimonials: [] as Testimonial[],
 };
+export const referencePriceLabel = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: offer.currency,
+}).format(offer.referencePrice);
 export const priceLabel = new Intl.NumberFormat("pt-BR", {
   style: "currency",
   currency: offer.currency,
@@ -103,37 +110,23 @@ export const bonuses = [
 ];
 export const faqs = [
   [
-    "Para qual idade a Missão Secreta é indicada?",
-    "A aventura foi pensada para crianças de 5 a 9 anos, com a companhia de um adulto. O responsável pode ajudar na leitura e adaptar a condução à sua equipe.",
+    "O que vou receber?",
+    "Uma caça ao tesouro digital para brincar em casa: história guiada, 6 desafios, mapa, pistas e guia para imprimir. Carta secreta e certificado personalizado também estão incluídos. Nada é enviado pelo correio.",
   ],
   [
-    "O que exatamente estou comprando?",
-    "Uma experiência digital de caça ao tesouro para brincar em casa: história interativa, seis desafios, pistas e mapa para imprimir, guia do responsável, personalização da equipe e certificado. Os itens disponíveis estão detalhados nesta página.",
+    "Para que idade e quantas crianças?",
+    "Para crianças de 5 a 9 anos, acompanhadas por um adulto. Você pode montar uma equipe com até 3 aventureiros, escolhendo os nomes e personagens.",
   ],
   [
-    "Preciso imprimir os materiais?",
-    "Para a experiência de caça ao tesouro proposta, recomendamos imprimir as pistas e escondê-las pela casa seguindo o guia. A história e os desafios são acompanhados pela plataforma.",
+    "O que preciso preparar?",
+    "Celular ou computador com internet, pistas impressas e uma surpresa simples para servir de tesouro. O guia explica onde esconder tudo. Reserve cerca de 10 minutos para preparar e de 25 a 40 minutos para brincar.",
   ],
   [
-    "Quanto tempo leva para preparar a aventura?",
-    "O guia orienta uma preparação de aproximadamente 10 minutos. A missão costuma durar de 25 a 40 minutos, dependendo do ritmo e da ajuda que cada equipe precisar.",
+    "Como recebo e por quanto tempo?",
+    `${offer.accessDelivery} ${offer.accessDuration}`,
   ],
   [
-    "Posso cadastrar mais de uma criança?",
-    "Sim. A versão atual permite cadastrar até três aventureiros, com nomes e avatares, e escolher quem participa da missão.",
-  ],
-  [
-    "Preciso de algum material especial?",
-    "Você vai precisar de um celular ou computador com internet, das pistas impressas e de um pequeno tesouro escolhido por você. O tesouro físico não acompanha o produto; pode ser uma surpresa simples que faça sentido para a família.",
-  ],
-  [
-    "O jogo funciona no celular?",
-    "Sim. A plataforma tem interface responsiva para celular e computador. Um adulto acompanha a tela enquanto as crianças exploram os espaços e procuram as pistas.",
-  ],
-  ["Como recebo o acesso após a compra?", offer.accessDelivery],
-  ["Por quanto tempo terei acesso?", offer.accessDuration],
-  [
-    "Como funciona o suporte e o reembolso?",
-    `${offer.support} Nas compras online, o Código de Defesa do Consumidor prevê o direito de arrependimento em até sete dias, conforme o art. 49. As orientações para solicitar o reembolso serão disponibilizadas antes das vendas.`,
+    "Pagamento, suporte e reembolso?",
+    `Você poderá consultar as opções de cartão, parcelas e juros no checkout da Cakto. ${offer.support} Para compras online, o CDC prevê o direito de arrependimento em até 7 dias, conforme o art. 49.`,
   ],
 ];

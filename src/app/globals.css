@@ -2557,35 +2557,6 @@ body {
   margin: 1px 0 15px;
   font-weight: 600;
 }
-.price-anchor {
-  background: #f0ead8;
-  border: 1px solid #dfd4b5;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-radius: 6px;
-  padding: 10px 12px;
-  margin: 0 0 19px;
-  color: #496043;
-}
-.price-anchor > svg {
-  flex-shrink: 0;
-}
-.price-anchor p {
-  font-size: 10px;
-  line-height: 1.55;
-  color: #5a634c;
-}
-.price-anchor strong {
-  font-size: 12px;
-  font-weight: 700;
-  display: block;
-  color: #35533d;
-  margin-bottom: 2px;
-}
-.price-anchor span {
-  display: block;
-}
 .purchase {
   min-height: 56px;
   font-size: 13px;
@@ -3164,17 +3135,6 @@ body {
     font-size: 12px;
     margin-bottom: 15px;
   }
-  .price-anchor {
-    gap: 8px;
-    padding: 10px;
-    margin-bottom: 19px;
-  }
-  .price-anchor p {
-    font-size: 10px;
-  }
-  .price-anchor strong {
-    font-size: 12px;
-  }
   .purchase {
     min-height: 57px;
     font-size: 12px;
@@ -3489,5 +3449,620 @@ body {
   .hero .purchase-note {
     font-size: 11px;
     line-height: 1.7;
+  }
+}
+/* Pergaminho claro e hierarquia comercial para celular. */
+.announcement {
+  min-height: 52px;
+  padding: 10px 20px;
+  gap: 15px;
+}
+.announcement p {
+  margin: 0;
+}
+.announcement strong {
+  font-size: 14px;
+}
+.offer-card,
+.hero .offer-card {
+  isolation: isolate;
+  position: relative;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 16px 24px #0005);
+  padding: 40px 39px 36px;
+}
+.offer-card:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/parchment-offer.webp") center/100% 100% no-repeat;
+  filter: brightness(1.14) saturate(0.65);
+  z-index: -1;
+  pointer-events: none;
+}
+.offer-card .edition {
+  background: #f7e3ad;
+  border-color: #c9ac63;
+  color: #614212;
+}
+.offer-card h3,
+.hero .offer-card h3 {
+  color: #263e2b;
+}
+.offer-card .offer-description {
+  color: #424b37;
+}
+.offer-includes-label {
+  text-align: center;
+  color: #384a32;
+}
+.offer-bonus-line {
+  background: linear-gradient(120deg, #ffe6a4, #fbc978);
+  border: 1px solid #d79632;
+  border-left: 4px solid #bd641b;
+  border-radius: 9px;
+  color: #6b350b;
+  box-shadow: 0 5px 15px #b7841d16;
+  justify-content: center;
+  text-align: center;
+  padding: 14px 12px;
+}
+.offer-bonus-line > svg {
+  color: #a73d1b;
+  width: 23px;
+  height: 23px;
+}
+.offer-bonus-line strong {
+  color: #7b300f;
+  font-size: 14px;
+}
+.offer-bonus-line span span {
+  color: #6e451a;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.price-reference {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  color: #69553c !important;
+  margin: 0 0 5px;
+}
+.price-reference del {
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: #984c38;
+}
+.price-launch-label {
+  font-size: 12px !important;
+  color: #495737 !important;
+}
+.price strong {
+  margin: 4px 0;
+}
+.installments-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-align: center;
+  margin: 0 auto 20px;
+  color: #355138;
+  max-width: 380px;
+  padding: 11px 10px;
+  background: #fff7e1b3;
+  border: 1px solid #bcaa704d;
+  border-radius: 6px;
+}
+.installments-note > svg {
+  flex-shrink: 0;
+  color: #3e7148;
+}
+.installments-note strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #2d5639;
+}
+.installments-note span {
+  display: block;
+  font-size: 10px;
+  line-height: 1.7;
+  color: #5b6049;
+  margin-top: 3px;
+}
+.offer-foot {
+  color: #4d573f;
+}
+.hero .offer-card {
+  padding: 35px 34px 30px;
+}
+.hero .offer-card .mission-logo {
+  height: 70px;
+  margin-bottom: 5px;
+}
+.hero .offer-description {
+  margin: 8px auto 13px;
+}
+.hero .offer-bonus-line {
+  padding: 10px 9px;
+  margin-bottom: 14px;
+}
+.hero .offer-bonus-line strong {
+  font-size: 13px;
+}
+.hero .offer-bonus-line span span {
+  font-size: 10px;
+}
+.hero .price-reference {
+  font-size: 16px !important;
+}
+.hero .price strong {
+  font-size: 52px;
+}
+.hero .price small {
+  margin-bottom: 12px;
+}
+.hero .installments-note {
+  padding: 8px;
+  margin-bottom: 16px;
+}
+.hero .installments-note strong {
+  font-size: 12px;
+}
+.hero .installments-note span {
+  font-size: 9px;
+}
+.full-offer {
+  padding: 45px 49px 42px;
+}
+.full-offer .offer-bonus-line strong {
+  font-size: 15px;
+}
+.faq-grid {
+  display: block;
+  max-width: 840px;
+}
+.faq-grid .section-heading {
+  margin-bottom: 30px;
+}
+.faq-grid h2 {
+  font-size: 39px;
+  margin: 14px 0 17px;
+}
+.faq-grid > .section-heading > p {
+  max-width: 600px;
+  margin: auto;
+  font-size: 16px;
+}
+.faq-list {
+  max-width: 700px;
+  margin: auto;
+}
+.faq-list summary {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 18px 3px;
+}
+.faq-list summary > svg {
+  width: 18px;
+}
+.faq-list details > p {
+  padding: 0 24px 20px 3px;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.material-note {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 850px) {
+  .offer-card,
+  .hero .offer-card {
+    padding: 34px 29px 30px;
+  }
+  .hero .offer-card h3 {
+    font-size: 24px;
+  }
+  .hero .offer-bonus-line strong {
+    font-size: 12px;
+  }
+  .installments-note {
+    gap: 7px;
+  }
+  .installments-note strong {
+    font-size: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .announcement {
+    min-height: 61px;
+    padding: 9px 18px;
+    gap: 4px 10px;
+  }
+  .announcement .launch-tag {
+    font-size: 8px;
+    padding: 3px 8px;
+    letter-spacing: 0.1em;
+  }
+  .announcement p {
+    width: 100%;
+    text-align: center;
+  }
+  .announcement strong {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .hero-copy {
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.15;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-copy > p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero .outlined {
+    font-size: 7px;
+    letter-spacing: 0.07em;
+    padding: 6px 8px;
+  }
+  .hero-actions {
+    align-items: center;
+    gap: 17px;
+    margin-top: 23px;
+  }
+  .hero-actions .button {
+    font-size: 12px;
+  }
+  .hero-indicators {
+    grid-template-columns: 1fr 1fr;
+    gap: 11px 8px;
+    text-align: center;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+  }
+  .hero-indicators span {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .hero-grid {
+    padding-top: 25px;
+    padding-bottom: 47px;
+  }
+  .hero-offer {
+    margin-top: 23px;
+  }
+  .offer-card,
+  .hero .offer-card {
+    padding: 32px 28px 30px;
+  }
+  .offer-card:before {
+    filter: brightness(1.18) saturate(0.55);
+  }
+  .offer-card .edition {
+    font-size: 7px;
+    letter-spacing: 0.07em;
+    padding: 5px 6px;
+    margin-bottom: 9px;
+  }
+  .offer-card h3,
+  .hero .offer-card h3 {
+    font-size: 26px;
+    line-height: 1.22;
+  }
+  .offer-card .mission-logo,
+  .hero .offer-card .mission-logo {
+    width: 180px;
+    height: 86px;
+  }
+  .offer-description,
+  .hero .offer-description {
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 10px auto 18px;
+  }
+  .offer-includes-label {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+  .offer-list li,
+  .hero .offer-list li {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 9px 0;
+  }
+  .offer-bonus-line,
+  .hero .offer-bonus-line {
+    padding: 12px 9px;
+    gap: 7px;
+    margin-bottom: 18px;
+    align-items: center;
+  }
+  .offer-bonus-line > svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  .offer-bonus-line strong,
+  .hero .offer-bonus-line strong,
+  .full-offer .offer-bonus-line strong {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .offer-bonus-line span span,
+  .hero .offer-bonus-line span span,
+  .full-offer .offer-bonus-line span span {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+  .price-reference,
+  .hero .price-reference {
+    font-size: 17px !important;
+    margin-bottom: 4px;
+  }
+  .price-launch-label,
+  .full-offer .price-launch-label {
+    font-size: 11px !important;
+    line-height: 1.7;
+  }
+  .price strong,
+  .hero .price strong,
+  .full-offer .price strong {
+    font-size: 56px;
+    line-height: 1.25;
+  }
+  .price small,
+  .hero .price small {
+    font-size: 11px;
+    margin-bottom: 14px;
+  }
+  .installments-note,
+  .hero .installments-note {
+    padding: 10px 8px;
+    gap: 7px;
+    margin-bottom: 18px;
+  }
+  .installments-note strong,
+  .hero .installments-note strong {
+    font-size: 12px;
+  }
+  .installments-note span,
+  .hero .installments-note span {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+  .purchase,
+  .full-offer .purchase {
+    font-size: 12px;
+    padding: 14px 9px;
+    gap: 6px;
+    min-height: 56px;
+  }
+  .purchase-note,
+  .hero .purchase-note {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+  .offer-foot {
+    font-size: 9px;
+  }
+  .full-offer {
+    padding: 35px 29px 32px;
+  }
+  .section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+  .section-heading {
+    margin-bottom: 29px;
+  }
+  .section-heading h2 {
+    font-size: 29px;
+    line-height: 1.28;
+  }
+  .section-heading p {
+    font-size: 14px;
+  }
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 23px 22px;
+    gap: 0;
+  }
+  .step-art {
+    width: 95px;
+    height: 95px;
+    margin-bottom: 21px;
+  }
+  .step h3 {
+    font-size: 22px;
+    align-self: center;
+    margin-bottom: 11px;
+    justify-content: center;
+  }
+  .step p {
+    font-size: 14px;
+    align-self: center;
+    max-width: 300px;
+  }
+  .step-number {
+    left: 50%;
+    bottom: -10px;
+  }
+  .benefit {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 24px 22px;
+    gap: 0;
+  }
+  .benefit > .art {
+    width: 100px;
+    height: 98px;
+    margin: 0 auto 15px;
+  }
+  .benefit h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .benefit p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+  .material-note {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .material-note p {
+    font-size: 12px;
+  }
+  .inside-copy {
+    text-align: center;
+  }
+  .inside-copy h3 {
+    font-size: 27px;
+  }
+  .inside-copy ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 22px 0;
+  }
+  .inside-copy li {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .personalization-grid > div:first-child {
+    text-align: center;
+  }
+  .personalization h2 {
+    font-size: 29px;
+  }
+  .personalization p {
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .personalization blockquote {
+    border-left: 0;
+    border-top: 1px solid #b4944d70;
+    padding: 19px 0 0;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .personalization small {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bonus-card {
+    text-align: center;
+    padding: 48px 24px 26px;
+  }
+  .bonus-number {
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  .bonus-image {
+    margin-bottom: 18px;
+  }
+  .bonus-card h3 {
+    font-size: 27px;
+  }
+  .bonus-card p {
+    font-size: 14px;
+  }
+  .bonus-value,
+  .bonus-reassurance {
+    justify-content: center;
+    text-align: center;
+  }
+  .bonus-reassurance {
+    align-items: center;
+    font-size: 12px;
+  }
+  .trust-grid {
+    text-align: center;
+    gap: 26px;
+  }
+  .trust-grid > div > svg {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .trust p {
+    font-size: 13px;
+  }
+  .trust a {
+    justify-content: center;
+    font-size: 9px;
+  }
+  .faq-grid .section-heading {
+    margin-bottom: 24px;
+  }
+  .faq-grid h2 {
+    font-size: 30px;
+    line-height: 1.3;
+    margin: 12px 0 16px;
+  }
+  .faq-grid > .section-heading > p {
+    font-size: 14px;
+    max-width: 300px;
+    line-height: 1.8;
+    margin: auto;
+  }
+  .faq-list summary {
+    font-size: 13px;
+    line-height: 1.7;
+    padding: 16px 0;
+    gap: 12px;
+  }
+  .faq-list details > p {
+    font-size: 13px;
+    line-height: 1.85;
+    padding: 0 17px 18px 0;
+  }
+  .faq-list summary > svg {
+    width: 16px;
+    height: 16px;
+  }
+  .footer-top {
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+  }
+  .footer-links {
+    justify-content: center;
+  }
+  .footer-bottom {
+    text-align: center;
+    align-items: center;
+    font-size: 9px;
+    gap: 10px;
   }
 }

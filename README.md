@@ -37,3 +37,11 @@ Projeto Vercel: `lpclubedamissao`. Domínio: https://lpclubedamissao.vercel.app.
 - Guia de cookies da ANPD: https://www.gov.br/anpd/pt-br/centrais-de-conteudo/materiais-educativos-e-publicacoes/guia-orientativo-cookies-e-protecao-de-dados-pessoais.pdf
 
 Relatório visual e funcional: `design-qa.md`. Assets pertencem à identidade fornecida pelo projeto; pergaminho de suporte gerado para receber conteúdo HTML. As fontes Lora e DM Sans usam SIL Open Font License; licenças em `public/fonts`.
+
+## Oferta e mobile — revisão de 15/10
+
+O responsável pela oferta informou R$197 como referência para a condição de lançamento de R$37. Os dois valores ficam em `offer.referencePrice` e `offer.price`. A LP não apresenta histórico de vendas nem valores individuais inventados para os bônus. A comparação por criança foi removida.
+
+Parcelamento: a interface informa pagamento no cartão pela Cakto, com valores/juros consultados no checkout. Quantidade e valor exato das parcelas não foram simulados. A Cakto informa que a tabela depende do valor do produto e da configuração de pagamento: https://ajuda.cakto.com.br/pt-br/articles/18-como-funciona-o-parcelamento-no-checkout. A compra continua desabilitada até existir um checkout real.
+
+Faixa superior sem preço/bônus, pergaminho mais claro na oferta, destaque colorido dos bônus, cinco perguntas curtas no FAQ e alinhamentos ajustados no celular.
