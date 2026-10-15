@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Check, X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
 import { showcasePhotos } from "@/lib/config";
-import { Art, Cta, Heading } from "./shared";
+import { Cta, Heading } from "./shared";
 export const shots = [
   {
     file: "quartel-general",
@@ -29,6 +29,32 @@ export const shots = [
     file: "certificado",
     label: "Uma lembrança da aventura",
     text: "Um certificado com os nomes dos aventureiros.",
+  },
+];
+const materialPreviews = [
+  {
+    src: "/demo/missao-equipe.jpg",
+    alt: "Tela real da missão aberta no celular, sem a barra do navegador",
+    label: "A aventura guiada no celular",
+    kind: "screen",
+  },
+  {
+    src: "/demo/missao-avatares.jpg",
+    alt: "Tela de personalização dos aventureiros no Clube da Missão",
+    label: "A equipe com nomes e avatares",
+    kind: "screen",
+  },
+  {
+    src: "/demo/carta-nas-maos.webp",
+    alt: "Carta temática impressa e segurada pelas mãos",
+    label: "Uma pista para descobrir de verdade",
+    kind: "print",
+  },
+  {
+    src: "/demo/diario-explorador.webp",
+    alt: "Diário do Explorador impresso em uma cena realista",
+    label: "Materiais que dão vida à missão",
+    kind: "print",
   },
 ];
 export function Screenshot({
@@ -153,36 +179,23 @@ export function Demo() {
           <br />
           <em>Da sua casa para a imaginação.</em>
         </Heading>
-        <div className="material-showcase">
-          <div className="showcase-screen">
-            <div className="showcase-browser-bar">
-              <i />
-              <i />
-              <i />
-              <span>Clube da Missão</span>
-            </div>
-            <Screenshot index={0} />
-            <span className="showcase-label">
-              <Check size={16} /> A história no computador
-            </span>
-          </div>
-          <div className="showcase-phone">
-            <Image
-              src="/screenshots/clube-mobile.jpg"
-              alt="A missão aberta no celular"
-              width={375}
-              height={780}
-              sizes="(max-width: 700px) 34vw, 210px"
-            />
-            <span>A aventura na palma da mão</span>
-          </div>
-          <div className="showcase-printables">
-            <Art name="openmap" />
-            <Art name="letter" />
-            <span className="showcase-label">
-              <Check size={16} /> Mapa, pistas e surpresas para imprimir
-            </span>
-          </div>
+        <div className="demo-material-grid">
+          {materialPreviews.map((item) => (
+            <figure className="demo-material" key={item.src}>
+              <div className={`demo-material-image ${item.kind}`}>
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 700px) 44vw, (max-width: 1000px) 30vw, 23vw"
+                />
+              </div>
+              <figcaption>
+                <Check size={16} aria-hidden="true" />
+                <span>{item.label}</span>
+              </figcaption>
+            </figure>
+          ))}
         </div>
         {showcasePhotos.length > 0 && (
           <div className="showcase-photos">

@@ -4772,6 +4772,78 @@ html {
   object-fit: contain;
   filter: drop-shadow(0 8px 14px #0004);
 }
+
+/* Real app captures and printed materials: consistent, mobile-first frames. */
+.demo-material-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 2vw, 22px);
+  margin: 0 auto 42px;
+  max-width: 1040px;
+}
+.demo-material {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #9c804c;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #14343b, #0b222a 72%);
+  box-shadow: 0 14px 28px #0003;
+}
+.demo-material-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: #101f20;
+}
+.demo-material-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.demo-material-image.screen img {
+  /* Crop browser/status/navigation chrome and center the actual app screen. */
+  object-position: center 57%;
+}
+.demo-material-image.print img {
+  object-position: center;
+}
+.demo-material figcaption {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 8px;
+  color: #f6dfa9;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+.demo-material figcaption svg {
+  flex: 0 0 auto;
+  color: #78c28b;
+}
+@media (max-width: 700px) {
+  .demo-material-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0 auto 30px;
+  }
+  .demo-material {
+    border-radius: 9px;
+  }
+  .demo-material figcaption {
+    min-height: 58px;
+    font-size: 11px;
+    padding: 8px 6px;
+    gap: 5px;
+  }
+  .demo-material figcaption svg {
+    width: 14px;
+  }
+}
 @media (max-width: 700px) {
   .guarantee-seal {
     width: 210px;
