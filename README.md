@@ -61,3 +61,15 @@ A LP não exibe avisos de “em breve”. O botão usa o checkout Cakto real con
 O responsável definiu acesso vitalício a esta aventura, compra única e sem mensalidade. Esses textos ficam em `offer.accessLabel`, `offer.accessDuration`, `offer.purchaseLabel` e `offer.billingLabel`. Não significa acesso a aventuras futuras.
 
 Parcelamento na LP: `offer.installmentCount` = 6. A parcela ilustrativa é derivada de `offer.price / offer.installmentCount` e arredondada para exibição (R$6,17). Com `installmentsConfirmed:false`, o layout identifica “Simulação sem juros”. Antes de ativar o checkout, conferir valores e juros reais e ajustar a configuração; a divisão simples não representa a tabela automática da Cakto. Não há menção ao provedor na oferta pública nem no FAQ.
+
+## Upsell: temporada de cinco aventuras
+
+A página `/upsell` apresenta cinco cenários, logos e uma imagem ilustrativa da coleção digital. Preço editorial: R$ 37 pelo pacote (R$ 7,40 por missão). Esse valor deve corresponder à oferta real da Cakto; não há desconto anterior ou prazo fictício.
+
+`CAKTO_UPSELL_BUTTONS_HTML` recebe o código EXATO de aceite/recusa do gerador da Cakto para a compra pós-checkout. `NEXT_PUBLIC_SEASON_CHECKOUT_URL` recebe o checkout direto HTTPS de `pay.cakto.com.br`, usado por quem retorna de dentro do app (`?origem=clube`). O modo do app não reutiliza o aceite de uma sessão de compra antiga. Sem nenhum checkout configurado, a compra fica indisponível; nenhum pedido é simulado.
+
+O aceite de um upsell de cartão pode cobrar imediatamente: preservar os botões oficiais e testar o fluxo no painel. Pix/cartão dependem da oferta configurada. Redirecione o comprador do pacote ao Clube e oriente ativação com o e-mail e ID completo do pedido do upsell. A página explica essa ativação; ainda não existe associação automática por webhook.
+
+As cinco histórias e os materiais ficam no projeto clubedamissao, com validação da compra feita pela API Cakto. Configure e teste as credenciais nesse projeto antes de habilitar a venda deste pacote. Não informe disponibilidade comercial antes dessa etapa.
+
+O embed público da oferta `quy8xc5` está em `src/lib/cakto-upsell.ts`, com aceite e recusa em `members_area`, conforme gerado no painel. A cobrança permanece desativada por padrão: defina `SEASON_SALES_ENABLED=true` apenas depois de configurar e validar o acesso no app. O ID da oferta não substitui o UUID do produto exigido pela API de pedidos.
