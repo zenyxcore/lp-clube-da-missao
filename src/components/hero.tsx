@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import { Check, ChevronDown, Compass } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 import { offer } from "@/lib/config";
 import { Art, Cta } from "./shared";
 export function Hero() {
@@ -27,41 +26,35 @@ export function Hero() {
           <span>sua casa em uma</span>
           <em>Grande Aventura!</em>
         </h1>
-        <div className="hero-film-frame">
+        <div className="hero-film-frame hero-film-frame--vturb">
           <span className="frame-corner top-left" aria-hidden="true" />
           <span className="frame-corner top-right" aria-hidden="true" />
           <span className="frame-corner bottom-left" aria-hidden="true" />
           <span className="frame-corner bottom-right" aria-hidden="true" />
-          {offer.videoUrl ? (
-            <video
-              controls
-              playsInline
-              preload="none"
-              poster="/assets/mundo-da-missao.webp"
-              aria-label="Conheça a Missão Secreta"
-            >
-              <source src={offer.videoUrl} />
-              Seu navegador não suporta este vídeo.
-            </video>
-          ) : (
-            <div className="hero-film-poster">
-              <Image
-                src="/assets/mundo-da-missao.webp"
-                alt="O universo da Missão Secreta: uma floresta cheia de descobertas"
-                fill
-                sizes="(max-width: 700px) 94vw, 820px"
-                priority
+          <div className="hero-vturb-wrapper">
+            <div className="hero-vturb-aspect">
+              <iframe
+                frameBorder="0"
+                allowFullScreen
+                src="about:blank"
+                id="ifr_6ad19ecc84ff5e9c27fd1ec8"
+                className="hero-vturb-iframe"
+                referrerPolicy="origin"
+                title="Conheça a Missão Secreta"
+                onLoad={(e) => {
+                  const el = e.currentTarget;
+                  el.onload = null;
+                  el.src =
+                    "https://scripts.converteai.net/d10e2dd0-f3c6-4a5e-ac67-f00f394436c3/players/6ad19ecc84ff5e9c27fd1ec8/v4/embed.html" +
+                    (typeof window !== "undefined"
+                      ? (window.location.search || "?") +
+                        "&vl=" +
+                        encodeURIComponent(window.location.href)
+                      : "");
+                }}
               />
-              <div>
-                <Compass size={22} aria-hidden="true" />
-                <span>UMA MISSÃO. INFINITAS MEMÓRIAS.</span>
-                <Art
-                  name="missao-secreta"
-                  alt="Missão Secreta — A Caça ao Tesouro Perdido"
-                />
-              </div>
             </div>
-          )}
+          </div>
         </div>
         <div className="hero-story-pitch">
           <h2>

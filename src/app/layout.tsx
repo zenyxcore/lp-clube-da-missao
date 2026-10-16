@@ -43,6 +43,41 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        {/* vturb / smartplayer — otimização */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);`,
+          }}
+        />
+        <link
+          rel="preload"
+          href="https://scripts.converteai.net/d10e2dd0-f3c6-4a5e-ac67-f00f394436c3/players/6ad19ecc84ff5e9c27fd1ec8/v4/embed.html"
+        />
+        <link
+          rel="preload"
+          href="https://scripts.converteai.net/d10e2dd0-f3c6-4a5e-ac67-f00f394436c3/players/6ad19ecc84ff5e9c27fd1ec8/v4/player.js"
+          as="script"
+        />
+        <link
+          rel="preload"
+          href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js"
+          as="script"
+        />
+        <link
+          rel="preload"
+          href="https://cdn.converteai.net/d10e2dd0-f3c6-4a5e-ac67-f00f394436c3/6ad19ec82450cd792a944de9/main.m3u8"
+          as="fetch"
+        />
+        <link rel="dns-prefetch" href="https://cdn.converteai.net" />
+        <link rel="dns-prefetch" href="https://scripts.converteai.net" />
+        <link rel="dns-prefetch" href="https://images.converteai.net" />
+        <link rel="dns-prefetch" href="https://license.vturb.com" />
+        <script
+          src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js"
+          async
+        />
+      </head>
       <body className={`${sans.variable} ${display.variable}`}>{children}</body>
     </html>
   );
