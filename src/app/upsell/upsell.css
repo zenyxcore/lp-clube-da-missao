@@ -20,7 +20,7 @@
 .expedition-hero h1 em{display:inline-block}
 .expedition-lead{font-size:16px;line-height:1.9;color:#cbc6d2;max-width:490px;margin:0 0 30px}
 .expedition-lead strong{font-weight:600;color:#fff0ce}
-.expedition-cta,.expedition-offer .season-buy{min-height:56px;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid #f7d89e;background:linear-gradient(120deg,#f2dba9,#d7a85c);color:#292332;border-radius:9px;padding:18px 24px;font:700 13px/1.5 var(--font-sans),sans-serif;box-shadow:0 7px 30px #0003;cursor:pointer;transition:transform .18s,box-shadow .18s}
+.expedition-cta,.expedition-offer .season-buy{min-height:56px;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid #68b88a;background:linear-gradient(160deg,#11916b,#075e46);color:#fff5e5;border-radius:9px;padding:18px 24px;font:700 13px/1.5 var(--font-sans),sans-serif;box-shadow:0 4px 0 #033b2d,0 9px 20px #001b1a40;cursor:pointer;transition:transform .18s,box-shadow .18s}
 .expedition-cta:hover,.expedition-offer .season-buy:hover{transform:translateY(-2px);box-shadow:0 10px 35px #0004}
 .expedition-hero-note{font-size:11px;color:#aeb1c4;line-height:1.7;margin:16px 0 0}
 .expedition-collection{position:relative;min-width:0;margin:0;padding:30px 0 0}
@@ -90,7 +90,7 @@
 .expedition-offer .season-buy:disabled{cursor:default;opacity:.6;transform:none}
 .expedition-offer .season-unavailable{font-size:11px;line-height:1.8;color:#795c62;margin:12px 0}
 .expedition-offer cakto-upsell-buttons{display:block;width:100%}
-.expedition-offer cakto-upsell-accept::part(button){width:100%;min-height:56px;padding:17px 14px;font-size:13px;font-weight:700;border-radius:9px;color:#2c2433;background:linear-gradient(120deg,#f2dba9,#d7a85c);border:1px solid #b78e54;line-height:1.5}
+.expedition-offer cakto-upsell-accept::part(button){width:100%;min-height:56px;padding:17px 14px;font-size:13px;font-weight:700;border-radius:9px;color:#fff5e5;background:linear-gradient(160deg,#11916b,#075e46);border:1px solid #68b88a;box-shadow:0 4px 0 #033b2d,0 9px 20px #001b1a40;line-height:1.5}
 .expedition-offer cakto-upsell-reject::part(button){min-height:44px;margin-top:10px;padding:12px;font-size:11px;line-height:1.7;background:transparent;color:#796b74;text-decoration:underline;box-shadow:none}
 .expedition-decline{display:block;font-size:11px;line-height:1.7;color:#796b74!important;text-decoration:underline!important;padding:14px 0;min-height:44px}
 .expedition-purchase-note{display:flex;gap:9px;text-align:left;border-top:1px solid #b99d7640;padding-top:18px;margin-top:18px;font-size:10px;color:#817379;line-height:1.8}
