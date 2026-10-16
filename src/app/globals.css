@@ -5678,39 +5678,57 @@ html {
 }
 .upsell-adventure-list li {
   min-width: 0;
-  min-height: 112px;
+  min-height: 0;
+  position: relative;
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr) 19px;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 10px 9px 8px;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  align-content: start;
+  gap: 9px;
+  padding: 12px 10px 13px;
   border: 1px solid #d7c29032;
-  border-radius: 12px;
-  background: linear-gradient(130deg, #ffffff12, #ffffff05);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #ffffff14, #ffffff05);
   color: #e6eadf;
 }
 .upsell-mission-art {
-  width: 92px;
-  height: 92px;
+  width: 132px;
+  height: 132px;
+  position: relative;
   display: grid;
   place-items: center;
-  overflow: hidden;
-  border: 1px solid #d7b65d80;
-  border-radius: 14px;
-  background: radial-gradient(circle, #e7bb5228, #07513f40 68%);
-  box-shadow: inset 0 0 0 3px #f5d67c12, 0 4px 12px #0003;
+  border: 1px solid #d7b65d70;
+  border-radius: 18px;
+  background: radial-gradient(circle, #e7bb5230 0, #07513f52 70%);
+  box-shadow: inset 0 0 0 4px #f5d67c14, 0 5px 15px #0003;
 }
 .upsell-mission-image {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 96%;
+  height: 96%;
   object-fit: contain;
   filter: drop-shadow(0 3px 5px #0006);
 }
+.upsell-adventure-list .upsell-mission-check {
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #d5f1d9;
+  border-radius: 50%;
+  background: #168452;
+  color: #ffffff;
+  box-shadow: 0 2px 8px #0005;
+}
 .upsell-mission-title {
+  width: 100%;
   min-width: 0;
   display: grid;
-  gap: 3px;
+  justify-items: center;
+  gap: 5px;
   line-height: 1.25;
 }
 .upsell-mission-title small {
@@ -5721,19 +5739,15 @@ html {
 }
 .upsell-mission-title strong {
   color: #f1ecdc;
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
 }
-.upsell-adventure-list .upsell-mission-check {
-  width: 19px;
-  height: 19px;
-  flex: 0 0 19px;
-  display: grid;
-  place-items: center;
-  margin-top: -1px;
-  border: 1px solid #e9c160;
-  border-radius: 50%;
-  color: #e9c160;
+.upsell-mission-title .upsell-mission-details {
+  color: #cbd9cc;
+  font-size: 9px;
+  letter-spacing: 0.03em;
+  font-weight: 500;
 }
 .upsell-note {
   max-width: 570px;
@@ -5961,22 +5975,20 @@ html {
     text-align: left;
   }
   .upsell-adventure-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     text-align: left;
-    gap: 10px;
+    gap: 9px;
   }
   .upsell-adventure-list li {
-    min-height: 112px;
-    grid-template-columns: 96px minmax(0, 1fr) 19px;
-    gap: 12px;
-    padding: 8px 11px 8px 8px;
+    gap: 8px;
+    padding: 9px 7px 10px;
   }
   .upsell-mission-art {
-    width: 96px;
-    height: 96px;
+    width: 114px;
+    height: 114px;
   }
   .upsell-mission-title strong {
-    font-size: 14px;
+    font-size: 12px;
   }
   .upsell-note {
     margin: 12px auto 0;
@@ -6035,7 +6047,19 @@ html {
     width: calc(100% - 22px);
   }
   .upsell-adventure-list {
-    grid-template-columns: 1fr;
     gap: 7px;
+  }
+  .upsell-adventure-list li {
+    padding: 8px 5px 9px;
+  }
+  .upsell-mission-art {
+    width: 100px;
+    height: 100px;
+  }
+  .upsell-mission-title strong {
+    font-size: 11px;
+  }
+  .upsell-mission-title .upsell-mission-details {
+    font-size: 8px;
   }
 }

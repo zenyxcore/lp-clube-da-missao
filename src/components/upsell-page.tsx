@@ -85,8 +85,8 @@ export function UpsellPage({ caktoSnippet }: { caktoSnippet: string }) {
                 <span>5</span>
               </div>
               <div>
-                <strong>Temporada de Novas Aventuras</strong>
-                <span>5 histórias • 30 desafios • para imprimir</span>
+                <strong>Você leva 5 novas missões</strong>
+                <span>5 histórias • 30 desafios • prontas para imprimir</span>
               </div>
             </div>
 
@@ -98,17 +98,18 @@ export function UpsellPage({ caktoSnippet }: { caktoSnippet: string }) {
                       className="upsell-mission-image"
                       src={adventure.image}
                       alt={adventure.title}
-                      width={112}
-                      height={112}
-                      sizes="(max-width: 760px) 100px, 88px"
+                      width={140}
+                      height={140}
+                      sizes="(max-width: 390px) 100px, (max-width: 760px) 114px, 132px"
                     />
+                    <span className="upsell-mission-check" aria-hidden="true">
+                      <Check size={13} strokeWidth={3} />
+                    </span>
                   </span>
                   <span className="upsell-mission-title">
                     <small>MISSÃO 0{index + 1}</small>
                     <strong>{adventure.title}</strong>
-                  </span>
-                  <span className="upsell-mission-check" aria-hidden="true">
-                    <Check size={13} strokeWidth={3} />
+                    <small className="upsell-mission-details">1 história + 6 desafios</small>
                   </span>
                 </li>
               ))}
