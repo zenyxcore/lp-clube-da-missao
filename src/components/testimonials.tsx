@@ -45,13 +45,14 @@ export function Testimonials() {
           >
             {feedbacks.map((number) => (
               <figure className="feedback-card" key={number}>
-                <Image
-                  src={`/testimonials/feedback-${number}.webp`}
-                  alt={`Print de feedback de uma família sobre o Clube da Missão, ${number} de 5`}
-                  width={600}
-                  height={1304}
-                  sizes="(max-width: 640px) 78vw, (max-width: 1100px) 38vw, 27vw"
-                />
+                <div className="feedback-image-stage">
+                  <Image
+                    src={`/testimonials/feedback-${number}.webp`}
+                    alt={`Print de feedback de uma família sobre o Clube da Missão, ${number} de 5`}
+                    fill
+                    sizes="(max-width: 640px) 82vw, (max-width: 1100px) 38vw, 27vw"
+                  />
+                </div>
               </figure>
             ))}
           </div>
