@@ -93,13 +93,16 @@ export function UpsellPage({ caktoSnippet }: { caktoSnippet: string }) {
             <ul className="upsell-adventure-list">
               {adventures.map((adventure, index) => (
                 <li key={adventure.title}>
-                  <Image
-                    className="upsell-mission-image"
-                    src={adventure.image}
-                    alt={adventure.title}
-                    width={80}
-                    height={80}
-                  />
+                  <span className="upsell-mission-art">
+                    <Image
+                      className="upsell-mission-image"
+                      src={adventure.image}
+                      alt={adventure.title}
+                      width={112}
+                      height={112}
+                      sizes="(max-width: 760px) 100px, 88px"
+                    />
+                  </span>
                   <span className="upsell-mission-title">
                     <small>MISSÃO 0{index + 1}</small>
                     <strong>{adventure.title}</strong>
