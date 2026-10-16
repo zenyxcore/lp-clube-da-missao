@@ -1,22 +1,24 @@
 "use client";
-import { offer } from "@/lib/config";
 import { useClock } from "./shared";
+
+const dateFormatter = new Intl.DateTimeFormat("pt-BR", {
+  timeZone: "America/Sao_Paulo",
+  day: "2-digit",
+  month: "2-digit",
+  year: "numeric",
+});
+
 export function Announcement() {
-  const now = useClock(Boolean(offer.endsAt)),
-    end = Date.parse(offer.endsAt);
-  const left = now && Number.isFinite(end) ? Math.max(0, end - now) : 0;
+  const now = useClock();
+  const today = now !== null ? dateFormatter.format(now) : null;
+
   return (
     <div className="announcement">
-      <span className="launch-tag">EDIÇÃO DE ESTREIA</span>
       <p>
-        <strong>Condição especial de lançamento</strong>
+        <strong>
+          Condição especial termina hoje{today ? `, ${today}` : ""}
+        </strong>
       </p>
-      {left > 0 && (
-        <span className="countdown">
-          Oferta encerra em {Math.floor(left / 86400000)}d{" "}
-          {Math.floor(left / 3600000) % 24}h {Math.floor(left / 60000) % 60}min
-        </span>
-      )}
     </div>
   );
 }
