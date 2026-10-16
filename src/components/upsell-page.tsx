@@ -38,12 +38,9 @@ function CaktoButtons({ snippet, checkoutUrl }: { snippet: string; checkoutUrl:s
 
 const DESTINATION_LABELS = ['Decifre os sinais', 'Atravesse o portal', 'Investigue o mistério', 'Siga os rastros', 'Acenda a descoberta'];
 const FAQS = [
-  ['O que entra na minha coleção?', 'As cinco aventuras apresentadas nesta página, com histórias próprias, desafios, guias do responsável e pistas essenciais para preparar cada missão. O pacote é adicional à Missão Secreta — O Tesouro Perdido.'],
-  ['Preciso fazer as missões em uma ordem?', 'Não. Depois de ativar o pacote, sua equipe escolhe no mapa qual aventura quer começar. Vocês podem reservar cada história para um novo momento em família.'],
-  ['Como acesso depois da compra?', 'Após a aprovação do pagamento, abra o mapa do Clube e escolha “Já comprei, ativar meu pacote”. Confirme o e-mail e o ID completo do pedido das cinco aventuras. O progresso das missões fica neste navegador.'],
-  ['É uma assinatura?', 'Não. É uma compra única do pacote por R$ 37, sem mensalidade. As formas de pagamento e o valor final são apresentados no checkout.'],
-  ['Preciso comprar acessórios?', 'Não. Os materiais essenciais de cada missão já estão incluídos. Você prepara as pistas e uma surpresa simples com objetos de casa. Crianças de 5 a 9 anos brincam acompanhadas por um adulto.'],
-  ['Vou receber uma caixa pelo correio?', 'Não. A caixa e as capas são uma representação ilustrativa da coleção digital. As aventuras ficam no Clube, com materiais para imprimir. Nenhum item físico é enviado.'],
+  ['Como libero as novas missões?', 'Após a aprovação do pagamento, abra o mapa do Clube e toque em “Já comprei, ativar meu pacote”. Informe o e-mail e o ID completo do pedido deste pacote.'],
+  ['Posso escolher por qual começar?', 'Sim. As cinco missões ficam disponíveis no mapa. Sua equipe escolhe a ordem e quando brincar.'],
+  ['É uma assinatura ou uma entrega física?', 'É uma compra única, sem mensalidade. As histórias e os materiais para imprimir ficam no Clube. Nenhum item físico é enviado.'],
 ];
 
 export function UpsellPage({ caktoSnippet, checkoutUrl, fromApp }: { caktoSnippet: string; checkoutUrl: string; fromApp: boolean }) {
@@ -72,9 +69,9 @@ export function UpsellPage({ caktoSnippet, checkoutUrl, fromApp }: { caktoSnippe
         <div className="expedition-hero-copy">
           <p className="expedition-eyebrow">{fromApp ? 'NOVOS DESTINOS PARA SUA EQUIPE' : 'UM CONVITE PARA CONTINUAR A AVENTURA'}</p>
           <h1 id="expedition-title">A primeira missão<br />é só <em>o começo.</em></h1>
-          <p className="expedition-lead">O Clube tem novos mundos esperando pelos seus aventureiros. Acrescente <strong>cinco histórias à sua coleção</strong> e tenham sempre um próximo destino para descobrir juntos.</p>
+          <p className="expedition-lead"><strong>Mais cinco aventuras para viver em família.</strong> Histórias, desafios e pistas prontos para a próxima descoberta.</p>
           <a className="expedition-cta" href="#pacote">Quero as cinco novas aventuras <ArrowRight size={19} aria-hidden="true" /></a>
-          <p className="expedition-hero-note">Uma única compra. Muitas próximas descobertas.</p>
+          <p className="expedition-hero-note">Pacote completo por R$ 37 · Pagamento único</p>
         </div>
         <figure className="expedition-collection">
           <div className="expedition-collection-label"><Compass size={17} aria-hidden="true" /> A COLEÇÃO COMPLETA</div>
@@ -83,15 +80,9 @@ export function UpsellPage({ caktoSnippet, checkoutUrl, fromApp }: { caktoSnippe
         </figure>
       </section>
 
-      <div className="expedition-passport expedition-container" aria-label="O que a coleção inclui">
-        <div><span>01 / A COLEÇÃO</span><strong>5 novas histórias</strong><small>Um mundo diferente em cada missão.</small></div>
-        <div><span>02 / A DESCOBERTA</span><strong>30 desafios</strong><small>Pistas para a equipe resolver junta.</small></div>
-        <div><span>03 / A PRATICIDADE</span><strong>Tudo no mesmo Clube</strong><small>Histórias, guias e materiais organizados.</small></div>
-      </div>
-
       <section className="expedition-destinations" id="novas-missoes" aria-labelledby="worlds-title">
         <div className="expedition-container">
-          <div className="expedition-section-heading"><p className="expedition-eyebrow">ABRA O ATLAS. ESCOLHA SEU PRÓXIMO DESTINO.</p><h2 id="worlds-title">Cinco mundos.<br /><em>Um novo capítulo em cada um.</em></h2><p>Do silêncio de uma estação espacial aos sinais de um farol, cada história convida a equipe a investigar, imaginar e descobrir.</p></div>
+          <div className="expedition-section-heading"><p className="expedition-eyebrow">SUA PRÓXIMA AVENTURA COMEÇA AQUI</p><h2 id="worlds-title">Cinco mundos.<br /><em>Novas descobertas juntos.</em></h2><p>Escolham um destino. O Clube guia a história; vocês resolvem as pistas juntos.</p></div>
           <div className="expedition-worlds" ref={worlds} onScroll={() => {
             const element = worlds.current;
             if (!element || window.matchMedia('(min-width: 761px)').matches) return;
@@ -102,7 +93,7 @@ export function UpsellPage({ caktoSnippet, checkoutUrl, fromApp }: { caktoSnippe
           }}>
             {SEASON_CATALOG.map((mission, index) => <article className="expedition-world" key={mission.id} style={{ '--world-color': mission.color } as CSSProperties}>
               <div className="expedition-world-scene"><Image src={mission.scene} alt="" fill sizes="(max-width: 760px) 85vw, (max-width: 1050px) 45vw, 33vw" /><span className="expedition-world-number">DESTINO 0{index + 1}</span><Image className="expedition-world-logo" src={mission.logo} alt="" width={210} height={210} sizes="210px" /></div>
-              <div className="expedition-world-copy"><span className="expedition-world-invitation">{DESTINATION_LABELS[index]}</span><h3>{mission.title}</h3><p>{mission.intro}</p><div className="expedition-world-detail"><Compass size={15} aria-hidden="true" /><span>{mission.benefit}</span></div><small>História própria · Desafios · Guia e pistas</small></div>
+              <div className="expedition-world-copy"><span className="expedition-world-invitation">{DESTINATION_LABELS[index]}</span><h3>{mission.title}</h3><p>{mission.intro}</p></div>
             </article>)}
           </div>
           <div className="expedition-carousel-controls" aria-label="Navegar pelas aventuras"><button type="button" aria-label="Ver aventura anterior" onClick={() => moveWorld(-1)} disabled={activeWorld === 0}><ChevronLeft size={22} /></button><span>0{activeWorld + 1} <i>/ 05</i><small>Deslize para explorar os destinos</small></span><button type="button" aria-label="Ver próxima aventura" onClick={() => moveWorld(1)} disabled={activeWorld === 4}><ChevronRight size={22} /></button></div>
@@ -110,18 +101,12 @@ export function UpsellPage({ caktoSnippet, checkoutUrl, fromApp }: { caktoSnippe
         </div>
       </section>
 
-      <section className="expedition-ritual expedition-container" aria-labelledby="ritual-title"><div><p className="expedition-eyebrow">NOVAS HISTÓRIAS. O MESMO JEITO DE BRINCAR.</p><h2 id="ritual-title">A surpresa muda.<br /><em>O guia continua com você.</em></h2><p>Você não precisa inventar os enigmas nem construir uma história do zero. Cada aventura já tem seu caminho preparado.</p></div><ol>{[
-        ['Escolham o próximo mundo', 'Ative o pacote com os dados da compra e abra uma das cinco aventuras no mapa do Clube.'],
-        ['Prepare a descoberta', 'Siga o guia da missão, imprima as pistas e organize os esconderijos com objetos de casa.'],
-        ['Reúnam os aventureiros', 'Acompanhe a equipe na história e nos desafios. Ao final, guardem o certificado dessa nova conquista.'],
-      ].map(([title, text], index) => <li key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol></section>
-
       <section className="expedition-package" id="pacote" aria-labelledby="package-title"><div className="expedition-package-layout expedition-container">
-        <div className="expedition-package-story"><p className="expedition-eyebrow">O PRÓXIMO CAPÍTULO DA SUA COLEÇÃO</p><h2 id="package-title">Leve os cinco mundos.<br /><em>Escolham quando explorar.</em></h2><p>Uma aventura para o próximo fim de semana. Outra para uma tarde em casa. Cinco novos motivos para reunir a equipe e abrir o mapa outra vez.</p><Image src="/aventuras/colecao-premium.webp" alt="As cinco aventuras representadas em uma coleção ilustrativa" width={1536} height={1024} sizes="(max-width: 800px) 100vw, 50vw" /><div className="expedition-collection-benefits"><span><Check size={16} /> Cinco histórias completas</span><span><Check size={16} /> Materiais de cada missão</span><span><Check size={16} /> Sem mensalidade</span></div></div>
-        <div className="expedition-price-card"><span className="expedition-price-ribbon">TEMPORADA DE NOVAS AVENTURAS</span><h3>Sua coleção com<br />cinco novos destinos.</h3><ul className="expedition-included">{SEASON_CATALOG.map(mission => <li key={mission.id}><Image src={mission.logo} alt="" width={48} height={48} /><span>{mission.title}</span><Check size={15} aria-hidden="true" /></li>)}</ul><div className="expedition-price"><span>Valor do pacote completo</span><strong>R$ {SEASON_PRICE.toFixed(2).replace('.', ',')}</strong><p>Apenas <b>R$ {(SEASON_PRICE / 5).toFixed(2).replace('.', ',')} por aventura</b> no pacote.</p></div><p className="expedition-payment">Pagamento único. Pix ou cartão, conforme as opções do checkout. Confira o valor final antes de concluir.</p><CaktoButtons snippet={fromApp ? '' : caktoSnippet} checkoutUrl={checkoutUrl} />{(fromApp || !caktoSnippet) && <Link className="expedition-decline" href="https://clubedamissao.vercel.app/">{fromApp ? 'Voltar ao meu Clube' : 'Continuar apenas com a Missão Secreta'}</Link>}<p className="expedition-purchase-note"><ShieldCheck size={18} aria-hidden="true" /><span>Pacote opcional, separado de O Tesouro Perdido. Sua missão principal continua independente desta compra.</span></p></div>
+        <div className="expedition-package-story"><p className="expedition-eyebrow">TUDO PRONTO PARA CONTINUAR</p><h2 id="package-title">Uma coleção inteira.<br /><em>Muitas tardes de aventura.</em></h2><p>Cada missão inclui a história, os desafios, o guia do responsável e as pistas. Você só prepara o cenário e reúne a equipe.</p><ol className="expedition-simple-steps"><li><span>01</span><div><strong>Ative no Clube</strong><p>Use o e-mail e o ID do pedido aprovado.</p></div></li><li><span>02</span><div><strong>Prepare as pistas</strong><p>Siga o guia da aventura escolhida.</p></div></li><li><span>03</span><div><strong>Comecem a missão</strong><p>A história conduz a diversão em família.</p></div></li></ol><div className="expedition-collection-benefits"><span><Check size={16} /> Cinco histórias completas</span><span><Check size={16} /> Materiais de cada missão</span><span><Check size={16} /> Sem mensalidade</span></div></div>
+        <div className="expedition-price-card"><span className="expedition-price-ribbon">TEMPORADA DE NOVAS AVENTURAS</span><h3>Sua coleção com<br />cinco novos destinos.</h3><ul className="expedition-included">{SEASON_CATALOG.map(mission => <li key={mission.id}><Image src={mission.logo} alt="" width={48} height={48} /><span>{mission.title}</span><Check size={15} aria-hidden="true" /></li>)}</ul><div className="expedition-price"><span>Valor do pacote completo</span><strong>R$ {SEASON_PRICE.toFixed(2).replace('.', ',')}</strong><p>Apenas <b>R$ {(SEASON_PRICE / 5).toFixed(2).replace('.', ',')} por aventura</b> no pacote.</p></div><p className="expedition-payment">Pagamento único · Pix ou cartão</p><CaktoButtons snippet={fromApp ? '' : caktoSnippet} checkoutUrl={checkoutUrl} />{(fromApp || !caktoSnippet) && <Link className="expedition-decline" href="https://clubedamissao.vercel.app/">{fromApp ? 'Voltar ao meu Clube' : 'Continuar apenas com a Missão Secreta'}</Link>}<p className="expedition-purchase-note"><ShieldCheck size={18} aria-hidden="true" /><span>Pacote adicional. O Tesouro Perdido continua incluído na sua compra principal.</span></p></div>
       </div></section>
 
-      <section className="expedition-faq expedition-container" aria-labelledby="faq-title"><div><p className="expedition-eyebrow">ANTES DE PARTIR</p><h2 id="faq-title">Tudo certo para<br /><em>a próxima missão?</em></h2><p>As respostas para preparar sua próxima descoberta com tranquilidade.</p></div><div>{FAQS.map(([question, answer]) => <details key={question} name="expedition-faq"><summary>{question}<ChevronDown size={18} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></section>
+      <section className="expedition-faq expedition-container" aria-labelledby="faq-title"><div><p className="expedition-eyebrow">ANTES DE PARTIR</p><h2 id="faq-title">Antes de<br /><em>começar.</em></h2><p>Só o que você precisa saber.</p></div><div>{FAQS.map(([question, answer]) => <details key={question} name="expedition-faq"><summary>{question}<ChevronDown size={18} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></section>
       <footer className="expedition-footer"><Image src="/assets/clube-da-missao.webp" alt="Clube da Missão" width={76} height={76} /><p>A história continua.<br /><strong>A próxima descoberta é de vocês.</strong></p><div><Link href="https://clubedamissao.vercel.app/">Meu Clube</Link><Link href="/privacidade">Privacidade</Link><a href="#topo">Voltar ao topo <ArrowUp size={13} aria-hidden="true" /></a></div></footer>
     </main>
   );
