@@ -1,5 +1,4 @@
 "use client";
-import { offer } from "@/lib/config";
 import { Analytics } from "./analytics";
 import { Announcement } from "./header";
 import { Hero } from "./hero";
@@ -27,9 +26,9 @@ export function Landing() {
         <Demo />
         <Bonuses />
         <Offer />
+        <Testimonials />
         <Benefits />
         <Personalization />
-        <Testimonials items={offer.testimonials} />
         <Trust />
         <FAQ />
         <FinalCTA />
