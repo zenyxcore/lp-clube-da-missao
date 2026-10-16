@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Check, ChevronDown } from "lucide-react";
 import { offer } from "@/lib/config";
 import { Art, Cta } from "./shared";
