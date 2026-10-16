@@ -1361,14 +1361,14 @@ summary:focus-visible {
   margin: 14px auto 18px;
 }
 .feedback-carousel {
-  display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) 44px;
-  align-items: center;
-  gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .feedback-track {
   display: flex;
   align-items: stretch;
+  width: 100%;
   gap: 20px;
   overflow-x: auto;
   padding: 8px 4px 18px;
@@ -1412,6 +1412,12 @@ summary:focus-visible {
   max-height: 100%;
   object-fit: contain;
 }
+.feedback-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
 .feedback-arrow {
   display: grid;
   width: 44px;
@@ -1428,7 +1434,7 @@ summary:focus-visible {
   background: #087254;
 }
 .feedback-hint {
-  margin-top: 12px;
+  margin: 0;
   color: var(--muted);
   font-size: 12px;
   text-align: center;
@@ -1702,10 +1708,6 @@ summary:focus-visible {
   }
   .container {
     width: calc(100% - 40px);
-  }
-  .feedback-carousel {
-    grid-template-columns: 36px minmax(0, 1fr) 36px;
-    gap: 7px;
   }
   .feedback-arrow {
     width: 36px;

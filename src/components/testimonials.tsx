@@ -11,10 +11,24 @@ export function Testimonials() {
 
   function move(direction: -1 | 1) {
     if (!track.current) return;
-    track.current.scrollBy({
-      left: direction * track.current.clientWidth * 0.82,
-      behavior: "smooth",
-    });
+    const slides = Array.from(track.current.children) as HTMLElement[];
+    if (!slides.length) return;
+
+    const trackLeft = track.current.getBoundingClientRect().left + track.current.clientLeft;
+    const activeIndex = slides.reduce((closest, slide, index) => {
+      const closestDistance = Math.abs(
+        slides[closest].getBoundingClientRect().left - trackLeft,
+      );
+      const slideDistance = Math.abs(slide.getBoundingClientRect().left - trackLeft);
+      return slideDistance < closestDistance ? index : closest;
+    }, 0);
+    const nextIndex = Math.max(0, Math.min(slides.length - 1, activeIndex + direction));
+    const nextLeft =
+      track.current.scrollLeft +
+      slides[nextIndex].getBoundingClientRect().left -
+      trackLeft;
+
+    track.current.scrollTo({ left: nextLeft, behavior: "smooth" });
   }
 
   return (
@@ -28,14 +42,6 @@ export function Testimonials() {
         </div>
 
         <div className="feedback-carousel">
-          <button
-            className="feedback-arrow"
-            type="button"
-            aria-label="Ver feedbacks anteriores"
-            onClick={() => move(-1)}
-          >
-            <ChevronLeft size={22} aria-hidden="true" />
-          </button>
           <div
             className="feedback-track"
             ref={track}
@@ -56,16 +62,26 @@ export function Testimonials() {
               </figure>
             ))}
           </div>
-          <button
-            className="feedback-arrow"
-            type="button"
-            aria-label="Ver próximos feedbacks"
-            onClick={() => move(1)}
-          >
-            <ChevronRight size={22} aria-hidden="true" />
-          </button>
+          <div className="feedback-controls">
+            <button
+              className="feedback-arrow"
+              type="button"
+              aria-label="Ver feedback anterior"
+              onClick={() => move(-1)}
+            >
+              <ChevronLeft size={22} aria-hidden="true" />
+            </button>
+            <p className="feedback-hint">Deslize para ver os feedbacks.</p>
+            <button
+              className="feedback-arrow"
+              type="button"
+              aria-label="Ver próximo feedback"
+              onClick={() => move(1)}
+            >
+              <ChevronRight size={22} aria-hidden="true" />
+            </button>
+          </div>
         </div>
-        <p className="feedback-hint">Deslize para ver os 5 feedbacks</p>
       </div>
     </section>
   );
