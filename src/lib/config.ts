@@ -32,9 +32,9 @@ export const offer = {
   endsAt: process.env.NEXT_PUBLIC_OFFER_END_AT || "",
   videoUrl: safeUrl(process.env.NEXT_PUBLIC_DEMO_VIDEO_URL), // Arquivo MP4/WebM, sem autoplay.
   metaPixelId: /^\d{5,20}$/.test(
-    process.env.NEXT_PUBLIC_META_PIXEL_ID || "1094666426766908",
+    process.env.NEXT_PUBLIC_META_PIXEL_ID || "1792505741795738",
   )
-    ? process.env.NEXT_PUBLIC_META_PIXEL_ID || "1094666426766908"
+    ? process.env.NEXT_PUBLIC_META_PIXEL_ID || "1792505741795738"
     : "",
   termsUrl: safeUrl(process.env.NEXT_PUBLIC_TERMS_URL),
   privacyUrl:

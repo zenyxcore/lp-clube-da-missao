@@ -23,7 +23,7 @@ O checkout Cakto da Missão Secreta está configurado como destino padrão em `s
 
 ## Campanhas e consentimento
 
-Meta Pixel `1094666426766908` está configurado e usa a página `/privacidade`; só carrega após permissão. Aceitar/recusar têm o mesmo destaque; preferência pode ser alterada no rodapé. Eventos: PageView, ViewContent e InitiateCheckout (somente no clique em checkout real). **Não existe evento Purchase**. Revogar consentimento desativa o envio e remove a campanha lembrada nesta sessão; não apaga retroativamente dados já enviados ao provedor.
+Meta Pixel `1792505741795738` está configurado e usa a página `/privacidade`; só carrega após permissão. Aceitar/recusar têm o mesmo destaque; preferência pode ser alterada no rodapé. Eventos: PageView, ViewContent e InitiateCheckout (somente no clique em checkout real). **Não existe evento Purchase**. Revogar consentimento desativa o envio e remove a campanha lembrada nesta sessão; não apaga retroativamente dados já enviados ao provedor.
 
 UTMs, fbclid e gclid da URL atual são preservados no checkout por lista permitida; outros parâmetros não são enviados. Persistência de campanha em sessionStorage só acontece após consentimento. A configuração e os testes não usam pixels reais nem transações.
 
