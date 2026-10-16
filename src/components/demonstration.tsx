@@ -32,6 +32,12 @@ export const shots = [
 ];
 const materialPreviews = [
   {
+    src: "/demo/pista-primeiro-sinal.webp",
+    alt: "Ilustração do cartão O Primeiro Sinal, incluído na Missão Secreta, sendo escondido no sofá",
+    label: "As pistas incluídas na Missão Secreta",
+    kind: "illustration",
+  },
+  {
     src: "/demo/carta-nas-maos.webp",
     alt: "Carta temática impressa e segurada pelas mãos",
     label: "Uma pista para descobrir de verdade",
@@ -47,12 +53,6 @@ const materialPreviews = [
     src: "/demo/certificado-aventureiro.webp",
     alt: "Certificado de Aventureiro impresso com materiais da missão",
     label: "Certificado de Aventureiro",
-    kind: "print",
-  },
-  {
-    src: "/demo/tag-aventureiro.webp",
-    alt: "Identificação de Aventureiro sendo colocada no peito da criança",
-    label: "Identificação de Aventureiro",
     kind: "print",
   },
   {
@@ -148,7 +148,7 @@ export function DeliverableCarousel() {
       </div>
       <div className="deliverable-caption">
         <span className="deliverable-type">
-          {current.kind.includes("screen") ? "TELA REAL DO APP" : "MATERIAL IMPRESSO"}
+          {current.kind.includes("screen") ? "TELA REAL DO APP" : current.kind === "illustration" ? "SIMULAÇÃO ILUSTRATIVA DA PISTA IMPRESSA" : "MATERIAL IMPRESSO"}
         </span>
         <h3>{current.label}</h3>
         <div className="deliverable-controls">
