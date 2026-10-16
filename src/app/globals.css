@@ -1378,23 +1378,23 @@ summary:focus-visible {
   scrollbar-width: thin;
   overscroll-behavior-x: contain;
 }
-.feedback-card {
+.testimonials .feedback-card {
   flex: 0 0 clamp(230px, 27vw, 310px);
   overflow: hidden;
-  padding: 9px;
+  padding: 0;
   border: 1px solid #a88a43;
-  border-radius: 14px;
-  background: linear-gradient(145deg, #fff5dc, #f3d9a3);
-  box-shadow: 0 14px 36px #0003;
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: 0 4px 14px #0002;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
-.feedback-card img {
+.testimonials .feedback-card img {
   width: 100%;
   height: auto;
-  max-height: 560px;
-  border-radius: 7px;
-  object-fit: contain;
-  object-position: top;
+  max-height: none;
+  border-radius: 9px;
+  object-fit: unset;
 }
 .feedback-arrow {
   display: grid;
@@ -1698,8 +1698,8 @@ summary:focus-visible {
   .feedback-track {
     gap: 12px;
   }
-  .feedback-card {
-    flex-basis: min(78vw, 290px);
+  .testimonials .feedback-card {
+    flex-basis: min(82vw, 340px);
   }
   .announcement {
     font-size: 7px;
