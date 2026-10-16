@@ -37,9 +37,8 @@ export function Hero() {
           priority
         />
         <h1>
-          <span>Transforme</span>
-          <span>sua casa em uma</span>
-          <em>Grande Aventura!</em>
+          <span>Uma carta. Uma casa.</span>
+          <em>Um tesouro escondido.</em>
         </h1>
         <div className="hero-film-frame hero-film-frame--vturb">
           <span className="frame-corner top-left" aria-hidden="true" />
@@ -62,15 +61,15 @@ export function Hero() {
         </div>
         <div className="hero-story-pitch">
           <h2>
-            Uma caça ao tesouro em casa.
+            Você prepara os esconderijos.
             <br />
-            <em>Uma lembrança para sempre.</em>
+            <em>A missão guia a brincadeira.</em>
           </h2>
           <p>
-            Pistas escondidas, mistérios para resolver e a alegria de descobrir
-            juntos. Uma aventura pronta para transformar o tempo em família.
+            Abra a história no celular, monte a equipe e siga o guia para preparar
+            a caça ao tesouro. Depois, acompanhe as crianças em cada descoberta.
           </p>
-          <Cta placement="hero">Quero essa aventura para minha família</Cta>
+          <Cta placement="hero">Quero a Missão Secreta</Cta>
           <div className="hero-story-facts">
             <span>
               <Check size={15} /> De 5 a 9 anos
@@ -82,8 +81,9 @@ export function Hero() {
               <Check size={15} /> {offer.billingLabel}
             </span>
           </div>
+          <p className="hero-preparation">Cerca de 10 minutos para preparar · 25–40 minutos para brincar, no ritmo da equipe.</p>
           <a className="hero-discover" href="#aventura">
-            Conheça o que sua família recebe <ChevronDown size={17} />
+            Veja a missão por dentro <ChevronDown size={17} />
           </a>
         </div>
       </div>

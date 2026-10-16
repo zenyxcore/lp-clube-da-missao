@@ -42,8 +42,8 @@ export function Bonuses() {
           ))}
         </div>
         <p className="bonus-reassurance">
-          <Check size={18} /> A experiência completa e os bônus estão no mesmo
-          valor. Nenhuma compra adicional.
+          <Check size={18} /> Os materiais de O Tesouro Perdido e estes dois bônus já estão
+          incluídos. Não é preciso comprar missões extras para jogar esta aventura.
         </p>
         <div className="section-cta">
           <Cta placement="bonuses">Quero a aventura com meus bônus</Cta>

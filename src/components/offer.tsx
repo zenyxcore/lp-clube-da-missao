@@ -10,13 +10,12 @@ import {
   offer,
   priceLabel,
   referencePriceLabel,
-  installmentPriceLabel,
 } from "@/lib/config";
 import { offerExpired } from "@/lib/campaign";
 import { startCheckout } from "./analytics";
 import { Art, Heading, useClock } from "./shared";
 export function CheckoutButton({
-  label = "Quero comprar essa aventura",
+  label = "Quero a Missão Secreta",
   placement = "offer",
 }: {
   label?: string;
@@ -115,12 +114,6 @@ export function OfferCard({ full = false }: { full?: boolean }) {
         <strong>{priceLabel}</strong>
         <small>à vista · {offer.purchaseLabel.toLowerCase()}</small>
       </div>
-      <div className="installment-option">
-        <strong>
-          ou <b>{offer.installmentCount}x</b> de <b>{installmentPriceLabel}</b>
-        </strong>
-        {!offer.installmentsConfirmed && <small>Simulação sem juros.</small>}
-      </div>
       <div className="ownership-promise">
         <span>
           <InfinityIcon size={19} />
@@ -170,7 +163,7 @@ export function Offer() {
       <div className="container">
         <Heading
           eyebrow="TUDO EM UMA ÚNICA COMPRA"
-          text="História, desafios, materiais para imprimir e bônus. Você prepara a casa; as crianças vivem a aventura."
+          text="A aventura O Tesouro Perdido, os materiais de preparação e os dois bônus em uma única compra."
         >
           Uma missão completa.
           <br />

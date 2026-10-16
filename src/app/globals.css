@@ -6180,3 +6180,13 @@ html {
 
 /* Reduce both dimensions of the vertical LP video by 12%, retaining its aspect ratio. */
 .hero-film-frame--vturb{width:min(352px,88%)}
+
+/* Clearer offer narrative, retaining the established brand and video layout. */
+.hero-preparation{font-size:12px!important;line-height:1.7!important;max-width:480px;margin:17px auto 0!important;color:#d1d4bd!important}
+.hero.hero-story h1{max-width:880px;text-wrap:balance}
+.hero-story h1 span{display:block}
+.hero-story h1 span:first-child:after{content:none}
+#como-funciona .steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+.personalization-description{font-size:16px;line-height:1.8;color:#c5cebd;max-width:480px;margin:20px 0}
+@media(min-width:1000px){.hero.hero-story h1{font-size:clamp(38px,3.5vw,48px)}}
+@media(max-width:700px){.hero.hero-story h1{font-size:clamp(32px,8.4vw,44px);line-height:1.13}#como-funciona .steps{grid-template-columns:1fr}.hero-preparation{font-size:11px!important}.personalization-description{font-size:14px}}

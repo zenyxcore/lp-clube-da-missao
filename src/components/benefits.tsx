@@ -9,11 +9,11 @@ export function Benefits() {
         <Heading
           light
           eyebrow="O QUE VEM NA SUA COMPRA"
-          text="Cada detalhe foi pensado para sua família entrar na história e aproveitar a descoberta."
+          text="Da preparação à última pista, você encontra a história, os materiais e as orientações no mesmo lugar."
         >
-          Abra, prepare e comece
+          Tudo organizado
           <br />
-          <em>a brincar com sua família.</em>
+          <em>para a sua missão.</em>
         </Heading>
         <div className="benefits-grid">
           {resources

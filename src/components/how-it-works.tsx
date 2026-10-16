@@ -2,23 +2,18 @@
 import { Art, Reveal, Heading } from "./shared";
 export const steps = [
   {
-    title: "Abra a missão",
-    text: "No celular ou computador, abra a história que vai guiar a brincadeira.",
-    image: "chest",
-  },
-  {
-    title: "Monte a equipe",
-    text: "Escolha os nomes e os personagens de até 3 crianças.",
+    title: "Abra e monte a equipe",
+    text: "Acesse a missão no celular ou computador. Escolha os nomes e os personagens de até 3 aventureiros.",
     image: "team-avatars",
   },
   {
-    title: "Esconda as pistas",
-    text: "Imprima os materiais e siga o guia para esconder as pistas pela casa.",
+    title: "Prepare os esconderijos",
+    text: "Imprima as pistas e siga o guia do responsável. Os enigmas e os locais sugeridos já estão organizados.",
     image: "openmap",
   },
   {
-    title: "Comece a caça",
-    text: "Acompanhe as crianças: resolvam os desafios e encontrem o tesouro juntos.",
+    title: "Comecem a investigação",
+    text: "Encontrem os cartões, resolvam os desafios no app e descubram o tesouro que você preparou para a equipe.",
     image: "compass",
   },
 ];
@@ -28,11 +23,11 @@ export function HowItWorks() {
       <div className="container">
         <Heading
           eyebrow="COMO A BRINCADEIRA FUNCIONA"
-          text="Um adulto organiza as pistas e acompanha a equipe. Não é preciso inventar os enigmas: a missão já vem preparada."
+          text="Você não precisa criar a história nem inventar os enigmas. Prepare a surpresa com o guia e acompanhe os aventureiros."
         >
-          Você prepara em casa.
+          Do primeiro convite
           <br />
-          <em>Eles entram na aventura.</em>
+          <em>à descoberta do tesouro.</em>
         </Heading>
         <div className="steps">
           {steps.map((s, i) => (

@@ -8,22 +8,22 @@ export function FinalCTA() {
       <Image src="/assets/mundo-da-missao.webp" alt="" fill sizes="100vw" />
       <div className="container">
         <h2>
-          Uma tarde comum pode virar
+          A próxima descoberta
           <br />
-          <em>a aventura que eles vão lembrar.</em>
+          <em>pode começar na sua casa.</em>
         </h2>
         <p>
-          Reúna seus pequenos exploradores, prepare as pistas e descubram juntos
-          o que os espera no fim da missão.
+          Uma carta para abrir, pistas para procurar e uma história para viver
+          juntos. Prepare a missão e convide seus aventureiros.
         </p>
         <p className="final-offer-summary">
-          A Missão Secreta completa e os bônus da edição por{" "}
-          <del>{referencePriceLabel}</del> <b>{priceLabel}</b>. Compra única,
+          De {" "}
+          <del>{referencePriceLabel}</del> por <b>{priceLabel}</b>, com a missão e os dois bônus. Compra única,
           acesso vitalício e sem mensalidade.
         </p>
         <OfferCondition final />
         <CheckoutButton
-          label="Quero viver essa aventura com minha família"
+          label="Quero a Missão Secreta"
           placement="final"
         />
       </div>

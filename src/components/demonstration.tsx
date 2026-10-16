@@ -194,7 +194,7 @@ export function Demo() {
       <div className="container">
         <Heading
           eyebrow="OLHE POR DENTRO"
-          text="Passe pelas telas reais da missão e veja os materiais impressos que fazem a aventura ganhar vida em casa."
+          text="Conheça as pistas da brincadeira e as telas do app que acompanham cada descoberta."
         >
           Veja o material
           <br />
@@ -202,7 +202,7 @@ export function Demo() {
         </Heading>
         <DeliverableCarousel />
         <div className="section-cta">
-          <p>Imagine a alegria de encontrar a próxima pista.</p>
+          <p>Veja como a história no celular se conecta às pistas escondidas pela casa.</p>
           <Cta placement="materials" />
         </div>
       </div>

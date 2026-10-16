@@ -24,11 +24,11 @@ export function Landing() {
         <Hero />
         <HowItWorks />
         <Demo />
+        <Benefits />
+        <Personalization />
         <Bonuses />
         <Offer />
         <Testimonials />
-        <Benefits />
-        <Personalization />
         <Trust />
         <FAQ />
         <FinalCTA />

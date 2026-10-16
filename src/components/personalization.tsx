@@ -8,8 +8,9 @@ export function Personalization() {
       <div className="container personalization-grid">
         <div>
           <h2>
-            Aqui, os pequenos são os protagonistas da história.
+            Uma equipe com os nomes e personagens dos seus aventureiros.
           </h2>
+          <p className="personalization-description">Escolham os personagens antes de começar. Os nomes da equipe acompanham a experiência e aparecem no certificado ao concluir a missão.</p>
           <div className="personalization-cta">
             <Cta placement="personalization" />
           </div>
@@ -22,7 +23,7 @@ export function Personalization() {
               width={150}
               height={150}
             />
-            <span className="eyebrow">CARTÃO DO AVENTUREIRO</span>
+            <span className="eyebrow">PERSONAGEM DA EQUIPE</span>
             <h3>Explorador Miguel</h3>
             <span>Coragem para descobrir.</span>
             <small>EXEMPLO ILUSTRATIVO</small>
