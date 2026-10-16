@@ -1,3 +1,4 @@
+import './upsell.css';
 import type { Metadata } from 'next';
 import { CAKTO_SEASON_UPSELL } from '@/lib/cakto-upsell';
 import { UpsellPage } from '@/components/upsell-page';

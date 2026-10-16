@@ -1,0 +1,117 @@
+.expedition-offer{--night:#121a33;--plum:#30233e;--gold:#e9c47f;--cream:#f5eddb;--ink:#302b3e;background:var(--night);color:var(--cream);isolation:isolate;overflow:clip;font-family:var(--font-sans),sans-serif}
+.expedition-offer *{box-sizing:border-box}
+.expedition-offer h1,.expedition-offer h2,.expedition-offer h3{font-family:var(--font-display),Georgia,serif;font-weight:700;letter-spacing:-.035em}
+.expedition-offer h1 em,.expedition-offer h2 em{font-weight:600;font-style:italic;color:var(--gold)}
+.expedition-offer a{text-decoration:none}
+.expedition-offer button,.expedition-offer a,.expedition-offer summary{-webkit-tap-highlight-color:transparent}
+.expedition-offer :is(a,button,summary):focus-visible{outline:3px solid #efbc6e;outline-offset:5px}
+.expedition-container{width:min(1200px,calc(100% - 64px));margin-inline:auto}
+.expedition-eyebrow{font:700 10px/1.7 var(--font-sans),sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.expedition-header{width:min(1280px,calc(100% - 64px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:112px;border-bottom:1px solid #e3c28b29}
+.expedition-brand{display:flex;align-items:center;gap:18px;color:var(--cream)}
+.expedition-brand img{width:76px;height:76px;object-fit:contain}
+.expedition-brand>span{font-size:9px;letter-spacing:.16em;font-weight:700}
+.expedition-brand small{display:block;font-size:12px;letter-spacing:.015em;font-weight:400;color:#c5becd;margin-top:7px}
+.expedition-optional{font-size:10px;letter-spacing:.04em;display:flex;align-items:center;gap:8px;border:1px solid #e4c58d42;border-radius:100px;padding:10px 14px;color:#e7d1ac}
+.expedition-hero{display:grid;grid-template-columns:.95fr 1.15fr;align-items:center;gap:28px;padding-top:72px;padding-bottom:58px;position:relative}
+.expedition-hero:before{content:'';position:absolute;z-index:-1;width:1050px;height:850px;right:-220px;top:-190px;background:radial-gradient(ellipse,#64436465,transparent 65%);pointer-events:none}
+.expedition-hero-copy{position:relative;z-index:1}
+.expedition-hero h1{font-size:clamp(44px,4.6vw,66px);line-height:1.1;margin:0 0 26px;color:#fff5e1}
+.expedition-hero h1 em{display:inline-block}
+.expedition-lead{font-size:16px;line-height:1.9;color:#cbc6d2;max-width:490px;margin:0 0 30px}
+.expedition-lead strong{font-weight:600;color:#fff0ce}
+.expedition-cta,.expedition-offer .season-buy{min-height:56px;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid #f7d89e;background:linear-gradient(120deg,#f2dba9,#d7a85c);color:#292332;border-radius:9px;padding:18px 24px;font:700 13px/1.5 var(--font-sans),sans-serif;box-shadow:0 7px 30px #0003;cursor:pointer;transition:transform .18s,box-shadow .18s}
+.expedition-cta:hover,.expedition-offer .season-buy:hover{transform:translateY(-2px);box-shadow:0 10px 35px #0004}
+.expedition-hero-note{font-size:11px;color:#aeb1c4;line-height:1.7;margin:16px 0 0}
+.expedition-collection{position:relative;min-width:0;margin:0;padding:30px 0 0}
+.expedition-collection:before{content:'';position:absolute;inset:16px -5px 20px;border:1px solid #d4ba8644;border-radius:50% 50% 10px 10px;transform:rotate(-4deg);pointer-events:none}
+.expedition-collection-label{display:flex;align-items:center;justify-content:center;gap:10px;font-size:9px;letter-spacing:.2em;color:#ebd1a1;position:relative;margin-bottom:22px}
+.expedition-collection>img{position:relative;width:100%;height:auto;border-radius:14px;box-shadow:0 24px 60px #0005;border:1px solid #d2b67b44}
+.expedition-collection figcaption{position:relative;text-align:center;color:#a9a7b7;font-size:9px;line-height:1.8;margin:14px 0 0}
+.expedition-passport{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid #e5c79233;margin-bottom:66px;padding-block:28px}
+.expedition-passport>div{padding:0 32px;border-right:1px solid #e5c79225}
+.expedition-passport>div:first-child{padding-left:0}.expedition-passport>div:last-child{border:0}
+.expedition-passport span{display:block;color:#c3a5c6;font-size:8px;letter-spacing:.14em;margin-bottom:10px}
+.expedition-passport strong{font-family:var(--font-display),serif;font-size:25px;font-weight:700;letter-spacing:-.03em;color:#f3dfb4}
+.expedition-passport small{display:block;color:#b8b5c5;font-size:11px;line-height:1.7;margin-top:6px}
+.expedition-destinations{position:relative;background:#f2e9d9;color:var(--ink);padding:80px 0 65px;border-top:5px solid #b99969;scroll-margin-top:20px;background-image:radial-gradient(ellipse at 0 0,#dbc9b385,transparent 55%),radial-gradient(ellipse at 100% 100%,#dacbb975,transparent 60%)}
+.expedition-section-heading{max-width:750px;margin:0 auto 42px;text-align:center}
+.expedition-destinations .expedition-eyebrow{color:#8c613b}
+.expedition-offer h2{font-size:clamp(32px,3.3vw,46px);line-height:1.2;margin-bottom:20px}
+.expedition-section-heading h2 em{color:#72506e}
+.expedition-section-heading>p:last-child{font-size:15px;line-height:1.9;color:#665b64;max-width:640px;margin:auto}
+.expedition-worlds{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px;position:relative}
+.expedition-world{grid-column:span 2;background:#fff9ee;min-width:0;border:1px solid #b4a08a80;border-radius:15px;overflow:hidden;box-shadow:0 8px 22px #32213a0c}
+.expedition-world:nth-child(4){grid-column:2 / span 2}
+.expedition-world-scene{height:245px;position:relative;isolation:isolate;background:var(--world-color)}
+.expedition-world-scene>img:first-child{object-fit:cover}
+.expedition-world-scene:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#111b2ce6,transparent 80%);z-index:1;pointer-events:none}
+.expedition-world-number{position:absolute;top:17px;left:17px;z-index:3;border:1px solid #e9d5a960;background:#151d36c9;border-radius:100px;padding:6px 10px;font-size:8px;letter-spacing:.12em;color:#f5e5bf}
+.expedition-world-logo{position:absolute!important;z-index:2;left:50%;bottom:-8px;transform:translateX(-50%);width:210px;height:210px;object-fit:contain;filter:drop-shadow(0 7px 12px #0006)}
+.expedition-world-copy{padding:25px 23px 22px}
+.expedition-world-invitation{font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#795f74}
+.expedition-world h3{color:#3c3040;font-size:25px;line-height:1.2;margin:10px 0 14px;min-height:60px}
+.expedition-world-copy>p{font-size:13px;line-height:1.85;color:#6b6264;margin-bottom:19px}
+.expedition-world-detail{display:flex;gap:9px;align-items:flex-start;border-top:1px solid #b6a18c44;padding-top:15px;color:#725b36;font-size:11px;line-height:1.7}
+.expedition-world-detail svg{flex-shrink:0;margin-top:3px}
+.expedition-world-copy>small{display:block;font-size:9px;color:#87786f;margin-top:16px}
+.expedition-carousel-controls{display:none}
+.expedition-worlds-cta{text-align:center;margin-top:35px}
+.expedition-ink-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:13px;line-height:1.7;color:#62405d!important;border-bottom:1px solid #98788c;padding:6px 0}
+.expedition-ritual{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;padding-block:85px}
+.expedition-ritual>div>p:last-child{font-size:14px;line-height:1.85;color:#b8b7c8;max-width:440px}
+.expedition-ritual ol{list-style:none;margin:0;padding:0;display:grid;gap:28px}
+.expedition-ritual li{display:flex;gap:22px;align-items:flex-start}
+.expedition-ritual li>span{font-family:var(--font-display),serif;font-size:25px;color:#dabb83;line-height:1}
+.expedition-ritual h3{font-size:21px;letter-spacing:-.02em;margin-bottom:8px;color:#f1e6d1}
+.expedition-ritual li p{font-size:13px;line-height:1.85;color:#b8b7c8}
+.expedition-package{position:relative;background:radial-gradient(ellipse at 18% 30%,#523148 0%,#2d233c 40%,#191d35 100%);border-block:1px solid #c7a97955;padding-block:80px;scroll-margin-top:24px}
+.expedition-package-layout{display:grid;grid-template-columns:1fr .87fr;gap:65px;align-items:center}
+.expedition-package-story>p:not(.expedition-eyebrow){font-size:15px;line-height:1.9;color:#d4c6d1;max-width:490px}
+.expedition-package-story>img{width:100%;height:auto;border-radius:15px;margin-top:28px;border:1px solid #ceb17d55;box-shadow:0 25px 50px #0004}
+.expedition-collection-benefits{display:grid;gap:10px;font-size:12px;color:#dfd4d8;margin-top:25px}
+.expedition-collection-benefits>span{display:flex;align-items:center;gap:10px}
+.expedition-collection-benefits svg{color:#e9c47f}
+.expedition-price-card{background:#fbf3e2;color:#362c3c;border:1px solid #e5c084;border-radius:17px;box-shadow:0 25px 65px #0004;overflow:hidden;padding:0 30px 24px;text-align:center}
+.expedition-price-ribbon{display:block;margin:0 -30px;padding:15px;background:#34263f;color:#f0d49f;border-bottom:1px solid #b79360;font-size:9px;letter-spacing:.15em}
+.expedition-price-card h3{font-size:31px;line-height:1.2;color:#392e3e;margin:27px 0 21px}
+.expedition-included{padding:0;margin:0;list-style:none;display:grid;gap:6px;text-align:left}
+.expedition-included li{display:flex;gap:12px;align-items:center;padding:6px 0;border-bottom:1px solid #baa28630;min-height:54px}
+.expedition-included img{width:45px;height:45px;object-fit:contain;flex-shrink:0}
+.expedition-included li>span{flex:1;font-size:12px;font-weight:600;line-height:1.5}
+.expedition-included svg{flex-shrink:0;color:#886538}
+.expedition-price{padding-top:24px}
+.expedition-price>span{display:block;font-size:11px;color:#796c72}
+.expedition-price>strong{display:block;font:700 64px/1.25 var(--font-display),serif;letter-spacing:-.06em;color:#43304b;margin:5px 0}
+.expedition-price p{font-size:12px;color:#6c5b68}
+.expedition-payment{font-size:10px;line-height:1.8;color:#7e7178;margin:18px 0}
+.expedition-price-card .upsell-cakto-buttons{margin-top:20px}
+.expedition-offer .season-buy{width:100%;font-size:13px;padding:17px 12px}
+.expedition-offer .season-buy:disabled{cursor:default;opacity:.6;transform:none}
+.expedition-offer .season-unavailable{font-size:11px;line-height:1.8;color:#795c62;margin:12px 0}
+.expedition-offer cakto-upsell-buttons{display:block;width:100%}
+.expedition-offer cakto-upsell-accept::part(button){width:100%;min-height:56px;padding:17px 14px;font-size:13px;font-weight:700;border-radius:9px;color:#2c2433;background:linear-gradient(120deg,#f2dba9,#d7a85c);border:1px solid #b78e54;line-height:1.5}
+.expedition-offer cakto-upsell-reject::part(button){min-height:44px;margin-top:10px;padding:12px;font-size:11px;line-height:1.7;background:transparent;color:#796b74;text-decoration:underline;box-shadow:none}
+.expedition-decline{display:block;font-size:11px;line-height:1.7;color:#796b74!important;text-decoration:underline!important;padding:14px 0;min-height:44px}
+.expedition-purchase-note{display:flex;gap:9px;text-align:left;border-top:1px solid #b99d7640;padding-top:18px;margin-top:18px;font-size:10px;color:#817379;line-height:1.8}
+.expedition-purchase-note svg{flex-shrink:0;color:#8d7149;margin-top:2px}
+.expedition-faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px;padding-block:80px}
+.expedition-faq>div:first-child>p:last-child{font-size:14px;line-height:1.9;color:#b8b7c8;max-width:340px}
+.expedition-faq details{border-bottom:1px solid #c0a37333;padding:19px 0}
+.expedition-faq details:first-child{padding-top:0}
+.expedition-faq summary{display:flex;justify-content:space-between;align-items:center;gap:18px;cursor:pointer;list-style:none;font-size:14px;line-height:1.6;color:#e5dece;min-height:44px}
+.expedition-faq summary::-webkit-details-marker{display:none}
+.expedition-faq summary svg{flex-shrink:0;color:#c7ab80;transition:transform .2s}
+.expedition-faq details[open] summary svg{transform:rotate(180deg)}
+.expedition-faq details>p{font-size:13px;line-height:1.9;color:#b8b7c8;padding:14px 26px 2px 0}
+.expedition-footer{border-top:1px solid #cab17c2e;background:#10172c;text-align:center;padding:36px 24px;color:#9fa0b5}
+.expedition-footer>img{width:76px;height:76px;object-fit:contain;margin:0 auto 15px}
+.expedition-footer p{font-size:13px;line-height:1.8;color:#c4bbcc;margin-bottom:20px}
+.expedition-footer strong{font-family:var(--font-display),serif;font-size:19px;font-weight:600;color:#e1c18b}
+.expedition-footer>div{display:flex;gap:25px;justify-content:center;flex-wrap:wrap}
+.expedition-footer a{display:inline-flex;gap:6px;align-items:center;font-size:11px;min-height:44px;color:#b3a9bd}
+@media(max-width:1050px) and (min-width:761px){.expedition-worlds{grid-template-columns:repeat(2,minmax(0,1fr))}.expedition-world,.expedition-world:nth-child(4){grid-column:auto}.expedition-world:last-child{grid-column:1 / -1;max-width:550px;justify-self:center}.expedition-package-layout{gap:32px}.expedition-price-card{padding-inline:22px}.expedition-price-ribbon{margin-inline:-22px}.expedition-ritual,.expedition-faq{gap:40px}}
+@media(max-width:800px){.expedition-container{width:calc(100% - 40px)}.expedition-header{width:calc(100% - 40px);min-height:92px}.expedition-hero{grid-template-columns:1fr;max-width:650px;text-align:center;gap:30px;padding-top:45px;padding-bottom:40px}.expedition-hero h1{font-size:clamp(39px,7vw,58px);margin-bottom:20px}.expedition-lead{max-width:550px;margin-inline:auto;font-size:15px}.expedition-collection{max-width:600px;margin:auto;width:100%}.expedition-hero:before{right:-300px;top:0}.expedition-ritual,.expedition-package-layout,.expedition-faq{grid-template-columns:1fr;gap:35px}.expedition-package-layout{max-width:630px}.expedition-package-story{text-align:center}.expedition-package-story>p:not(.expedition-eyebrow){margin-inline:auto}.expedition-package-story>img{max-width:560px;margin-inline:auto}.expedition-collection-benefits{text-align:left;max-width:310px;margin-inline:auto}.expedition-price-card{width:100%;max-width:530px;margin:auto}.expedition-ritual{max-width:640px}.expedition-faq{max-width:650px}.expedition-passport{margin-bottom:40px}.expedition-passport>div{padding-inline:18px}.expedition-passport strong{font-size:20px}.expedition-passport small{font-size:10px}}
+@media(max-width:760px){.expedition-worlds{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 0 16px;overscroll-behavior-x:contain}.expedition-worlds::-webkit-scrollbar{display:none}.expedition-world,.expedition-world:nth-child(4){flex:0 0 85%;scroll-snap-align:center;scroll-snap-stop:always}.expedition-world h3{min-height:0}.expedition-world-scene{height:245px}.expedition-world-copy>p{font-size:14px}.expedition-carousel-controls{display:flex;align-items:center;justify-content:center;gap:26px;margin-top:10px}.expedition-carousel-controls button{display:flex;align-items:center;justify-content:center;min-height:46px;min-width:46px;border:1px solid #b59b79;border-radius:50%;background:#fff9ee;color:#634761;cursor:pointer}.expedition-carousel-controls button:disabled{opacity:.35;cursor:default}.expedition-carousel-controls>span{text-align:center;font-size:14px;font-weight:700;color:#574350}.expedition-carousel-controls i{font-style:normal;color:#9c8a91;font-weight:400}.expedition-carousel-controls small{display:block;font-size:9px;font-weight:400;color:#8b777e;margin-top:6px}.expedition-destinations{padding-block:48px}.expedition-worlds-cta{margin-top:25px}.expedition-section-heading{margin-bottom:28px}.expedition-section-heading>p:last-child{font-size:14px}.expedition-world-logo{height:200px;width:200px}}
+@media(max-width:480px){.expedition-container{width:calc(100% - 36px)}.expedition-header{width:calc(100% - 36px);gap:9px;min-height:86px}.expedition-brand{gap:10px}.expedition-brand img{width:60px;height:60px}.expedition-brand>span{font-size:7px;letter-spacing:.12em}.expedition-brand small{font-size:9px;max-width:125px;line-height:1.6;margin-top:4px}.expedition-optional{font-size:8px;padding:8px 10px;gap:5px}.expedition-optional svg{width:11px}.expedition-eyebrow{font-size:8px;letter-spacing:.13em;margin-bottom:16px}.expedition-hero{padding-top:34px;gap:18px}.expedition-hero h1{font-size:39px}.expedition-lead{font-size:14px;line-height:1.85}.expedition-cta{width:100%;padding:17px 13px;font-size:12px;min-height:54px}.expedition-hero-note{font-size:10px}.expedition-collection{padding-top:22px}.expedition-collection-label{font-size:8px;margin-bottom:15px}.expedition-collection figcaption{font-size:8px}.expedition-passport{grid-template-columns:1fr;padding-block:6px;margin-bottom:30px}.expedition-passport>div,.expedition-passport>div:first-child,.expedition-passport>div:last-child{padding:17px 0;border:0;border-bottom:1px solid #e5c79225}.expedition-passport>div:last-child{border-bottom:0}.expedition-passport span{font-size:7px;margin-bottom:5px}.expedition-passport strong{font-size:22px}.expedition-passport small{font-size:11px;margin-top:3px}.expedition-offer h2{font-size:31px}.expedition-world{flex-basis:91%}.expedition-worlds{gap:14px}.expedition-world-scene{height:220px}.expedition-world-logo{width:185px;height:185px}.expedition-world-copy{padding:22px 20px}.expedition-world h3{font-size:26px}.expedition-world-copy>p{font-size:13px}.expedition-ink-link{font-size:12px}.expedition-ritual{padding-block:50px;gap:28px}.expedition-ritual li{gap:17px}.expedition-ritual li>span{font-size:23px}.expedition-ritual h3{font-size:20px}.expedition-package{padding-block:48px}.expedition-package-layout{gap:30px}.expedition-package-story>p:not(.expedition-eyebrow){font-size:14px}.expedition-price-card{padding-inline:21px;border-radius:13px}.expedition-price-ribbon{margin-inline:-21px;font-size:8px}.expedition-price-card h3{font-size:28px}.expedition-included li>span{font-size:11px}.expedition-price>strong{font-size:61px}.expedition-faq{padding-block:50px}.expedition-faq summary{font-size:13px}.expedition-faq details>p{font-size:12px}.expedition-footer>div{gap:18px}}
+@media(prefers-reduced-motion:reduce){.expedition-offer *{scroll-behavior:auto!important;transition:none!important}}
