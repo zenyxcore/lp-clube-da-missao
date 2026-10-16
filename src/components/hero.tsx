@@ -1,9 +1,23 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { Check, ChevronDown } from "lucide-react";
 import { offer } from "@/lib/config";
 import { Art, Cta } from "./shared";
+
 export function Hero() {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    const el = iframeRef.current;
+    if (!el) return;
+    el.src =
+      "https://scripts.converteai.net/d10e2dd0-f3c6-4a5e-ac67-f00f394436c3/players/6ad19ecc84ff5e9c27fd1ec8/v4/embed.html" +
+      (window.location.search || "?") +
+      "&vl=" +
+      encodeURIComponent(window.location.href);
+  }, []);
+
   return (
     <section id="inicio" className="hero hero-story">
       <Image
@@ -35,24 +49,13 @@ export function Hero() {
           <div className="hero-vturb-wrapper">
             <div className="hero-vturb-aspect">
               <iframe
+                ref={iframeRef}
                 frameBorder="0"
                 allowFullScreen
-                src="about:blank"
                 id="ifr_6ad19ecc84ff5e9c27fd1ec8"
                 className="hero-vturb-iframe"
                 referrerPolicy="origin"
                 title="Conheça a Missão Secreta"
-                onLoad={(e) => {
-                  const el = e.currentTarget;
-                  el.onload = null;
-                  el.src =
-                    "https://scripts.converteai.net/d10e2dd0-f3c6-4a5e-ac67-f00f394436c3/players/6ad19ecc84ff5e9c27fd1ec8/v4/embed.html" +
-                    (typeof window !== "undefined"
-                      ? (window.location.search || "?") +
-                        "&vl=" +
-                        encodeURIComponent(window.location.href)
-                      : "");
-                }}
               />
             </div>
           </div>
