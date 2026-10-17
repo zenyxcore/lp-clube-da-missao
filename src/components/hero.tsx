@@ -12,7 +12,7 @@ export function Hero() {
     const el = iframeRef.current;
     if (!el) return;
     el.src =
-      "https://scripts.converteai.net/d10e2dd0-f3c6-4a5e-ac67-f00f394436c3/players/6ad280f6a884ed0eb810d455/v4/embed.html" +
+      "https://scripts.converteai.net/f77f9cdf-7e95-44b3-9ec9-20eecaa568fb/players/6ad3e17c41ed223949a60415/v4/embed.html" +
       (window.location.search || "?") +
       "&vl=" +
       encodeURIComponent(window.location.href);
@@ -51,7 +51,7 @@ export function Hero() {
                 ref={iframeRef}
                 frameBorder="0"
                 allowFullScreen
-                id="ifr_6ad280f6a884ed0eb810d455"
+                id="ifr_6ad3e17c41ed223949a60415"
                 className="hero-vturb-iframe"
                 referrerPolicy="origin"
                 title="Conheça a Missão Secreta"

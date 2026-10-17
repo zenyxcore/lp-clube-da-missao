@@ -52,11 +52,11 @@ export default function RootLayout({
         />
         <link
           rel="preload"
-          href="https://scripts.converteai.net/d10e2dd0-f3c6-4a5e-ac67-f00f394436c3/players/6ad280f6a884ed0eb810d455/v4/embed.html"
+          href="https://scripts.converteai.net/f77f9cdf-7e95-44b3-9ec9-20eecaa568fb/players/6ad3e17c41ed223949a60415/v4/embed.html"
         />
         <link
           rel="preload"
-          href="https://scripts.converteai.net/d10e2dd0-f3c6-4a5e-ac67-f00f394436c3/players/6ad280f6a884ed0eb810d455/v4/player.js"
+          href="https://scripts.converteai.net/f77f9cdf-7e95-44b3-9ec9-20eecaa568fb/players/6ad3e17c41ed223949a60415/v4/player.js"
           as="script"
         />
         <link
@@ -66,7 +66,7 @@ export default function RootLayout({
         />
         <link
           rel="preload"
-          href="https://cdn.converteai.net/d10e2dd0-f3c6-4a5e-ac67-f00f394436c3/6ad280f0c1bda537efa25af0/main.m3u8"
+          href="https://cdn.converteai.net/f77f9cdf-7e95-44b3-9ec9-20eecaa568fb/6ad3e16c9b505bbdc0359423/main.m3u8"
           as="fetch"
         />
         <link rel="dns-prefetch" href="https://cdn.converteai.net" />
