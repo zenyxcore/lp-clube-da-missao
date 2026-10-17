@@ -15,7 +15,7 @@ import { offerExpired } from "@/lib/campaign";
 import { startCheckout } from "./analytics";
 import { Art, Heading, useClock } from "./shared";
 export function CheckoutButton({
-  label = "Quero a Missão Secreta",
+  label = "Comprar Missão Secreta",
   placement = "offer",
 }: {
   label?: string;

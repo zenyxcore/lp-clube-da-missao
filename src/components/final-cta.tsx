@@ -23,7 +23,7 @@ export function FinalCTA() {
         </p>
         <OfferCondition final />
         <CheckoutButton
-          label="Quero a Missão Secreta"
+          label="Comprar Missão Secreta"
           placement="final"
         />
       </div>
