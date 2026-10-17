@@ -6,7 +6,6 @@ import { Offer } from "./offer";
 import { HowItWorks } from "./how-it-works";
 import { Demo } from "./demonstration";
 import { Benefits } from "./benefits";
-import { Personalization } from "./personalization";
 import { Bonuses } from "./bonuses";
 import { Testimonials } from "./testimonials";
 import { Trust } from "./trust";
@@ -25,7 +24,6 @@ export function Landing() {
         <HowItWorks />
         <Demo />
         <Benefits />
-        <Personalization />
         <Bonuses />
         <Offer />
         <Testimonials />
