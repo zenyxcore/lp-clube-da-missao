@@ -6190,3 +6190,32 @@ html {
 .personalization-description{font-size:16px;line-height:1.8;color:#c5cebd;max-width:480px;margin:20px 0}
 @media(min-width:1000px){.hero.hero-story h1{font-size:clamp(38px,3.5vw,48px)}}
 @media(max-width:700px){.hero.hero-story h1{font-size:clamp(32px,8.4vw,44px);line-height:1.13}#como-funciona .steps{grid-template-columns:1fr}.hero-preparation{font-size:11px!important}.personalization-description{font-size:14px}}
+
+/* Faixa de lançamento: mesma cor e altura, com acabamento discreto. */
+.announcement--launch {
+  background: #8c2b20;
+  box-shadow: inset 0 1px 0 #fff0d616, inset 0 -1px 0 #4a160e38;
+}
+.announcement--launch p {
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: clamp(8px, 2vw, 18px);
+}
+.announcement--launch p::before,
+.announcement--launch p::after {
+  content: "";
+  width: clamp(12px, 4vw, 42px);
+  height: 1px;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, transparent, #e7bd7f99);
+}
+.announcement--launch p::after {
+  transform: rotate(180deg);
+}
+.announcement--launch strong {
+  font-size: clamp(9px, 2.6vw, 12px);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  white-space: nowrap;
+}
