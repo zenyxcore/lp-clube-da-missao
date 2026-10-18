@@ -41,6 +41,16 @@ export function Testimonials() {
           <span className="heading-rule" aria-hidden="true">◆</span>
         </div>
 
+        <div className="feedback-summary-proof">
+          <Image
+            src="/assets/avaliacoes-positivas.webp"
+            alt="Mais de 2 mil avaliações positivas"
+            width={1327}
+            height={128}
+            sizes="(max-width: 600px) 80vw, 440px"
+          />
+        </div>
+
         <div className="feedback-carousel">
           <div
             className="feedback-track"

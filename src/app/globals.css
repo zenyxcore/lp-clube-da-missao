@@ -6224,3 +6224,9 @@ html {
 .hero-feedback-proof{width:min(520px,100%);margin:20px auto 0}
 .hero-feedback-proof-image{display:block;width:100%;height:auto;object-fit:contain}
 @media(max-width:600px){.hero-feedback-proof{margin-top:18px}}
+
+/* Compact feedback artwork with breathing room above and below. */
+.hero-feedback-proof{width:min(440px,88%);margin:30px auto 28px}
+.feedback-summary-proof{width:min(440px,88%);margin:0 auto 36px}
+.feedback-summary-proof img{display:block;width:100%;height:auto;object-fit:contain}
+@media(max-width:600px){.hero-feedback-proof{margin:28px auto 26px}.feedback-summary-proof{margin-bottom:28px}}
