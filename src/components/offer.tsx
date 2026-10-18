@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import {
   ArrowRight,
   Check,
@@ -17,9 +18,11 @@ import { Art, Heading, useClock } from "./shared";
 export function CheckoutButton({
   label = "Comprar Missão Secreta",
   placement = "offer",
+  showNote = true,
 }: {
   label?: string;
   placement?: string;
+  showNote?: boolean;
 }) {
   const now = useClock(Boolean(offer.endsAt));
   const expired = now !== null && offerExpired(offer.endsAt, now);
@@ -41,7 +44,7 @@ export function CheckoutButton({
             : label}
         <ArrowRight size={19} />
       </button>
-      {(active || expired) && (
+      {showNote && (active || expired) && (
         <p className="purchase-note">
           {expired
             ? "Aguarde a divulgação de uma nova condição."
@@ -58,18 +61,9 @@ export function CheckoutButton({
 export function OfferCard({ full = false }: { full?: boolean }) {
   const activeBonuses = bonuses.filter((b) => b.ready);
   return (
-    <div className={`offer-card ${full ? "full-offer" : ""}`}>
+    <div className={`offer-card offer-card--pack ${full ? "full-offer" : ""}`}>
       <span className="edition">CONDIÇÃO ESPECIAL DE LANÇAMENTO</span>
-      <Art
-        name="missao-secreta"
-        alt="Missão Secreta"
-        className="mission-logo"
-        priority={!full}
-      />
       <h3>A Caça ao Tesouro Perdido</h3>
-      <p className="offer-description">
-        Uma caça ao tesouro para brincar em casa, com crianças de 5 a 9 anos.
-      </p>
       <div className="offer-includes-label">
         UMA MISSÃO COMPLETA PARA SUA FAMÍLIA
       </div>
@@ -104,6 +98,16 @@ export function OfferCard({ full = false }: { full?: boolean }) {
           </div>
         </div>
       )}
+      <div className="offer-pack">
+        <Image
+          src="/assets/box-pack-oferta.webp"
+          alt="Pack Missão Secreta: app, carta, pistas, Diário do Explorador e Certificado de Aventureiro"
+          width={1000}
+          height={706}
+          sizes="(max-width: 600px) 75vw, 400px"
+          className="offer-pack-image"
+        />
+      </div>
       <div className="price">
         <span className="price-reference">
           De <del>{referencePriceLabel}</del>
@@ -124,8 +128,8 @@ export function OfferCard({ full = false }: { full?: boolean }) {
           <strong>{offer.billingLabel}</strong>
         </span>
       </div>
+      <CheckoutButton showNote={false} />
       <OfferCondition />
-      <CheckoutButton />
     </div>
   );
 }

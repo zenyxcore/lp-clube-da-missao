@@ -6230,3 +6230,19 @@ html {
 .feedback-summary-proof{width:min(440px,88%);margin:0 auto 36px}
 .feedback-summary-proof img{display:block;width:100%;height:auto;object-fit:contain}
 @media(max-width:600px){.hero-feedback-proof{margin:28px auto 26px}.feedback-summary-proof{margin-bottom:28px}}
+
+/* Product pack replaces the old logo without extending the parchment. */
+.offer-card.offer-card--pack{padding-top:30px;padding-bottom:30px}
+.offer-card--pack h3{margin:12px 0 10px;line-height:1.2}
+.offer-card--pack .offer-includes-label{margin:0 0 8px}
+.offer-card--pack .offer-list.compact-includes{margin-bottom:12px;row-gap:6px}
+.offer-card--pack .offer-gifts{padding:8px;margin-bottom:8px}
+.offer-card--pack .offer-gifts>strong{margin-bottom:6px}
+.offer-pack{display:flex;align-items:center;justify-content:center;width:100%;margin:10px auto 8px}
+.offer-pack-image{display:block;width:100%;max-width:400px;height:auto;max-height:200px;object-fit:contain}
+.offer-card--pack .price{margin-top:0;padding-top:8px}
+.offer-card--pack .price small{margin-bottom:12px}
+.offer-card--pack .ownership-promise{margin:0 0 8px;padding:9px 7px}
+.offer-card--pack .purchase{margin-top:0}
+.offer-card--pack .offer-condition{margin:16px auto 0;font-size:10px;line-height:1.5}
+@media(max-width:700px){.offer-card.full-offer.offer-card--pack{padding:28px 26px 27px}.offer-card--pack h3{margin:10px 0 9px}.offer-card--pack .offer-list.compact-includes{margin-bottom:10px}.offer-card--pack .offer-gifts{padding:7px;margin-bottom:6px}.offer-pack{margin:8px auto 6px}.offer-pack-image{max-height:175px}.offer-card--pack .ownership-promise{padding:8px 5px;margin-bottom:7px}.offer-card--pack .offer-condition{margin-top:14px;font-size:9px}.offer-card--pack .price small{margin-bottom:10px}}
