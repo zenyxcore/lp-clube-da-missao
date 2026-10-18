@@ -6255,3 +6255,10 @@ html {
 @keyframes offer-pack-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
 @media(max-width:700px){.offer-card--pack .offer-list.compact-includes{column-gap:clamp(10px,3vw,20px);row-gap:8px}.offer-card--pack .offer-pack{margin:14px auto 10px}.offer-card--pack .offer-pack-image{max-height:225px}}
 @media(prefers-reduced-motion:reduce){.offer-card--pack .offer-pack-image{animation:none;transform:none}}
+
+/* Final purchase call: a centered product bundle and a bounded CTA. */
+.final-offer-pack{display:flex;justify-content:center;align-items:center;width:min(480px,90%);margin:24px auto 26px;padding:5px}
+.final-offer-pack-image{display:block;width:100%;height:auto;max-height:300px;object-fit:contain;animation:offer-pack-pulse 3.6s ease-in-out infinite;transform-origin:center}
+.final-cta .button.purchase{display:flex;width:min(440px,100%);min-width:0;max-width:100%;margin-left:auto;margin-right:auto;font-size:14px}
+@media(max-width:600px){.final-offer-pack{width:min(400px,94%);margin:20px auto 24px}.final-offer-pack-image{max-height:260px}.final-cta .button.purchase{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.final-offer-pack-image{animation:none;transform:none}}
