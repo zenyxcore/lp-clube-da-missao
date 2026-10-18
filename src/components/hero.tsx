@@ -81,7 +81,16 @@ export function Hero() {
               <Check size={15} /> Até {offer.maxAdventurers} aventureiros
             </span>
           </div>
-          <p className="hero-preparation">Cerca de 10 minutos para preparar · 25–40 minutos para brincar, no ritmo da equipe.</p>
+          <div className="hero-feedback-proof">
+            <Image
+              src="/assets/avaliacoes-positivas.webp"
+              alt="Mais de 2 mil avaliações positivas"
+              width={1327}
+              height={128}
+              sizes="(max-width: 600px) 90vw, 520px"
+              className="hero-feedback-proof-image"
+            />
+          </div>
           <a className="hero-discover" href="#aventura">
             Veja a missão por dentro <ChevronDown size={17} />
           </a>

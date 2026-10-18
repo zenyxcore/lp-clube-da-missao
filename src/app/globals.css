@@ -6219,3 +6219,8 @@ html {
   line-height: 1.4;
   white-space: nowrap;
 }
+
+/* Social proof supplied for the hero. Preserve the complete artwork. */
+.hero-feedback-proof{width:min(520px,100%);margin:20px auto 0}
+.hero-feedback-proof-image{display:block;width:100%;height:auto;object-fit:contain}
+@media(max-width:600px){.hero-feedback-proof{margin-top:18px}}
