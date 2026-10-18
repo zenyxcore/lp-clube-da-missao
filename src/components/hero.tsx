@@ -61,13 +61,13 @@ export function Hero() {
         </div>
         <div className="hero-story-pitch">
           <h2>
-            Você prepara os esconderijos.
+            Surpreenda seus filhos.
             <br />
-            <em>A missão guia a brincadeira.</em>
+            <em>A aventura começa em casa.</em>
           </h2>
           <p>
-            Abra a história no celular, monte a equipe e siga o guia para preparar
-            a caça ao tesouro. Depois, acompanhe as crianças em cada descoberta.
+            Uma caça ao tesouro para viver em família, com história, pistas e passo a
+            passo já preparados. Você organiza os esconderijos e participa de cada descoberta.
           </p>
           <Cta placement="hero">Quero a Missão Secreta</Cta>
           <div className="hero-story-facts">
@@ -78,7 +78,7 @@ export function Hero() {
               <Check size={15} /> {offer.accessLabel}
             </span>
             <span>
-              <Check size={15} /> {offer.billingLabel}
+              <Check size={15} /> Até {offer.maxAdventurers} aventureiros
             </span>
           </div>
           <p className="hero-preparation">Cerca de 10 minutos para preparar · 25–40 minutos para brincar, no ritmo da equipe.</p>

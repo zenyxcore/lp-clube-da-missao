@@ -13,13 +13,13 @@ export function FinalCTA() {
           <em>pode começar na sua casa.</em>
         </h2>
         <p>
-          Uma carta para abrir, pistas para procurar e uma história para viver
-          juntos. Prepare a missão e convide seus aventureiros.
+          Imagine entregar a carta e convidar seus filhos para procurar um tesouro
+          pela casa. A história e as pistas já estão prontas para vocês começarem.
         </p>
         <p className="final-offer-summary">
           De {" "}
-          <del>{referencePriceLabel}</del> por <b>{priceLabel}</b>, com a missão e os dois bônus. Compra única,
-          acesso vitalício e sem mensalidade.
+          <del>{referencePriceLabel}</del> por <b>{priceLabel}</b>, com a missão e os dois bônus.
+          Compra única com acesso vitalício.
         </p>
         <OfferCondition final />
         <CheckoutButton

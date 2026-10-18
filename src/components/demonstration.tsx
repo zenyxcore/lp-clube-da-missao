@@ -33,9 +33,9 @@ export const shots = [
 const materialPreviews = [
   {
     src: "/demo/pista-primeiro-sinal.webp",
-    alt: "Ilustração do cartão O Primeiro Sinal, incluído na Missão Secreta, sendo escondido no sofá",
+    alt: "Cartão O Primeiro Sinal, incluído na Missão Secreta, sendo escondido no sofá",
     label: "As pistas incluídas na Missão Secreta",
-    kind: "illustration",
+    kind: "print",
   },
   {
     src: "/demo/carta-nas-maos.webp",
@@ -118,7 +118,7 @@ export function DeliverableCarousel() {
       className="deliverable-carousel"
       id="screenshots"
       role="region"
-      aria-label="Prévia das telas e dos materiais da missão"
+      aria-label="Telas e materiais da missão"
       aria-roledescription="carrossel"
     >
       <div
@@ -148,7 +148,7 @@ export function DeliverableCarousel() {
       </div>
       <div className="deliverable-caption">
         <span className="deliverable-type">
-          {current.kind.includes("screen") ? "TELA REAL DO APP" : current.kind === "illustration" ? "SIMULAÇÃO ILUSTRATIVA DA PISTA IMPRESSA" : "MATERIAL IMPRESSO"}
+          {current.kind.includes("screen") ? "TELA REAL DO APP" : "MATERIAL IMPRESSO"}
         </span>
         <h3>{current.label}</h3>
         <div className="deliverable-controls">
@@ -194,7 +194,7 @@ export function Demo() {
       <div className="container">
         <Heading
           eyebrow="OLHE POR DENTRO"
-          text="Conheça as pistas da brincadeira e as telas do app que acompanham cada descoberta."
+          text="Veja os materiais da aventura e as telas reais do app que guia a equipe em cada descoberta."
         >
           Veja o material
           <br />
@@ -202,7 +202,7 @@ export function Demo() {
         </Heading>
         <DeliverableCarousel />
         <div className="section-cta">
-          <p>Veja como a história no celular se conecta às pistas escondidas pela casa.</p>
+          <p>Uma pista encontrada pela casa. Um desafio no app. A próxima descoberta de vocês.</p>
           <Cta placement="materials" />
         </div>
       </div>
