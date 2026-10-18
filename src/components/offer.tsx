@@ -129,7 +129,6 @@ export function OfferCard({ full = false }: { full?: boolean }) {
         </span>
       </div>
       <CheckoutButton showNote={false} />
-      <OfferCondition />
     </div>
   );
 }

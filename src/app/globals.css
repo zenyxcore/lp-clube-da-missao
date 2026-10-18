@@ -6246,3 +6246,12 @@ html {
 .offer-card--pack .purchase{margin-top:0}
 .offer-card--pack .offer-condition{margin:16px auto 0;font-size:10px;line-height:1.5}
 @media(max-width:700px){.offer-card.full-offer.offer-card--pack{padding:28px 26px 27px}.offer-card--pack h3{margin:10px 0 9px}.offer-card--pack .offer-list.compact-includes{margin-bottom:10px}.offer-card--pack .offer-gifts{padding:7px;margin-bottom:6px}.offer-pack{margin:8px auto 6px}.offer-pack-image{max-height:175px}.offer-card--pack .ownership-promise{padding:8px 5px;margin-bottom:7px}.offer-card--pack .offer-condition{margin-top:14px;font-size:9px}.offer-card--pack .price small{margin-bottom:10px}}
+
+/* Center the inclusion grid and give the bundle more visual presence. */
+.offer-card--pack .offer-list.compact-includes{grid-template-columns:repeat(2,max-content);justify-content:center;column-gap:28px;row-gap:8px;margin-left:auto;margin-right:auto}
+.offer-card--pack .compact-includes li{margin:0;justify-content:flex-start;text-align:left}
+.offer-card--pack .offer-pack{margin:16px auto 12px;padding:4px 0}
+.offer-card--pack .offer-pack-image{max-width:440px;max-height:260px;transform-origin:center;animation:offer-pack-pulse 3.6s ease-in-out infinite}
+@keyframes offer-pack-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+@media(max-width:700px){.offer-card--pack .offer-list.compact-includes{column-gap:clamp(10px,3vw,20px);row-gap:8px}.offer-card--pack .offer-pack{margin:14px auto 10px}.offer-card--pack .offer-pack-image{max-height:225px}}
+@media(prefers-reduced-motion:reduce){.offer-card--pack .offer-pack-image{animation:none;transform:none}}
