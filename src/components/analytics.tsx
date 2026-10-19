@@ -100,8 +100,7 @@ export function Analytics() {
   return (
     <aside className="consent" aria-label="Aviso de privacidade">
       <div><p>
-        Usamos cookies, Meta Pixel e Microsoft Clarity para medir visitas,
-        campanhas e navegação. {offer.privacyUrl && <a href={offer.privacyUrl}>Saiba mais na Política de Privacidade</a>}
+        Usamos cookies para melhorar sua experiência por aqui. {offer.privacyUrl && <a href={offer.privacyUrl}>Política de Privacidade</a>}
       </p></div>
       <button onClick={dismiss}>Entendi</button>
     </aside>
