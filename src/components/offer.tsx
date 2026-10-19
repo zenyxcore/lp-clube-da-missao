@@ -108,6 +108,10 @@ export function OfferCard({ full = false }: { full?: boolean }) {
           className="offer-pack-image"
         />
       </div>
+      <ul className="offer-access-extras" aria-label="Também incluído na compra">
+        <li><span aria-hidden="true">+</span> Acesso ao app</li>
+        <li><span aria-hidden="true">+</span> Materiais organizados para download</li>
+      </ul>
       <div className="price">
         <span className="price-reference">
           De <del>{referencePriceLabel}</del>

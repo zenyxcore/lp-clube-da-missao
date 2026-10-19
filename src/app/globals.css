@@ -6265,3 +6265,9 @@ html {
 
 /* Compact social proof on desktop; preserve approved mobile sizing. */
 @media(min-width:601px){.hero-feedback-proof,.feedback-summary-proof{width:min(320px,72%)}}
+
+/* Included app access and organized downloads beside the product pack. */
+.offer-access-extras{list-style:none;padding:0;margin:4px auto 16px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;color:#285a46;font-size:11px;line-height:1.5}
+.offer-access-extras li{display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600}
+.offer-access-extras li>span{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;flex:0 0 17px;border:1px solid #8fa68b;border-radius:50%;background:#e3ead5;color:#216b50;font-size:13px;font-weight:700;line-height:1}
+@media(max-width:600px){.offer-access-extras{gap:7px 12px;font-size:10px;margin-bottom:14px}}
