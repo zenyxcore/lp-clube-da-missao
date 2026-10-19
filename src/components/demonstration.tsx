@@ -32,15 +32,15 @@ export const shots = [
 ];
 const materialPreviews = [
   {
-    src: "/demo/pista-primeiro-sinal.webp",
-    alt: "Cartão O Primeiro Sinal, incluído na Missão Secreta, sendo escondido no sofá",
-    label: "As pistas incluídas na Missão Secreta",
+    src: "/demo/carta-nas-maos.webp",
+    alt: "Carta temática impressa e segurada pelas mãos",
+    label: "A Carta Secreta que dá início à aventura",
     kind: "print",
   },
   {
-    src: "/demo/carta-nas-maos.webp",
-    alt: "Carta temática impressa e segurada pelas mãos",
-    label: "Uma pista para descobrir de verdade",
+    src: "/demo/pista-primeiro-sinal.webp",
+    alt: "Cartão O Primeiro Sinal, incluído na Missão Secreta, sendo escondido no sofá",
+    label: "As pistas incluídas na Missão Secreta",
     kind: "print",
   },
   {
