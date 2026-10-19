@@ -59,9 +59,9 @@ export function Trust() {
           <div>
             <h3>7 dias de garantia.</h3>
             <p>
-              Nas compras online, você pode exercer o direito de arrependimento
-              em até 7 dias e receber de volta os valores pagos, conforme o art.
-              49 do CDC.
+              Conheça a Missão Secreta com tranquilidade. Se sentir que ela não é
+              para sua família, peça o reembolso em até 7 dias após a compra e
+              devolvemos seu dinheiro.
             </p>
           </div>
         </div>
