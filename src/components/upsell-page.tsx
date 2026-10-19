@@ -17,6 +17,10 @@ function CaktoButtons({ snippet, checkoutUrl }: { snippet: string; checkoutUrl:s
     const template = document.createElement("template");
     template.innerHTML = snippet;
     const fragment = template.content;
+    // The main product is delivered in our external app, including after a refusal.
+    fragment.querySelectorAll("cakto-upsell-accept, cakto-upsell-reject").forEach((button) => {
+      button.setAttribute("upsell-reject-url", "https://clubedamissao.vercel.app/");
+    });
     const scripts = Array.from(fragment.querySelectorAll("script"));
     container.replaceChildren(fragment);
 
