@@ -137,3 +137,35 @@
 .expedition-price-card{border-color:#e5c0848c;box-shadow:0 22px 65px #0003}
 .expedition-faq{padding-block:60px}
 @media(max-width:760px){.expedition-hero{padding-top:32px;padding-bottom:42px}.expedition-destinations{padding-block:42px}.expedition-package{padding-block:44px}.expedition-simple-steps{text-align:left;margin:24px 0}.expedition-package-layout{gap:28px}.expedition-collection-benefits{display:none}.expedition-faq{padding-block:42px}.expedition-world h3{min-height:0}.expedition-hero-note{font-size:11px}}
+
+/* Premium collection: transparent mockup, collectible covers and clear package pricing. */
+.expedition-collection>img{border:0;border-radius:0;box-shadow:none;filter:drop-shadow(0 25px 28px #0003)}
+.expedition-collection-label{line-height:1.7;letter-spacing:.14em}
+.expedition-collection figcaption{margin-top:8px}
+.expedition-world{border:1px solid #b5986259;border-radius:18px;box-shadow:0 14px 35px #24152913;transition:transform .25s,box-shadow .25s}
+.expedition-world-scene{height:auto;aspect-ratio:4/5}
+.expedition-world-scene>img:first-child{object-fit:cover}
+.expedition-world-scene:after{display:none}
+.expedition-world-number{top:14px;left:14px;font-size:8px;letter-spacing:.09em;padding:7px 9px;background:#101c2cdd;backdrop-filter:blur(8px)}
+.expedition-world-copy{padding:25px 24px 28px;background:linear-gradient(140deg,#fffaf0,#f1e8d8)}
+.expedition-world h3{min-height:0;font-size:25px;line-height:1.22;margin:10px 0 12px}
+.expedition-world-invitation{color:#806231}
+.expedition-world-copy>p{font-size:13px;line-height:1.8}
+.expedition-price-card{background:radial-gradient(ellipse at 50% 24%,#fffdf3,#f4ead5 80%);border-radius:22px}
+.expedition-price-card h3{margin:28px 0 6px;font-size:33px}
+.expedition-offer-pack{margin:0 -20px 8px}
+.expedition-offer-pack img{display:block;width:100%;height:auto;max-height:310px;object-fit:contain;filter:drop-shadow(0 12px 16px #392e3e24)}
+.expedition-price{padding-top:8px}
+.expedition-price>span{font-size:12px;line-height:1.7;color:#6d5c66}
+.expedition-price>strong{font-size:clamp(68px,6.5vw,88px);line-height:1.08;margin:9px 0 6px;color:#43304f;letter-spacing:-.055em}
+.expedition-price .expedition-unit-label{font-size:13px;margin:0;color:#685367}
+.expedition-total{margin:23px 0 0;padding:17px 10px;border-block:1px solid #b3946645;display:grid;gap:5px;background:#fffaf06b}
+.expedition-total>span{font-size:11px;color:#796a6e}
+.expedition-total>b{font-size:22px;line-height:1.4;color:#35283c;font-weight:700}
+.expedition-payment{margin:15px 0;font-size:11px}
+.expedition-package-story h2{max-width:540px}
+@media(hover:hover){.expedition-world:hover{transform:translateY(-5px);box-shadow:0 20px 42px #24152920}}
+@media(max-width:800px){.expedition-collection{max-width:620px}.expedition-package-story h2{margin-inline:auto}.expedition-offer-pack{margin-inline:-15px}}
+@media(max-width:760px){.expedition-world-scene{height:auto;aspect-ratio:4/5}.expedition-worlds{align-items:stretch}.expedition-world{display:flex;flex-direction:column}.expedition-world-copy{flex:1}.expedition-world h3{font-size:25px}.expedition-price-card h3{font-size:30px}.expedition-price>strong{font-size:78px}.expedition-offer-pack img{max-height:280px}}
+@media(max-width:380px){.expedition-price-card{padding-inline:17px}.expedition-price-ribbon{margin-inline:-17px}.expedition-total>b{font-size:20px}.expedition-world-number{font-size:7px;left:10px;top:10px}}
+@media(prefers-reduced-motion:reduce){.expedition-world:hover{transform:none}}

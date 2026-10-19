@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { Check, ArrowRight, ShieldCheck, Sparkles, Compass, ChevronLeft, ChevronRight, ChevronDown, ArrowUp } from "lucide-react";
+import { Check, ArrowRight, ShieldCheck, Sparkles, ChevronLeft, ChevronRight, ChevronDown, ArrowUp } from "lucide-react";
 
 import { SEASON_CATALOG, SEASON_PRICE } from '@/lib/season-catalog';
 function CaktoButtons({ snippet, checkoutUrl }: { snippet: string; checkoutUrl:string }) {
@@ -71,12 +71,12 @@ export function UpsellPage({ caktoSnippet, checkoutUrl, fromApp }: { caktoSnippe
           <h1 id="expedition-title">A primeira missão<br />é só <em>o começo.</em></h1>
           <p className="expedition-lead"><strong>Mais cinco aventuras para viver em família.</strong> Histórias, desafios e pistas prontos para a próxima descoberta.</p>
           <a className="expedition-cta" href="#pacote">Quero as cinco novas aventuras <ArrowRight size={19} aria-hidden="true" /></a>
-          <p className="expedition-hero-note">Pacote completo por R$ 37 · Pagamento único</p>
+          <p className="expedition-hero-note">R$ 7,40 por aventura · As cinco por R$ 37 à vista</p>
         </div>
         <figure className="expedition-collection">
-          <div className="expedition-collection-label"><Compass size={17} aria-hidden="true" /> A COLEÇÃO COMPLETA</div>
-          <Image src="/aventuras/colecao-premium.webp" alt="Representação ilustrativa da coleção com as cinco novas aventuras do Clube da Missão" width={1536} height={1024} priority sizes="(max-width: 800px) 100vw, 58vw" />
-          <figcaption>Coleção digital · Imagem ilustrativa, sem envio de itens físicos.</figcaption>
+          <div className="expedition-collection-label">CINCO NOVOS DESTINOS. UMA COLEÇÃO COMPLETA.</div>
+          <Image src="/upsell/premium/colecao.webp" alt="Representação ilustrativa da coleção com as cinco novas aventuras do Clube da Missão" width={1536} height={1024} priority sizes="(max-width: 800px) 100vw, 58vw" />
+          <figcaption>Coleção digital de aventuras · Mockup ilustrativo</figcaption>
         </figure>
       </section>
 
@@ -92,7 +92,7 @@ export function UpsellPage({ caktoSnippet, checkoutUrl, fromApp }: { caktoSnippe
             if (distance > 0) setActiveWorld(Math.max(0, Math.min(SEASON_CATALOG.length - 1, Math.round(element.scrollLeft / distance))));
           }}>
             {SEASON_CATALOG.map((mission, index) => <article className="expedition-world" key={mission.id} style={{ '--world-color': mission.color } as CSSProperties}>
-              <div className="expedition-world-scene"><Image src={mission.scene} alt="" fill sizes="(max-width: 760px) 85vw, (max-width: 1050px) 45vw, 33vw" /><span className="expedition-world-number">DESTINO 0{index + 1}</span><Image className="expedition-world-logo" src={mission.logo} alt="" width={210} height={210} sizes="210px" /></div>
+              <div className="expedition-world-scene"><Image src={`/upsell/premium/${mission.id}.webp`} alt={`Cenário da aventura ${mission.title}`} fill sizes="(max-width: 760px) 85vw, (max-width: 1050px) 45vw, 33vw" /><span className="expedition-world-number">AVENTURA 0{index + 1}</span></div>
               <div className="expedition-world-copy"><span className="expedition-world-invitation">{DESTINATION_LABELS[index]}</span><h3>{mission.title}</h3><p>{mission.intro}</p></div>
             </article>)}
           </div>
@@ -103,7 +103,7 @@ export function UpsellPage({ caktoSnippet, checkoutUrl, fromApp }: { caktoSnippe
 
       <section className="expedition-package" id="pacote" aria-labelledby="package-title"><div className="expedition-package-layout expedition-container">
         <div className="expedition-package-story"><p className="expedition-eyebrow">TUDO PRONTO PARA CONTINUAR</p><h2 id="package-title">Uma coleção inteira.<br /><em>Muitas tardes de aventura.</em></h2><p>Cada missão inclui a história, os desafios, o guia do responsável e as pistas. Você só prepara o cenário e reúne a equipe.</p><ol className="expedition-simple-steps"><li><span>01</span><div><strong>Ative no Clube</strong><p>Use o e-mail e o ID do pedido aprovado.</p></div></li><li><span>02</span><div><strong>Prepare as pistas</strong><p>Siga o guia da aventura escolhida.</p></div></li><li><span>03</span><div><strong>Comecem a missão</strong><p>A história conduz a diversão em família.</p></div></li></ol><div className="expedition-collection-benefits"><span><Check size={16} /> Cinco histórias completas</span><span><Check size={16} /> Materiais de cada missão</span><span><Check size={16} /> Sem mensalidade</span></div></div>
-        <div className="expedition-price-card"><span className="expedition-price-ribbon">TEMPORADA DE NOVAS AVENTURAS</span><h3>Sua coleção com<br />cinco novos destinos.</h3><ul className="expedition-included">{SEASON_CATALOG.map(mission => <li key={mission.id}><Image src={mission.logo} alt="" width={48} height={48} /><span>{mission.title}</span><Check size={15} aria-hidden="true" /></li>)}</ul><div className="expedition-price"><span>Valor do pacote completo</span><strong>R$ {SEASON_PRICE.toFixed(2).replace('.', ',')}</strong><p>Apenas <b>R$ {(SEASON_PRICE / 5).toFixed(2).replace('.', ',')} por aventura</b> no pacote.</p></div><p className="expedition-payment">Pagamento único · Pix ou cartão</p><CaktoButtons snippet={fromApp ? '' : caktoSnippet} checkoutUrl={checkoutUrl} />{(fromApp || !caktoSnippet) && <Link className="expedition-decline" href="https://clubedamissao.vercel.app/">{fromApp ? 'Voltar ao meu Clube' : 'Continuar apenas com a Missão Secreta'}</Link>}<p className="expedition-purchase-note"><ShieldCheck size={18} aria-hidden="true" /><span>Pacote adicional. O Tesouro Perdido continua incluído na sua compra principal.</span></p></div>
+        <div className="expedition-price-card"><span className="expedition-price-ribbon">TEMPORADA DE NOVAS AVENTURAS</span><h3>Leve as cinco.<br />Descubram muito mais.</h3><div className="expedition-offer-pack"><Image src="/upsell/premium/colecao.webp" alt="Coleção das cinco novas missões do Clube da Missão" width={1200} height={800} sizes="(max-width: 760px) 90vw, 480px" /></div><div className="expedition-price"><span>Cinco aventuras no pacote. Cada uma por</span><strong>R$ {(SEASON_PRICE / SEASON_CATALOG.length).toFixed(2).replace('.', ',')}</strong><p className="expedition-unit-label">por missão, no pacote completo</p><div className="expedition-total"><span>Total pelas cinco missões</span><b>R$ {SEASON_PRICE.toFixed(2).replace('.', ',')} à vista</b></div></div><p className="expedition-payment">Pagamento único · Pix ou cartão</p><CaktoButtons snippet={fromApp ? '' : caktoSnippet} checkoutUrl={checkoutUrl} />{(fromApp || !caktoSnippet) && <Link className="expedition-decline" href="https://clubedamissao.vercel.app/">{fromApp ? 'Voltar ao meu Clube' : 'Continuar apenas com a Missão Secreta'}</Link>}<p className="expedition-purchase-note"><ShieldCheck size={18} aria-hidden="true" /><span>Pacote adicional. O Tesouro Perdido continua incluído na sua compra principal.</span></p></div>
       </div></section>
 
       <section className="expedition-faq expedition-container" aria-labelledby="faq-title"><div><p className="expedition-eyebrow">ANTES DE PARTIR</p><h2 id="faq-title">Antes de<br /><em>começar.</em></h2><p>Só o que você precisa saber.</p></div><div>{FAQS.map(([question, answer]) => <details key={question} name="expedition-faq"><summary>{question}<ChevronDown size={18} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></section>
