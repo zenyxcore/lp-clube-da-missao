@@ -2,71 +2,24 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Privacidade e cookies | Clube da Missão",
-  description:
-    "Entenda como usamos cookies, Meta Pixel e Microsoft Clarity e como alterar suas preferências.",
+  description: "Como usamos cookies, Meta Pixel e Microsoft Clarity na página da Missão Secreta.",
 };
-
 export default function PrivacyPage() {
   return (
     <main className="section">
       <article className="container" style={{ maxWidth: 820 }}>
         <span className="eyebrow">CLUBE DA MISSÃO · PRIVACIDADE</span>
-        <h1 style={{ fontSize: "clamp(34px, 7vw, 58px)", margin: "12px 0 22px" }}>
-          Privacidade e cookies
-        </h1>
-        <p>
-          Esta página explica o que acontece quando você visita a landing page
-          da Missão Secreta. Não pedimos aqui nomes ou dados de crianças.
-        </p>
-
-        <h2 style={{ fontSize: 28, margin: "36px 0 12px" }}>
-          Medição de visitas e campanhas
-        </h2>
-        <p>
-          Com sua autorização, ativamos o Meta Pixel, da Meta Platforms, para
-          registrar eventos de navegação e entender o desempenho dos anúncios.
-          Os eventos usados nesta página são visualização de página, visualização
-          do conteúdo e início do checkout. O Pixel não é ativado quando você
-          recusa. Não enviamos evento de compra por esta página.
-        </p>
-        <p style={{ marginTop: 14 }}>
-          Com sua autorização, também usamos o Microsoft Clarity na página
-          principal e na oferta de aventuras extras para entender cliques,
-          rolagem e navegação por meio de mapas de calor e gravações de sessões.
-          O Clarity só é carregado após você aceitar a medição. Não enviamos
-          nomes, e-mails ou dados de crianças como identificadores ao serviço.
-          Você pode retirar a autorização nas preferências de privacidade.
-        </p>
-        <p style={{ marginTop: 14 }}>
-          Depois que você permite a medição, podemos guardar temporariamente no
-          navegador parâmetros de campanha para encaminhá-los ao checkout da
-          Cakto quando você clicar para comprar. A Cakto também pode usar seus
-          próprios cookies e tecnologias; consulte os avisos apresentados por
-          ela durante a compra.
-        </p>
-
-        <h2 style={{ fontSize: 28, margin: "36px 0 12px" }}>
-          Sua escolha e seus direitos
-        </h2>
-        <p>
-          Você pode recusar a medição quando o aviso aparecer ou alterar sua
-          escolha a qualquer momento pelo link “Preferências de privacidade” no
-          rodapé da página inicial. Também pode apagar os dados locais do site
-          nas configurações do navegador. Para exercer direitos relacionados aos
-          dados enviados no checkout, use os canais de atendimento indicados na
-          confirmação da compra.
-        </p>
-        <p style={{ marginTop: 14 }}>
-          A Meta trata os dados recebidos conforme seus próprios termos e
-          políticas. Esta página não controla os dados tratados pela Meta, pela Microsoft ou
-          pela Cakto em seus serviços.
-        </p>
-
-        <p style={{ marginTop: 36 }}>
-          <Link href="/" style={{ color: "var(--gold)", fontWeight: 700 }}>
-            Voltar para a Missão Secreta
-          </Link>
-        </p>
+        <h1 style={{ fontSize: "clamp(34px, 7vw, 58px)", margin: "12px 0 22px" }}>Privacidade e cookies</h1>
+        <p>Esta página explica o uso de cookies e ferramentas de medição na página da Missão Secreta e na oferta de aventuras extras. Não pedimos aqui nomes ou dados de crianças.</p>
+        <h2 style={{ fontSize: 28, margin: "36px 0 12px" }}>Visitas, campanhas e navegação</h2>
+        <p>O Meta Pixel e o Microsoft Clarity são carregados automaticamente na entrada dessas páginas. O aviso de privacidade é informativo: fechá-lo não ativa nem desativa essas ferramentas.</p>
+        <p style={{ marginTop: 14 }}>O Meta Pixel registra visualizações de página e de conteúdo e, na página principal, o início do checkout. Não enviamos evento de compra por esta página. O Microsoft Clarity ajuda a analisar cliques, rolagem e navegação por meio de mapas de calor e gravações de sessões. Não enviamos nomes, e-mails ou dados de crianças como identificadores personalizados ao Clarity.</p>
+        <p style={{ marginTop: 14 }}>Esses serviços podem usar cookies e identificadores conforme suas configurações e políticas. A coleta também depende das restrições do navegador, dos bloqueadores e das regras aplicadas pelos próprios serviços.</p>
+        <p style={{ marginTop: 14 }}>Podemos guardar temporariamente parâmetros de campanha no navegador para encaminhá-los ao checkout da Cakto. A Cakto utiliza suas próprias tecnologias e avisos durante a compra.</p>
+        <h2 style={{ fontSize: 28, margin: "36px 0 12px" }}>Controles do navegador e contato</h2>
+        <p>Você pode consultar e apagar cookies e dados locais ou restringir rastreadores nas configurações do seu navegador. Para dúvidas e solicitações sobre os dados da sua compra, use os canais de atendimento informados na confirmação do pedido.</p>
+        <p style={{ marginTop: 14 }}>A Meta, a Microsoft e a Cakto tratam os dados recebidos conforme seus próprios termos e políticas.</p>
+        <p style={{ marginTop: 36 }}><Link href="/" style={{ color: "var(--gold)", fontWeight: 700 }}>Voltar para a Missão Secreta</Link></p>
       </article>
     </main>
   );

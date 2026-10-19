@@ -13,138 +13,97 @@ declare global {
     fbq?: Pixel;
     _fbq?: Pixel;
     clarity?: ((...args: unknown[]) => void) & { q?: unknown[][] };
+    clubeMetaPage?: string;
   }
 }
-const CONSENT = "clube-lp:analytics-consent";
+const NOTICE = "clube-lp:privacy-notice";
 export function trackCheckout() {
-  try {
-    if (localStorage.getItem(CONSENT) === "accepted")
-      window.fbq?.("track", "InitiateCheckout", {
-        content_name: "Missão Secreta",
-        value: offer.price,
-        currency: offer.currency,
-      });
-  } catch {}
+  window.fbq?.("track", "InitiateCheckout", {
+    content_name: "Missão Secreta",
+    value: offer.price,
+    currency: offer.currency,
+  });
 }
 export function startCheckout() {
   const target = offer.checkoutUrl || offer.interestUrl;
   if (!target) return;
   let remembered = "";
-  try {
-    remembered = sessionStorage.getItem("clube-lp:campaign") || "";
-  } catch {}
+  try { remembered = sessionStorage.getItem("clube-lp:campaign") || ""; } catch {}
   if (offer.checkoutUrl) trackCheckout();
-  window.location.assign(
-    checkoutWithCampaign(target, window.location.search, remembered),
-  );
+  window.location.assign(checkoutWithCampaign(target, window.location.search, remembered));
 }
-export function Analytics({ trackMeta = true }: { trackMeta?: boolean }) {
+export function Analytics() {
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    const start = () => {
-      try {
-        if (localStorage.getItem(CONSENT) !== "accepted") return;
-        sessionStorage.setItem(
-          "clube-lp:campaign",
-          campaignParams(location.search).toString(),
-        );
-      } catch {
-        return;
-      }
-      if (!window.clarity) {
-        const clarity: NonNullable<Window["clarity"]> = (...args) => {
-          (clarity.q ||= []).push(args);
-        };
-        window.clarity = clarity;
-        clarity("consentv2", { analytics_Storage: "granted", ad_Storage: "granted" });
-        const script = document.createElement("script");
-        script.id = "clube-clarity";
-        script.async = true;
-        script.src = "https://www.clarity.ms/tag/yzxp18nrg1";
-        document.head.appendChild(script);
-      } else {
-        window.clarity("consentv2", { analytics_Storage: "granted", ad_Storage: "granted" });
-      }
-      if (!trackMeta || !offer.metaPixelId) return;
-      if (window.fbq) {
-        window.fbq("consent", "grant");
-        return;
-      }
-      const fbq: Pixel = (...args) => {
-        if (fbq.callMethod) fbq.callMethod(...args);
-        else fbq.queue?.push(args);
+    // Load the supplied Clarity tag on entry, independently of the notice.
+    if (!window.clarity) {
+      const clarity: NonNullable<Window["clarity"]> = (...args) => {
+        (clarity.q ||= []).push(args);
       };
-      fbq.queue = [];
-      fbq.loaded = true;
-      fbq.version = "2.0";
-      window.fbq = fbq;
-      window._fbq = fbq;
-      fbq("consent", "grant");
-      fbq("init", offer.metaPixelId);
-      fbq("track", "PageView");
-      fbq("track", "ViewContent", {
-        content_name: "Missão Secreta",
-        value: offer.price,
-        currency: offer.currency,
-      });
+      window.clarity = clarity;
       const script = document.createElement("script");
+      script.id = "clube-clarity";
       script.async = true;
-      script.src = "https://connect.facebook.net/en_US/fbevents.js";
+      script.src = "https://www.clarity.ms/tag/yzxp18nrg1";
       document.head.appendChild(script);
-    };
-    const show = () => setOpen(true);
-    const initialize = () => {
-      try {
-        if (!localStorage.getItem(CONSENT)) setOpen(true);
-        else start();
-      } catch {
-        setOpen(true);
+    }
+    try {
+      const current = campaignParams(window.location.search).toString();
+      if (current) sessionStorage.setItem("clube-lp:campaign", current);
+    } catch {}
+    if (offer.metaPixelId) {
+      if (!window.fbq) {
+        const fbq: Pixel = (...args) => {
+          if (fbq.callMethod) fbq.callMethod(...args);
+          else fbq.queue?.push(args);
+        };
+        fbq.queue = [];
+        fbq.loaded = true;
+        fbq.version = "2.0";
+        window.fbq = fbq;
+        window._fbq = fbq;
+        fbq("init", offer.metaPixelId);
+        const script = document.createElement("script");
+        script.id = "clube-meta-pixel";
+        script.async = true;
+        script.src = "https://connect.facebook.net/en_US/fbevents.js";
+        document.head.appendChild(script);
       }
-    };
-    const frame = requestAnimationFrame(initialize);
-    const changed = () => {
-      try {
-        if (localStorage.getItem(CONSENT) === "accepted") start();
-        else {
-          window.fbq?.("consent", "revoke");
-          sessionStorage.removeItem("clube-lp:campaign");
-          if (window.clarity) {
-            window.clarity("consentv2", { analytics_Storage: "denied", ad_Storage: "denied" });
-            // Reload without loading analytics again after consent is withdrawn.
-            window.location.reload();
-          }
-        }
-      } catch {}
-    };
-    window.addEventListener("clube:consent", changed);
+      const page = window.location.pathname + window.location.search;
+      if (window.clubeMetaPage !== page) {
+        window.clubeMetaPage = page;
+        window.fbq("track", "PageView");
+        window.fbq("track", "ViewContent", {
+          content_name: window.location.pathname.startsWith("/upsell")
+            ? "Clube da Missão — 5 novas aventuras" : "Missão Secreta",
+          value: offer.price,
+          currency: offer.currency,
+        });
+      }
+    }
+    const show = () => setOpen(true);
+    const frame = requestAnimationFrame(() => {
+      try { if (!localStorage.getItem(NOTICE)) setOpen(true); }
+      catch { setOpen(true); }
+    });
     window.addEventListener("clube:privacy", show);
     return () => {
       cancelAnimationFrame(frame);
-      window.removeEventListener("clube:consent", changed);
       window.removeEventListener("clube:privacy", show);
     };
-  }, [trackMeta]);
+  }, []);
   if (!open) return null;
-  function choose(value: string) {
-    try {
-      localStorage.setItem(CONSENT, value);
-    } catch {}
-    window.dispatchEvent(new Event("clube:consent"));
+  function dismiss() {
+    try { localStorage.setItem(NOTICE, "seen"); } catch {}
     setOpen(false);
   }
   return (
-    <aside className="consent" aria-label="Preferências de privacidade">
-      <div>
-        <p>
-          Usamos cookies para o site funcionar e, com sua permissão, entender
-          como ele é usado.{" "}
-          {offer.privacyUrl && (
-            <a href={offer.privacyUrl}>Política de Privacidade</a>
-          )}
-        </p>
-      </div>
-      <button onClick={() => choose("rejected")}>Recusar</button>
-      <button onClick={() => choose("accepted")}>Sim, aceito</button>
+    <aside className="consent" aria-label="Aviso de privacidade">
+      <div><p>
+        Usamos cookies, Meta Pixel e Microsoft Clarity para medir visitas,
+        campanhas e navegação. {offer.privacyUrl && <a href={offer.privacyUrl}>Saiba mais na Política de Privacidade</a>}
+      </p></div>
+      <button onClick={dismiss}>Entendi</button>
     </aside>
   );
 }

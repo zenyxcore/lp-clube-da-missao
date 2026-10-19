@@ -61,7 +61,7 @@ export function UpsellPage({ caktoSnippet, checkoutUrl, fromApp }: { caktoSnippe
   }
   return (
     <main className="expedition-offer" id="topo">
-      <Analytics trackMeta={false} />
+      <Analytics />
       <a className="skip-link" href="#novas-missoes">Conhecer as cinco aventuras</a>
       <header className="expedition-header">
         <Link href="/" className="expedition-brand" aria-label="Clube da Missão — página principal">
@@ -113,7 +113,7 @@ export function UpsellPage({ caktoSnippet, checkoutUrl, fromApp }: { caktoSnippe
       </div></section>
 
       <section className="expedition-faq expedition-container" aria-labelledby="faq-title"><div><p className="expedition-eyebrow">ANTES DE PARTIR</p><h2 id="faq-title">Antes de<br /><em>começar.</em></h2><p>Só o que você precisa saber.</p></div><div>{FAQS.map(([question, answer]) => <details key={question} name="expedition-faq"><summary>{question}<ChevronDown size={18} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></section>
-      <footer className="expedition-footer"><Image src="/assets/clube-da-missao.webp" alt="Clube da Missão" width={76} height={76} /><p>A história continua.<br /><strong>A próxima descoberta é de vocês.</strong></p><div><Link href="https://clubedamissao.vercel.app/">Meu Clube</Link><Link href="/privacidade">Privacidade</Link><button type="button" onClick={() => window.dispatchEvent(new Event("clube:privacy"))} style={{ background: "none", border: 0, padding: 0, font: "inherit", fontSize: 11, color: "#b3a9bd", cursor: "pointer", minHeight: 44 }}>Preferências de privacidade</button><a href="#topo">Voltar ao topo <ArrowUp size={13} aria-hidden="true" /></a></div></footer>
+      <footer className="expedition-footer"><Image src="/assets/clube-da-missao.webp" alt="Clube da Missão" width={76} height={76} /><p>A história continua.<br /><strong>A próxima descoberta é de vocês.</strong></p><div><Link href="https://clubedamissao.vercel.app/">Meu Clube</Link><Link href="/privacidade">Privacidade</Link><button type="button" onClick={() => window.dispatchEvent(new Event("clube:privacy"))} style={{ background: "none", border: 0, padding: 0, font: "inherit", fontSize: 11, color: "#b3a9bd", cursor: "pointer", minHeight: 44 }}>Aviso de privacidade</button><a href="#topo">Voltar ao topo <ArrowUp size={13} aria-hidden="true" /></a></div></footer>
     </main>
   );
 }

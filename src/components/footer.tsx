@@ -27,7 +27,7 @@ export function Footer() {
             <button
               onClick={() => window.dispatchEvent(new Event("clube:privacy"))}
             >
-              Preferências de privacidade
+              Aviso de privacidade
             </button>
           )}
           <a href="#faq">Dúvidas sobre o produto</a>
