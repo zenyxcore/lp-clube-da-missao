@@ -4,6 +4,7 @@ import { Announcement } from "./header";
 import { Hero } from "./hero";
 import { Offer } from "./offer";
 import { HowItWorks } from "./how-it-works";
+import { PreparationGuide } from "./preparation-guide";
 import { Demo } from "./demonstration";
 import { Benefits } from "./benefits";
 import { Bonuses } from "./bonuses";
@@ -22,6 +23,7 @@ export function Landing() {
       <main id="conteudo">
         <Hero />
         <HowItWorks />
+        <PreparationGuide />
         <Demo />
         <Benefits />
         <Bonuses />

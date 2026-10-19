@@ -6271,3 +6271,12 @@ html {
 .offer-access-extras li{display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600}
 .offer-access-extras li>span{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;flex:0 0 17px;border:1px solid #8fa68b;border-radius:50%;background:#e3ead5;color:#216b50;font-size:13px;font-weight:700;line-height:1}
 @media(max-width:600px){.offer-access-extras{gap:7px 12px;font-size:10px;margin-bottom:14px}}
+
+/* A compact preview of preparation guidance and the real download area. */
+.preparation-guide{background:radial-gradient(ellipse at 25% 50%,#123b3c66,transparent 65%),#08242d;padding:58px 0;border-top:1px solid #b2984b24}
+.preparation-guide-grid{display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:44px}
+.preparation-guide-visual{min-width:0}
+.preparation-guide-visual img{width:100%;height:auto;object-fit:contain}
+.preparation-guide-copy h2{font-size:clamp(28px,3vw,40px);margin:14px 0 20px;text-wrap:balance}
+.preparation-guide-copy p{font-size:15px;line-height:1.85;max-width:440px}
+@media(max-width:760px){.preparation-guide{padding:38px 0 48px}.preparation-guide-grid{grid-template-columns:1fr;gap:24px;text-align:center}.preparation-guide-visual{width:min(560px,100%);margin:auto}.preparation-guide-copy h2{font-size:clamp(27px,7vw,35px);margin:12px 0 16px}.preparation-guide-copy p{margin:auto;font-size:14px;max-width:420px}}
