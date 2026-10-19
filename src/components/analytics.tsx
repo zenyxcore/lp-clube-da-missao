@@ -12,6 +12,7 @@ declare global {
   interface Window {
     fbq?: Pixel;
     _fbq?: Pixel;
+    clarity?: ((...args: unknown[]) => void) & { q?: unknown[][] };
   }
 }
 const CONSENT = "clube-lp:analytics-consent";
@@ -37,10 +38,9 @@ export function startCheckout() {
     checkoutWithCampaign(target, window.location.search, remembered),
   );
 }
-export function Analytics() {
+export function Analytics({ trackMeta = true }: { trackMeta?: boolean }) {
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    if (!offer.metaPixelId) return;
     const start = () => {
       try {
         if (localStorage.getItem(CONSENT) !== "accepted") return;
@@ -51,6 +51,21 @@ export function Analytics() {
       } catch {
         return;
       }
+      if (!window.clarity) {
+        const clarity: NonNullable<Window["clarity"]> = (...args) => {
+          (clarity.q ||= []).push(args);
+        };
+        window.clarity = clarity;
+        clarity("consentv2", { analytics_Storage: "granted", ad_Storage: "granted" });
+        const script = document.createElement("script");
+        script.id = "clube-clarity";
+        script.async = true;
+        script.src = "https://www.clarity.ms/tag/yzxp18nrg1";
+        document.head.appendChild(script);
+      } else {
+        window.clarity("consentv2", { analytics_Storage: "granted", ad_Storage: "granted" });
+      }
+      if (!trackMeta || !offer.metaPixelId) return;
       if (window.fbq) {
         window.fbq("consent", "grant");
         return;
@@ -93,6 +108,11 @@ export function Analytics() {
         else {
           window.fbq?.("consent", "revoke");
           sessionStorage.removeItem("clube-lp:campaign");
+          if (window.clarity) {
+            window.clarity("consentv2", { analytics_Storage: "denied", ad_Storage: "denied" });
+            // Reload without loading analytics again after consent is withdrawn.
+            window.location.reload();
+          }
         }
       } catch {}
     };
@@ -103,8 +123,8 @@ export function Analytics() {
       window.removeEventListener("clube:consent", changed);
       window.removeEventListener("clube:privacy", show);
     };
-  }, []);
-  if (!offer.metaPixelId || !open) return null;
+  }, [trackMeta]);
+  if (!open) return null;
   function choose(value: string) {
     try {
       localStorage.setItem(CONSENT, value);

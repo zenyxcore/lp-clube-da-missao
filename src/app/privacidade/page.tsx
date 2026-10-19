@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Privacidade e cookies | Clube da Missão",
   description:
-    "Entenda como esta página usa cookies e o Meta Pixel para medir campanhas, e como alterar suas preferências.",
+    "Entenda como usamos cookies, Meta Pixel e Microsoft Clarity e como alterar suas preferências.",
 };
 
 export default function PrivacyPage() {
@@ -30,6 +30,14 @@ export default function PrivacyPage() {
           recusa. Não enviamos evento de compra por esta página.
         </p>
         <p style={{ marginTop: 14 }}>
+          Com sua autorização, também usamos o Microsoft Clarity na página
+          principal e na oferta de aventuras extras para entender cliques,
+          rolagem e navegação por meio de mapas de calor e gravações de sessões.
+          O Clarity só é carregado após você aceitar a medição. Não enviamos
+          nomes, e-mails ou dados de crianças como identificadores ao serviço.
+          Você pode retirar a autorização nas preferências de privacidade.
+        </p>
+        <p style={{ marginTop: 14 }}>
           Depois que você permite a medição, podemos guardar temporariamente no
           navegador parâmetros de campanha para encaminhá-los ao checkout da
           Cakto quando você clicar para comprar. A Cakto também pode usar seus
@@ -50,7 +58,7 @@ export default function PrivacyPage() {
         </p>
         <p style={{ marginTop: 14 }}>
           A Meta trata os dados recebidos conforme seus próprios termos e
-          políticas. Esta página não controla os dados tratados pela Meta ou
+          políticas. Esta página não controla os dados tratados pela Meta, pela Microsoft ou
           pela Cakto em seus serviços.
         </p>
 
