@@ -6395,3 +6395,18 @@ html {
 .offer-card.full-offer.offer-card--pack .compact-includes .include-check svg{
  color:#fff;stroke:#fff;stroke-width:3;
 }
+
+/* Center the inclusion block inside the parchment's printed inner border. */
+@media(max-width:700px){
+ .offer-card.full-offer.offer-card--pack .offer-list.compact-includes{
+  box-sizing:border-box;width:calc(100% - 32px);max-width:300px;min-width:0;
+  margin:10px auto 14px;padding:8px 0;
+  grid-template-columns:repeat(2,minmax(0,1fr));column-gap:10px;
+  justify-content:stretch;justify-items:stretch;
+  position:relative;left:auto;right:auto;transform:none;
+ }
+ .offer-card.full-offer.offer-card--pack .offer-list.compact-includes li{
+  box-sizing:border-box;width:auto;max-width:100%;min-width:0;
+  margin:0;padding:0;justify-self:stretch;
+ }
+}
