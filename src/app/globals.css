@@ -6370,13 +6370,13 @@ html {
 @media(max-width:700px){
  .offer-card.full-offer.offer-card--pack .offer-list.compact-includes{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  width:100%;max-width:100%;gap:10px 7px;
+  width:100%;max-width:100%;gap:10px 4px;
   margin:10px auto 14px;padding:8px 0;
  }
  .offer-card.full-offer.offer-card--pack .offer-list.compact-includes li{
   display:flex;align-items:flex-start;justify-content:flex-start;
   min-width:0;margin:0;padding:0;gap:6px;
-  font-size:clamp(10.5px,2.9vw,12.5px);font-weight:600;line-height:1.45;
+  font-size:clamp(9.5px,calc(2.9vw - 1px),11.5px);font-weight:600;line-height:1.45;
   letter-spacing:0;white-space:normal;word-break:normal;
   overflow-wrap:normal;text-align:left;
  }
@@ -6386,4 +6386,12 @@ html {
  .offer-card.full-offer.offer-card--pack .compact-includes .include-check svg{
   width:10px;height:10px;margin:0;
  }
+}
+
+/* Solid green inclusion marks with a clear white check. */
+.offer-card.full-offer.offer-card--pack .compact-includes .include-check{
+ background:#087657;border-color:#087657;color:#fff;
+}
+.offer-card.full-offer.offer-card--pack .compact-includes .include-check svg{
+ color:#fff;stroke:#fff;stroke-width:3;
 }
