@@ -19,7 +19,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="inicio" className="hero hero-story">
+    <section id="inicio" className="hero hero-story hero-ready">
       <Image
         src="/assets/mundo-da-missao.webp"
         alt=""
@@ -37,9 +37,30 @@ export function Hero() {
           priority
         />
         <h1>
-          <span>Uma carta. Uma casa.</span>
-          <em>Um tesouro escondido.</em>
+          <span>Uma aventura inesquecível para seus filhos.</span>
+          <em>Sem precisar inventar a brincadeira.</em>
         </h1>
+        <div className="hero-story-pitch">
+          <p>
+            Transforme sua casa em uma caça ao tesouro com história, pistas imprimíveis
+            e desafios prontos para toda a família participar.
+          </p>
+          <Cta placement="hero">QUERO ESSA AVENTURA</Cta>
+          <div className="hero-story-facts">
+            <span>
+              <Check size={15} /> De 5 a 9 anos
+            </span>
+            <span>
+              <Check size={15} /> {offer.accessLabel}
+            </span>
+            <span>
+              <Check size={15} /> Até {offer.maxAdventurers} aventureiros
+            </span>
+          </div>
+          <a className="hero-discover" href="#aventura">
+            Veja a missão por dentro <ChevronDown size={17} />
+          </a>
+        </div>
         <div className="hero-film-frame hero-film-frame--vturb">
           <span className="frame-corner top-left" aria-hidden="true" />
           <span className="frame-corner top-right" aria-hidden="true" />
@@ -59,42 +80,7 @@ export function Hero() {
             </div>
           </div>
         </div>
-        <div className="hero-story-pitch">
-          <h2>
-            Surpreenda seus filhos.
-            <br />
-            <em>A aventura começa em casa.</em>
-          </h2>
-          <p>
-            Uma caça ao tesouro para viver em família, com história, pistas e passo a
-            passo já preparados. Você organiza os esconderijos e participa de cada descoberta.
-          </p>
-          <Cta placement="hero">Quero a Missão Secreta</Cta>
-          <div className="hero-story-facts">
-            <span>
-              <Check size={15} /> De 5 a 9 anos
-            </span>
-            <span>
-              <Check size={15} /> {offer.accessLabel}
-            </span>
-            <span>
-              <Check size={15} /> Até {offer.maxAdventurers} aventureiros
-            </span>
-          </div>
-          <div className="hero-feedback-proof">
-            <Image
-              src="/assets/avaliacoes-positivas.webp"
-              alt="Mais de 2 mil avaliações positivas"
-              width={1327}
-              height={128}
-              sizes="(max-width: 600px) 90vw, 520px"
-              className="hero-feedback-proof-image"
-            />
-          </div>
-          <a className="hero-discover" href="#aventura">
-            Veja a missão por dentro <ChevronDown size={17} />
-          </a>
-        </div>
+
       </div>
     </section>
   );

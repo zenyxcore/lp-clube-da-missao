@@ -67,7 +67,7 @@ export function Heading({
   );
 }
 export function Cta({
-  children = "Quero a Missão Secreta",
+  children = "QUERO ESSA AVENTURA",
   secondary = false,
   placement = "section",
 }: {

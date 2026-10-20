@@ -108,13 +108,13 @@ export const bonuses = [
   },
   {
     title: "Carta Secreta",
-    text: "Imprima e entregue às crianças antes de começar. É o convite secreto que coloca a equipe dentro da história.",
+    text: "Entregue o convite e surpreenda sua equipe com uma missão misteriosa.",
     image: "letter",
     ready: true,
   },
   {
     title: "Certificado Personalizado",
-    text: "Ao terminar a missão, imprima o certificado com os nomes da equipe e celebre a conquista em família.",
+    text: "Comemore o fim da aventura com uma lembrança especial da conquista.",
     image: "certificate",
     ready: true,
   },
@@ -122,44 +122,14 @@ export const bonuses = [
 /** Adicione aqui somente fotos reais aprovadas dos materiais impressos. */
 export const showcasePhotos: { src: string; alt: string }[] = [];
 export const faqs = [
-  [
-    "O que está incluído nesta compra?",
-    "A aventura O Tesouro Perdido: história guiada no app, desafios, mapa, pistas e guia do responsável. A Carta Secreta e o Certificado Personalizado também estão incluídos.",
-  ],
-  [
-    "Para que idade e quantas crianças?",
-    "Para crianças de 5 a 9 anos, acompanhadas por um adulto. Monte uma equipe com até 3 aventureiros, escolhendo os nomes e personagens.",
-  ],
-  [
-    "Preciso de impressora?",
-    "Os materiais são digitais, sem envio pelo correio. Você pode imprimir em casa ou em uma papelaria. Se preferir, copie o texto e o código de cada pista em papéis separados, seguindo o guia.",
-  ],
-  [
-    "Quanto tempo preciso reservar?",
-    "Reserve cerca de 10 minutos para preparar os esconderijos e de 25 a 40 minutos para brincar. O tempo varia conforme a idade e o ritmo da equipe. Um adulto deve acompanhar a aventura.",
-  ],
-  [
-    "O que posso usar como tesouro?",
-    "Uma caixa com um desenho, um bilhete carinhoso ou uma pequena surpresa que você já tenha em casa. O tesouro é preparado pela família; não é preciso comprar brinquedos ou acessórios para completar a missão.",
-  ],
-  [
-    "Posso brincar novamente?",
-    "Sim. Você pode preparar a mesma aventura novamente. Ao reiniciar uma equipe, o progresso anterior dela é apagado. A história é a mesma, e os nomes e personagens podem ser alterados no app.",
-  ],
-  [
-    "As cinco aventuras extras estão incluídas?",
-    "Esta oferta inclui O Tesouro Perdido e os dois bônus apresentados na página. A temporada com cinco novas aventuras é um pacote opcional, vendido separadamente. Você não precisa dele para jogar sua missão principal.",
-  ],
-  [
-    "Como recebo o acesso?",
-    `${offer.accessDelivery} Após a aprovação do pagamento, abra a plataforma pelo link recebido. ${offer.accessDuration}`,
-  ],
-  [
-    "Como funciona o pagamento?",
-    "Você faz uma compra única, sem mensalidade. Consulte as formas de pagamento e o valor total no checkout antes de concluir.",
-  ],
-  [
-    "Como peço ajuda ou solicito reembolso?",
-    `${offer.support} Você tem 7 dias para solicitar o reembolso, conforme as condições da compra. Use o atendimento informado na confirmação para receber as orientações.`,
-  ],
+  ["Para qual idade a missão é indicada?", "Para crianças de 5 a 9 anos, com acompanhamento de um adulto."],
+  ["Quantas crianças podem participar?", "Monte uma equipe com até 3 aventureiros, escolhendo os nomes e personagens."],
+  ["Preciso imprimir os materiais?", "As pistas foram preparadas para imprimir em casa ou em uma papelaria. Se preferir, copie o texto e o código de cada pista em papéis separados, seguindo o guia. Não há envio pelo correio."],
+  ["Preciso inventar as pistas ou os desafios?", "Não. A história, as pistas e os enigmas já estão preparados. Você organiza os esconderijos seguindo o guia."],
+  ["A brincadeira acontece no celular?", "O app apresenta a história e acompanha os desafios. A busca pelas pistas acontece fisicamente pela casa, com a participação da família."],
+  ["O tesouro está incluído?", "Você prepara o tesouro: um bilhete, um desenho ou uma pequena surpresa que já tenha em casa. Não é preciso comprar brinquedos ou acessórios."],
+  ["Como recebo o acesso?", `${offer.accessDelivery} O link é liberado após a aprovação do pagamento. ${offer.accessDuration}`],
+  ["Posso brincar novamente?", "Sim. A história é a mesma, mas você pode preparar outra rodada e alterar nomes e personagens. Reiniciar uma equipe apaga o progresso anterior dela."],
+  ["As outras missões estão incluídas?", "Esta compra inclui O Tesouro Perdido, a Carta Secreta e o Certificado Personalizado. As cinco aventuras extras são um pacote opcional vendido separadamente. O Diário do Explorador também é opcional e pode ser adicionado no checkout."],
+  ["Quanto tempo dura a aventura?", "A estimativa é de 25 a 40 minutos de brincadeira, conforme a idade e o ritmo da equipe. Reserve também cerca de 10 minutos para preparar os esconderijos."],
 ];

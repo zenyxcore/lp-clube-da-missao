@@ -2,18 +2,18 @@
 import { Art, Reveal, Heading } from "./shared";
 export const steps = [
   {
-    title: "Abra e monte a equipe",
-    text: "Acesse a missão no celular ou computador. Escolha os nomes e os personagens de até 3 aventureiros.",
+    title: "Acesse a missão",
+    text: "A história, os desafios e os materiais ficam organizados para você começar.",
     image: "team-avatars",
   },
   {
-    title: "Prepare os esconderijos",
-    text: "Imprima as pistas e siga o guia do responsável. Os enigmas e os locais sugeridos já estão organizados.",
+    title: "Prepare as pistas",
+    text: "Imprima os cartões e siga o guia para esconder as pistas pela casa.",
     image: "openmap",
   },
   {
-    title: "Comecem a investigação",
-    text: "Encontrem os cartões, resolvam os desafios no app e descubram o tesouro que você preparou para a equipe.",
+    title: "Reúna os aventureiros",
+    text: "Monte sua equipe, acompanhe a história no app e descubram juntos o tesouro que você preparou.",
     image: "compass",
   },
 ];
@@ -23,11 +23,10 @@ export function HowItWorks() {
       <div className="container">
         <Heading
           eyebrow="COMO A BRINCADEIRA FUNCIONA"
-          text="Você não precisa criar a história nem inventar os enigmas. Prepare a surpresa com o guia e acompanhe os aventureiros."
         >
-          Do primeiro convite
+          Você prepara a surpresa.
           <br />
-          <em>à descoberta do tesouro.</em>
+          <em>A aventura acontece em família.</em>
         </Heading>
         <div className="steps">
           {steps.map((s, i) => (

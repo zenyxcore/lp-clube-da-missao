@@ -6280,3 +6280,49 @@ html {
 .preparation-guide-copy h2{font-size:clamp(28px,3vw,40px);margin:14px 0 20px;text-wrap:balance}
 .preparation-guide-copy p{font-size:15px;line-height:1.85;max-width:440px}
 @media(max-width:760px){.preparation-guide{padding:38px 0 48px}.preparation-guide-grid{grid-template-columns:1fr;gap:24px;text-align:center}.preparation-guide-visual{width:min(560px,100%);margin:auto}.preparation-guide-copy h2{font-size:clamp(27px,7vw,35px);margin:12px 0 16px}.preparation-guide-copy p{margin:auto;font-size:14px;max-width:420px}}
+
+/* Updated narrative: explain the ready-to-play adventure before the video. */
+.hero-ready .hero-story-content{display:flex;flex-direction:column;max-width:920px;gap:0}
+.hero.hero-ready{padding:28px 0 44px}
+.hero-ready .hero-club-logo{width:122px;height:104px;margin:0 auto 18px}
+.hero.hero-ready h1{font-size:clamp(30px,6.8vw,44px);line-height:1.15;letter-spacing:-.025em;margin:0 auto 16px;max-width:850px;text-wrap:balance}
+.hero-ready .hero-story-pitch{margin:0 auto 24px;max-width:650px}
+.hero-ready .hero-story-pitch>p{font-size:15px;line-height:1.7;margin:0 auto 18px;max-width:590px;text-wrap:pretty}
+.hero-ready .hero-story-pitch>.button{width:min(390px,100%);min-height:52px;font-size:14px;padding:15px 22px}
+.hero-ready .hero-story-facts{margin:16px auto 0;gap:9px 14px;flex-wrap:wrap;font-size:11px}
+.hero-ready .hero-discover{margin-top:14px;font-size:11px}
+.hero-ready .hero-film-frame--vturb{width:min(310px,83%);margin:0 auto}
+.benefit-treasure-pair{display:flex;align-items:center;justify-content:center;gap:8px}
+.benefit-treasure-pair .art{width:46%;object-fit:contain}
+.deliverable-image.guide img,.deliverable-image.illustration img{object-fit:contain}
+.deliverable-image.optional img{object-fit:contain}
+.optional-material-note{font-size:12px;line-height:1.6;max-width:390px;margin:9px auto 0;color:#d5c5a1}
+.offer-card--pack h3 em{font-style:normal;font-size:.72em;letter-spacing:.025em}
+.offer-pack-caption{font-size:10px;line-height:1.5;color:#53634c;max-width:320px;margin:0 auto 10px;text-align:center}
+.final-cta .final-pack-note{font-size:10px;line-height:1.5;color:#b8c9bd;margin:0 auto 17px;max-width:400px}
+.treasure-bonuses .bonus-copy h3{margin-top:0}
+@media(min-width:1000px){
+ .hero.hero-ready{padding:36px 0 48px}
+ .hero-ready .hero-club-logo{width:132px;height:112px;margin-bottom:22px}
+ .hero.hero-ready h1{font-size:45px}
+ .hero-ready .hero-film-frame--vturb{width:310px}
+}
+@media(max-width:600px){
+ .hero.hero-ready{padding-top:22px}
+ .hero-ready .hero-club-logo{width:100px;height:86px;margin-bottom:15px}
+ .hero.hero-ready h1{font-size:clamp(28px,7.1vw,36px);line-height:1.16;margin-bottom:14px}
+ .hero-ready .hero-story-pitch>p{font-size:14px;line-height:1.65;margin-bottom:16px}
+ .hero-ready .hero-story-pitch>.button{font-size:13px;min-height:50px}
+ .hero-ready .hero-story-facts{font-size:10px;gap:8px 12px;margin-top:13px}
+ .hero-ready .hero-discover{margin-top:12px}
+ .hero-ready .hero-story-pitch{margin-bottom:22px}
+ .optional-material-note{font-size:11px;padding:0 12px}
+ .offer-card--pack h3{font-size:clamp(23px,6vw,29px)}
+ .offer-card--pack .offer-pack-caption{font-size:9px}
+}
+@media(min-width:701px){
+ #recebe .benefits-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+ #recebe .benefit{grid-column:span 2;min-width:0}
+ #recebe .benefit:nth-child(4){grid-column:2/span 2}
+ #recebe .benefit:nth-child(5){grid-column:4/span 2}
+}

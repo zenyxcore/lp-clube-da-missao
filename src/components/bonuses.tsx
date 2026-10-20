@@ -1,5 +1,5 @@
 "use client";
-import { Check, Gift } from "lucide-react";
+import { Check } from "lucide-react";
 import { bonuses } from "@/lib/config";
 import { Art, Cta, Reveal, Heading } from "./shared";
 export function Bonuses() {
@@ -10,11 +10,10 @@ export function Bonuses() {
       <div className="container">
         <Heading
           eyebrow="PRESENTES PARA COMPLETAR A EXPERIÊNCIA"
-          text="Na compra da missão, estes materiais também são seus. Sem pagar nada a mais."
         >
-          Além da aventura, você ganha
+          Um convite para começar.
           <br />
-          <em>{active.length} bônus para guardar esse momento.</em>
+          <em>Uma lembrança para guardar.</em>
         </Heading>
         <div className="bonus-grid">
           {active.map((b, i) => (
@@ -27,26 +26,18 @@ export function Bonuses() {
                 <Art name={b.image} />
               </div>
               <div className="bonus-copy">
-                <span className="free-badge">
-                  <Check size={17} strokeWidth={3} />
-                  GRÁTIS COM A MISSÃO
-                </span>
                 <h3>{b.title}</h3>
                 <p>{b.text}</p>
-                <span className="bonus-value">
-                  <Gift size={16} />
-                  Incluído na sua compra. Sem custo extra.
-                </span>
+
               </div>
             </Reveal>
           ))}
         </div>
         <p className="bonus-reassurance">
-          <Check size={18} /> Os materiais de O Tesouro Perdido e estes dois bônus já estão
-          incluídos. Não é preciso comprar missões extras para jogar esta aventura.
+          <Check size={18} /> Os dois estão incluídos na sua compra.
         </p>
         <div className="section-cta">
-          <Cta placement="bonuses">Quero a aventura com meus bônus</Cta>
+          <Cta placement="bonuses">QUERO ESSA AVENTURA</Cta>
         </div>
       </div>
     </section>

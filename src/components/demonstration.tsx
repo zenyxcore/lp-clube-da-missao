@@ -30,62 +30,20 @@ export const shots = [
     text: "Um certificado com os nomes dos aventureiros.",
   },
 ];
-const materialPreviews = [
-  {
-    src: "/demo/carta-nas-maos.webp",
-    alt: "Carta temática impressa e segurada pelas mãos",
-    label: "A Carta Secreta que dá início à aventura",
-    kind: "print",
-  },
-  {
-    src: "/demo/pista-primeiro-sinal.webp",
-    alt: "Cartão O Primeiro Sinal, incluído na Missão Secreta, sendo escondido no sofá",
-    label: "As pistas incluídas na Missão Secreta",
-    kind: "print",
-  },
-  {
-    src: "/demo/diario-explorador-atual.webp",
-    alt: "Diário do Explorador e páginas de desafios impressos",
-    label: "Diário do Explorador",
-    kind: "print",
-  },
-  {
-    src: "/demo/certificado-aventureiro.webp",
-    alt: "Certificado de Aventureiro impresso com materiais da missão",
-    label: "Certificado de Aventureiro",
-    kind: "print",
-  },
-  {
-    src: "/demo/familia-aventura.webp",
-    alt: "Mãe e filho celebram juntos a aventura com o certificado",
-    label: "Uma conquista para celebrar em família",
-    kind: "print",
-  },
-  {
-    src: "/demo/missao-etapa-preview.jpg",
-    alt: "Tela real de uma etapa da missão no celular",
-    label: "A história e os desafios no celular",
-    kind: "screen",
-  },
-  {
-    src: "/demo/missao-equipe.jpg",
-    alt: "Tela inicial real da missão no celular",
-    label: "O início da aventura",
-    kind: "screen",
-  },
-  {
-    src: "/demo/missao-avatares-preview.jpg",
-    alt: "Tela real de personalização dos aventureiros no celular",
-    label: "A equipe com nomes e avatares",
-    kind: "screen",
-  },
-  {
-    src: "/demo/missao-tesouro.jpg",
-    alt: "Tela real da descoberta do tesouro no celular",
-    label: "A descoberta do tesouro",
-    kind: "screen",
-  },
+export const materialPreviews = [
+  { src: "/demo/carta-nas-maos.webp", alt: "Carta temática impressa e segurada pelas mãos", label: "A Carta Secreta que dá início à aventura", kind: "print" },
+  { src: "/demo/pista-primeiro-sinal.webp", alt: "Cartão O Primeiro Sinal sendo escondido no sofá", label: "As pistas e os desafios da missão", kind: "print" },
+  { src: "/assets/openmap.webp", alt: "Ilustração do mapa da aventura", label: "O caminho da investigação", kind: "illustration" },
+  { src: "/assets/guia-responsavel-mockup.webp", alt: "Guia do responsável impresso e downloads no app", label: "O guia e os materiais organizados", kind: "guide" },
+  { src: "/demo/missao-etapa-preview.jpg", alt: "Tela real de uma etapa da missão no celular", label: "A história e os desafios no celular", kind: "screen" },
+  { src: "/demo/missao-equipe.jpg", alt: "Tela inicial real da missão no celular", label: "O início da aventura", kind: "screen" },
+  { src: "/demo/missao-tesouro.jpg", alt: "Tela real da descoberta do tesouro", label: "A descoberta do tesouro", kind: "screen" },
+  { src: "/demo/missao-avatares-preview.jpg", alt: "Tela real de personalização dos aventureiros", label: "A equipe com nomes e personagens", kind: "screen" },
+  { src: "/demo/certificado-aventureiro.webp", alt: "Certificado de Aventureiro impresso", label: "Uma lembrança da conquista", kind: "print" },
+  { src: "/demo/diario-explorador-atual.webp", alt: "Diário do Explorador, material opcional vendido separadamente", label: "Diário do Explorador", kind: "optional" },
+  { src: "/demo/familia-aventura.webp", alt: "Mãe e filho celebram a aventura com o certificado", label: "Uma conquista para celebrar em família", kind: "print" },
 ];
+
 export function Screenshot({
   index,
   className = "",
@@ -148,9 +106,10 @@ export function DeliverableCarousel() {
       </div>
       <div className="deliverable-caption">
         <span className="deliverable-type">
-          {current.kind.includes("screen") ? "TELA REAL DO APP" : "MATERIAL IMPRESSO"}
+          {current.kind === "screen" ? "TELA REAL DO APP" : current.kind === "optional" ? "OPCIONAL · VENDIDO SEPARADAMENTE" : current.kind === "illustration" ? "MAPA DA AVENTURA" : current.kind === "guide" ? "GUIA E DOWNLOADS" : "MATERIAL IMPRESSO"}
         </span>
         <h3>{current.label}</h3>
+        {current.kind === "optional" && <p className="optional-material-note">Adicione no checkout por R$ 9,90. Não faz parte da missão principal.</p>}
         <div className="deliverable-controls">
           <button
             className="deliverable-arrow"
@@ -194,15 +153,14 @@ export function Demo() {
       <div className="container">
         <Heading
           eyebrow="OLHE POR DENTRO"
-          text="Veja os materiais da aventura e as telas reais do app que guia a equipe em cada descoberta."
+          text="Conheça os materiais e descubra como a missão ganha vida dentro da sua casa."
         >
-          Veja o material
+          Uma carta misteriosa.
           <br />
-          <em>por dentro.</em>
+          <em>Pistas para uma grande aventura.</em>
         </Heading>
         <DeliverableCarousel />
         <div className="section-cta">
-          <p>Uma pista encontrada pela casa. Um desafio no app. A próxima descoberta de vocês.</p>
           <Cta placement="materials" />
         </div>
       </div>

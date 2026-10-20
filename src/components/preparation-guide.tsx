@@ -8,8 +8,8 @@ export function PreparationGuide() {
         </div>
         <div className="preparation-guide-copy">
           <span className="eyebrow">ORIENTAÇÃO EM CADA ETAPA</span>
-          <h2 id="preparation-guide-title">Você prepara a surpresa.<br /><em>O guia mostra o caminho.</em></h2>
-          <p>Saiba o que separar, onde esconder as pistas e como acompanhar a aventura. No app, os materiais ficam organizados para você baixar.</p>
+          <h2 id="preparation-guide-title">Você não precisa inventar os desafios.<br /><em>Nós já preparamos o caminho.</em></h2>
+          <p>O guia mostra como organizar a brincadeira, preparar os esconderijos e conduzir a aventura. Você só precisa preparar a surpresa e reunir sua equipe.</p>
         </div>
       </div>
     </section>

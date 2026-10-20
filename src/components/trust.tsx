@@ -42,13 +42,12 @@ export function Trust() {
             </span>
           </div>
           <h3>
-            Receba o acesso por
+            Acesso enviado por
             <br />
-            <em>e-mail e WhatsApp.</em>
+            <em>e-mail e WhatsApp</em>
           </h3>
           <p>
-            {offer.accessDelivery} Depois, é só abrir a missão e reunir seus
-            exploradores.
+            Após a aprovação do pagamento, você recebe o acesso para abrir a missão e baixar os materiais.
           </p>
           <p className="trust-lifetime">
             {offer.accessLabel}. {offer.purchaseLabel}. {offer.billingLabel}.
@@ -59,9 +58,7 @@ export function Trust() {
           <div>
             <h3>7 dias de garantia.</h3>
             <p>
-              Conheça a Missão Secreta com tranquilidade. Se sentir que ela não é
-              para sua família, peça o reembolso em até 7 dias após a compra e
-              devolvemos seu dinheiro.
+              Se a experiência não for para sua família, você pode solicitar o reembolso em até 7 dias após a compra.
             </p>
           </div>
         </div>

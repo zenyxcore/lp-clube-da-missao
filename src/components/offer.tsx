@@ -16,7 +16,7 @@ import { offerExpired } from "@/lib/campaign";
 import { startCheckout } from "./analytics";
 import { Art, Heading, useClock } from "./shared";
 export function CheckoutButton({
-  label = "Comprar Missão Secreta",
+  label = "COMPRAR MINHA MISSÃO",
   placement = "offer",
   showNote = true,
 }: {
@@ -63,7 +63,7 @@ export function OfferCard({ full = false }: { full?: boolean }) {
   return (
     <div className={`offer-card offer-card--pack ${full ? "full-offer" : ""}`}>
       <span className="edition">CONDIÇÃO ESPECIAL DE LANÇAMENTO</span>
-      <h3>A Caça ao Tesouro Perdido</h3>
+      <h3>MISSÃO SECRETA<br /><em>O TESOURO PERDIDO</em></h3>
       <div className="offer-includes-label">
         UMA MISSÃO COMPLETA PARA SUA FAMÍLIA
       </div>
@@ -101,13 +101,14 @@ export function OfferCard({ full = false }: { full?: boolean }) {
       <div className="offer-pack">
         <Image
           src="/assets/box-pack-oferta.webp"
-          alt="Pack Missão Secreta: app, carta, pistas, Diário do Explorador e Certificado de Aventureiro"
+          alt="Apresentação visual da Missão Secreta e dos materiais da aventura"
           width={1000}
           height={706}
           sizes="(max-width: 600px) 75vw, 400px"
           className="offer-pack-image"
         />
       </div>
+      <p className="offer-pack-caption">Diário do Explorador exibido no pack: opcional, vendido separadamente.</p>
       <ul className="offer-access-extras" aria-label="Também incluído na compra">
         <li><span aria-hidden="true">+</span> Acesso ao app</li>
         <li><span aria-hidden="true">+</span> Materiais organizados para download</li>
@@ -170,7 +171,7 @@ export function Offer() {
       <div className="container">
         <Heading
           eyebrow="TUDO EM UMA ÚNICA COMPRA"
-          text="A aventura O Tesouro Perdido, os materiais de preparação e os dois bônus em uma única compra."
+          text="História, desafios, pistas e tudo o que você precisa para preparar uma caça ao tesouro especial em casa."
         >
           Uma missão completa.
           <br />

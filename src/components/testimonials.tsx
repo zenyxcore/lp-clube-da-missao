@@ -36,8 +36,8 @@ export function Testimonials() {
       <div className="container">
         <div className="section-heading">
           <span className="eyebrow">FEEDBACK DE QUEM JÁ ENTROU NA MISSÃO</span>
-          <h2 id="feedback-title">Veja o que estão falando dessa aventura.</h2>
-          <p>Mensagens de famílias que já receberam o material e começaram a brincar.</p>
+          <h2 id="feedback-title">Famílias que já viveram essa aventura.</h2>
+          <p>Veja como foi a experiência de quem preparou a missão e compartilhou esse momento com as crianças.</p>
           <span className="heading-rule" aria-hidden="true">◆</span>
         </div>
 

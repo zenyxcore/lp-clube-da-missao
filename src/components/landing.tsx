@@ -27,8 +27,8 @@ export function Landing() {
         <Demo />
         <Benefits />
         <Bonuses />
-        <Offer />
         <Testimonials />
+        <Offer />
         <Trust />
         <FAQ />
         <FinalCTA />

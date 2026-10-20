@@ -1,25 +1,24 @@
 "use client";
 import Image from "next/image";
 import { CheckoutButton, OfferCondition } from "./offer";
-import { priceLabel, referencePriceLabel } from "@/lib/config";
+import { priceLabel } from "@/lib/config";
 export function FinalCTA() {
   return (
     <section className="final-cta">
       <Image src="/assets/mundo-da-missao.webp" alt="" fill sizes="100vw" />
       <div className="container">
         <h2>
-          A próxima descoberta
+          A próxima aventura da sua família
           <br />
-          <em>pode começar na sua casa.</em>
+          <em>pode começar em casa.</em>
         </h2>
         <p>
-          Imagine entregar a carta e convidar seus filhos para procurar um tesouro
-          pela casa. A história e as pistas já estão prontas para vocês começarem.
+          Uma história misteriosa, pistas prontas e uma equipe esperando para entrar em ação.
         </p>
         <div className="final-offer-pack">
           <Image
             src="/assets/box-pack-oferta.webp"
-            alt="Pack Missão Secreta com app, carta, pistas, diário e certificado"
+            alt="Apresentação visual da Missão Secreta e dos materiais da aventura"
             width={1000}
             height={706}
             sizes="(max-width: 600px) 85vw, 480px"
@@ -27,13 +26,13 @@ export function FinalCTA() {
           />
         </div>
         <p className="final-offer-summary">
-          De {" "}
-          <del>{referencePriceLabel}</del> por <b>{priceLabel}</b>, com a missão e os dois bônus.
-          Compra única com acesso vitalício.
+          <b>{priceLabel}</b> · Pagamento único · Acesso vitalício
         </p>
+        <p className="final-pack-note">Diário do Explorador: opcional, vendido separadamente.</p>
         <OfferCondition final />
         <CheckoutButton
-          label="Comprar Missão Secreta"
+          label="GARANTIR MINHA MISSÃO"
+          showNote={false}
           placement="final"
         />
       </div>
