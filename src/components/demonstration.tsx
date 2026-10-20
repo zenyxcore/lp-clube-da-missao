@@ -33,8 +33,6 @@ export const shots = [
 export const materialPreviews = [
   { src: "/demo/carta-nas-maos.webp", alt: "Carta temática impressa e segurada pelas mãos", label: "A Carta Secreta que dá início à aventura", kind: "print" },
   { src: "/demo/pista-primeiro-sinal.webp", alt: "Cartão O Primeiro Sinal sendo escondido no sofá", label: "As pistas e os desafios da missão", kind: "print" },
-  { src: "/assets/openmap.webp", alt: "Ilustração do mapa da aventura", label: "O caminho da investigação", kind: "illustration" },
-  { src: "/assets/guia-responsavel-mockup.webp", alt: "Guia do responsável impresso e downloads no app", label: "O guia e os materiais organizados", kind: "guide" },
   { src: "/demo/missao-etapa-preview.jpg", alt: "Tela real de uma etapa da missão no celular", label: "A história e os desafios no celular", kind: "screen" },
   { src: "/demo/missao-equipe.jpg", alt: "Tela inicial real da missão no celular", label: "O início da aventura", kind: "screen" },
   { src: "/demo/missao-tesouro.jpg", alt: "Tela real da descoberta do tesouro", label: "A descoberta do tesouro", kind: "screen" },
@@ -105,11 +103,10 @@ export function DeliverableCarousel() {
         </div>
       </div>
       <div className="deliverable-caption">
-        <span className="deliverable-type">
+        {current.kind !== "optional" && <span className="deliverable-type">
           {current.kind === "screen" ? "TELA REAL DO APP" : current.kind === "optional" ? "OPCIONAL · VENDIDO SEPARADAMENTE" : current.kind === "illustration" ? "MAPA DA AVENTURA" : current.kind === "guide" ? "GUIA E DOWNLOADS" : "MATERIAL IMPRESSO"}
-        </span>
-        <h3>{current.label}</h3>
-        {current.kind === "optional" && <p className="optional-material-note">Adicione no checkout por R$ 9,90. Não faz parte da missão principal.</p>}
+        </span>}
+        {current.kind !== "optional" && <h3>{current.label}</h3>}
         <div className="deliverable-controls">
           <button
             className="deliverable-arrow"

@@ -4,7 +4,7 @@ export const steps = [
   {
     title: "Acesse a missão",
     text: "A história, os desafios e os materiais ficam organizados para você começar.",
-    image: "team-avatars",
+    image: "compass",
   },
   {
     title: "Prepare as pistas",
@@ -14,7 +14,7 @@ export const steps = [
   {
     title: "Reúna os aventureiros",
     text: "Monte sua equipe, acompanhe a história no app e descubram juntos o tesouro que você preparou.",
-    image: "compass",
+    image: "team-avatars",
   },
 ];
 export function HowItWorks() {

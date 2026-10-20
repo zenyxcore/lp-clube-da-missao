@@ -28,7 +28,6 @@ export function FinalCTA() {
         <p className="final-offer-summary">
           <b>{priceLabel}</b> · Pagamento único · Acesso vitalício
         </p>
-        <p className="final-pack-note">Diário do Explorador: opcional, vendido separadamente.</p>
         <OfferCondition final />
         <CheckoutButton
           label="GARANTIR MINHA MISSÃO"

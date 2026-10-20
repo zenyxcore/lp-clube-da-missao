@@ -63,10 +63,6 @@ export function OfferCard({ full = false }: { full?: boolean }) {
   return (
     <div className={`offer-card offer-card--pack ${full ? "full-offer" : ""}`}>
       <span className="edition">CONDIÇÃO ESPECIAL DE LANÇAMENTO</span>
-      <h3>MISSÃO SECRETA<br /><em>O TESOURO PERDIDO</em></h3>
-      <div className="offer-includes-label">
-        UMA MISSÃO COMPLETA PARA SUA FAMÍLIA
-      </div>
       <ul className="offer-list compact-includes">
         {[
           "História + 6 desafios",
@@ -108,7 +104,6 @@ export function OfferCard({ full = false }: { full?: boolean }) {
           className="offer-pack-image"
         />
       </div>
-      <p className="offer-pack-caption">Diário do Explorador exibido no pack: opcional, vendido separadamente.</p>
       <ul className="offer-access-extras" aria-label="Também incluído na compra">
         <li><span aria-hidden="true">+</span> Acesso ao app</li>
         <li><span aria-hidden="true">+</span> Materiais organizados para download</li>
@@ -177,6 +172,10 @@ export function Offer() {
           <br />
           <em>Uma tarde para lembrar.</em>
         </Heading>
+        <div className="offer-product-heading">
+          <h3>MISSÃO SECRETA — O TESOURO PERDIDO</h3>
+          <p>Uma missão completa para sua família.</p>
+        </div>
         <div className="final-offer-wrap">
           <Art name="compass" className="decor final-compass" />
           <Art name="chest" className="decor final-chest" />

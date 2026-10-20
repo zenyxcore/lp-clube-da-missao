@@ -6326,3 +6326,34 @@ html {
  #recebe .benefit:nth-child(4){grid-column:2/span 2}
  #recebe .benefit:nth-child(5){grid-column:4/span 2}
 }
+
+/* Mobile corrections: allow long copy to wrap, retain circular carousel controls. */
+.hero-ready .hero-story-content{min-width:0}
+.hero.hero-ready h1{width:100%;min-width:0;max-width:100%}
+.hero.hero-ready h1 span,.hero.hero-ready h1 em{white-space:normal;max-width:100%;overflow-wrap:break-word}
+.deliverable-controls{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;width:min(100%,340px);gap:10px}
+.deliverable-paging{min-width:0;width:100%}
+.deliverable-arrow{width:40px;height:40px;min-width:40px;min-height:40px;aspect-ratio:1;flex-shrink:0;justify-self:center;padding:0}
+.deliverable-arrow svg{width:20px;height:20px;flex-shrink:0}
+.deliverable-dots{width:100%;max-width:210px;gap:6px;flex-wrap:wrap;padding:5px 0}
+.deliverable-dots button{width:8px;height:8px;min-width:8px;flex:0 0 8px;aspect-ratio:1}
+.deliverable-dots button[aria-current="true"]{width:20px;flex-basis:20px;aspect-ratio:auto}
+.treasure-bonuses .bonus-number{display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border:1px solid #6eac86;border-radius:8px;background:linear-gradient(135deg,#145b43,#0a382e);color:#f5dfa9;box-shadow:inset 0 1px 0 #ffffff18,0 3px 9px #0002;line-height:1.2}
+.offer-product-heading{text-align:center;margin:-10px auto 23px;max-width:650px}
+.offer-product-heading h3{font-size:clamp(18px,3vw,25px);line-height:1.35;color:#f2d599}
+.offer-product-heading p{font-size:13px;margin-top:8px;color:#c8d4cc}
+.offer-card.full-offer.offer-card--pack{padding-top:25px;padding-bottom:25px}
+.offer-card--pack .offer-list.compact-includes{padding-top:8px;margin-top:8px;margin-bottom:8px;row-gap:5px}
+.offer-card--pack .offer-pack{margin:9px auto 7px;padding:0}
+.offer-card--pack .offer-pack-image{max-height:230px}
+.offer-card--pack .offer-access-extras{margin-bottom:8px}
+@media(max-width:700px){
+ .hero.hero-ready h1{font-size:clamp(27px,7vw,35px);line-height:1.17}
+ .hero-ready .hero-story-pitch{width:100%;min-width:0}
+ .deliverable-controls{gap:7px}
+ .deliverable-dots{gap:5px}
+ .offer-card.full-offer.offer-card--pack{padding:24px 24px}
+ .offer-card--pack .offer-pack-image{max-height:205px}
+ .offer-card--pack .price strong{font-size:clamp(48px,14vw,65px)}
+ .offer-product-heading{margin-bottom:18px}
+}

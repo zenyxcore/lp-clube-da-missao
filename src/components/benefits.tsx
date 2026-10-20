@@ -2,7 +2,7 @@
 import { Check } from "lucide-react";
 import { Art, Cta, Reveal, Heading } from "./shared";
 const groups = [
-  { title: "História e desafios", text: "Uma aventura guiada, com mistérios e enigmas para resolver em equipe.", images: ["chest", "key"] },
+  { title: "História e desafios", text: "Uma aventura guiada, com mistérios e enigmas para resolver em equipe.", images: ["chest"] },
   { title: "Pistas e materiais imprimíveis", text: "Cartões, mapa e materiais para espalhar a investigação pela casa.", images: ["openmap"] },
   { title: "Guia do responsável", text: "Orientações para preparar os esconderijos e acompanhar a brincadeira.", images: ["guide"] },
   { title: "Equipe personalizada", text: "Escolha nomes e personagens para reunir até três aventureiros.", images: ["team-avatars"] },
