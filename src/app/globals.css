@@ -6357,3 +6357,10 @@ html {
  .offer-card--pack .price strong{font-size:clamp(48px,14vw,65px)}
  .offer-product-heading{margin-bottom:18px}
 }
+
+/* Readable inclusions in the parchment price offer, including mobile. */
+.offer-card--pack .offer-list.compact-includes{grid-template-columns:repeat(2,minmax(0,1fr));width:100%;column-gap:16px;row-gap:11px;padding:12px 0;margin:8px auto 14px}
+.offer-card--pack .offer-list.compact-includes li{font-size:14px;font-weight:600;line-height:1.45;letter-spacing:0;color:#203f31;gap:8px;align-items:center;min-width:0}
+.offer-card--pack .compact-includes .include-check{width:19px;height:19px;min-width:19px;flex:0 0 19px}
+.offer-card--pack .compact-includes .include-check svg{width:13px;height:13px;stroke-width:2.8}
+@media(max-width:400px){.offer-card--pack .offer-list.compact-includes{column-gap:12px;row-gap:10px}.offer-card--pack .offer-list.compact-includes li{font-size:13px;gap:6px}}
